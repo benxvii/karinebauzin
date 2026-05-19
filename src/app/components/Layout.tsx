@@ -1,7 +1,12 @@
 import { Outlet, Link, useLocation } from "react-router";
-import { Menu, X } from "lucide-react";
+import { Instagram, Linkedin, Menu, X } from "lucide-react";
 import { useState } from "react";
-import { isNavActive, mainNavigation, type NavItem } from "../../config/navigation";
+import {
+  isNavActive,
+  isNavSectionActive,
+  mainNavigation,
+  type NavItem,
+} from "../../config/navigation";
 import { site } from "../../config/site";
 
 export default function Layout() {
@@ -37,16 +42,14 @@ export default function Layout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500">
-              © {site.copyrightYear} {site.name}. Tous droits réservés.
+              © {site.copyrightYear} {site.name}
             </p>
-            <div className="flex gap-6">
+            <div className="flex flex-wrap gap-6 justify-center md:justify-end">
               <a
-                href={site.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={site.phoneHref}
                 className="text-gray-500 hover:text-[var(--brand)] transition-colors"
               >
-                Instagram
+                {site.phone}
               </a>
               <a
                 href={`mailto:${site.email}`}
@@ -54,12 +57,24 @@ export default function Layout() {
               >
                 {site.email}
               </a>
-              <Link
-                to="/contact"
+              <a
+                href={site.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
                 className="text-gray-500 hover:text-[var(--brand)] transition-colors"
               >
-                Contact
-              </Link>
+                <Instagram size={22} strokeWidth={1.5} />
+              </a>
+              <a
+                href={site.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="text-gray-500 hover:text-[var(--brand)] transition-colors"
+              >
+                <Linkedin size={22} strokeWidth={1.5} />
+              </a>
             </div>
           </div>
         </div>
@@ -79,12 +94,16 @@ function HeaderRow({
 }) {
   return (
     <div className="flex justify-between items-center h-20">
-      <Link to="/" className="flex items-center">
-        <img
-          src={site.logoSrc}
-          alt={site.name}
-          className="h-10 w-auto object-contain"
-        />
+      <Link
+        to="/"
+        className="inline-flex flex-col items-stretch w-fit leading-tight hover:text-[var(--brand)] transition-colors"
+      >
+        <span className="site-name text-xl whitespace-nowrap">{site.name}</span>
+        <span className="site-tagline text-gray-600" aria-label="Photographe">
+          {"Photographe".split("").map((char, i) => (
+            <span key={i}>{char}</span>
+          ))}
+        </span>
       </Link>
 
       <DesktopNav navLinks={mainNavigation} isActive={isActive} />
@@ -136,8 +155,8 @@ function NavDropdown({
   link: Extract<NavItem, { subLinks: unknown }>;
   isActive: (path: string) => boolean;
 }) {
-  const sectionActive =
-    link.path !== undefined && isActive(link.path);
+  const location = useLocation();
+  const sectionActive = isNavSectionActive(location.pathname, link);
 
   return (
     <div className="relative group">

@@ -8,11 +8,18 @@ export type NavItem =
       subLinks: { path: string; label: string }[];
     };
 
+const corporateGallery = portraitGalleries[1];
+
 export const mainNavigation: NavItem[] = [
-  { path: "/", label: "Accueil" },
   { path: "/about", label: "À propos" },
-  ...portraitGalleries.map((g) => ({ path: g.path, label: g.title })),
-  { path: portraitPresse.path, label: portraitPresse.title },
+  {
+    label: "Portraits",
+    path: corporateGallery.path,
+    subLinks: [
+      { path: corporateGallery.path, label: "Corporate" },
+      { path: portraitPresse.path, label: "Presse" },
+    ],
+  },
   {
     label: documentary.title,
     path: documentary.indexPath,
@@ -28,17 +35,24 @@ export const mainNavigation: NavItem[] = [
     label: livres.title,
     path: livres.indexPath,
     subLinks: [
-      { path: livres.indexPath, label: "Tous les livres" },
+      { path: livres.indexPath, label: "Tout voir" },
       ...livres.items.map((b) => ({
         path: b.path,
         label: b.title,
       })),
     ],
   },
-  { path: "/contact", label: "Contact" },
 ];
 
 export function isNavActive(pathname: string, path: string): boolean {
   if (path === "/") return pathname === "/";
   return pathname === path || pathname.startsWith(`${path}/`);
+}
+
+export function isNavSectionActive(
+  pathname: string,
+  item: Extract<NavItem, { subLinks: unknown }>,
+): boolean {
+  if (item.path && isNavActive(pathname, item.path)) return true;
+  return item.subLinks.some((s) => isNavActive(pathname, s.path));
 }
