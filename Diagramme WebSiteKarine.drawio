@@ -1,0 +1,124 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="7DQdf_UWoHgIIKnjzrB9">
+    <mxGraphModel dx="913" dy="749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="5QbHy8jZmOt01RL8WsuC-1" parent="1" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.home_page;" value="HomePage" vertex="1">
+          <mxGeometry height="43" width="53" x="341.5" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="5QbHy8jZmOt01RL8WsuC-21" edge="1" parent="1" source="5QbHy8jZmOt01RL8WsuC-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="5QbHy8jZmOt01RL8WsuC-20" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5QbHy8jZmOt01RL8WsuC-13" parent="1" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.web_page;" value="Documentaire" vertex="1">
+          <mxGeometry height="54" width="50" x="240" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="5QbHy8jZmOt01RL8WsuC-16" parent="1" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.web_page;" value="A propos" vertex="1">
+          <mxGeometry height="54" width="50" x="81.5" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="5QbHy8jZmOt01RL8WsuC-19" parent="1" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.web_page;" value="Portraits&lt;div&gt;Corporate&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="50" x="160" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="5QbHy8jZmOt01RL8WsuC-20" parent="1" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.web_page;" value="Swiss Cu&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="50" x="240" y="334" as="geometry" />
+        </mxCell>
+        <mxCell id="5QbHy8jZmOt01RL8WsuC-23" parent="1" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.web_page;" value="144" vertex="1">
+          <mxGeometry height="54" width="50" x="300" y="334" as="geometry" />
+        </mxCell>
+        <mxCell id="5QbHy8jZmOt01RL8WsuC-24" edge="1" parent="1" source="5QbHy8jZmOt01RL8WsuC-13" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="5QbHy8jZmOt01RL8WsuC-23" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="265" y="290" />
+              <mxPoint x="325" y="290" />
+            </Array>
+            <mxPoint x="280" y="280" as="sourcePoint" />
+            <mxPoint x="360" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5QbHy8jZmOt01RL8WsuC-25" parent="1" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.web_page;" value="Portrait&lt;div&gt;Presse&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="50" x="344.5" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="5QbHy8jZmOt01RL8WsuC-26" parent="1" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.web_page;" value="Livres" vertex="1">
+          <mxGeometry height="54" width="50" x="440" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="5QbHy8jZmOt01RL8WsuC-27" parent="1" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.web_page;" value="Livre 1" vertex="1">
+          <mxGeometry height="54" width="50" x="440" y="334" as="geometry" />
+        </mxCell>
+        <mxCell id="5QbHy8jZmOt01RL8WsuC-28" parent="1" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.web_page;" value="Livre 2" vertex="1">
+          <mxGeometry height="54" width="50" x="500" y="334" as="geometry" />
+        </mxCell>
+        <mxCell id="5QbHy8jZmOt01RL8WsuC-29" edge="1" parent="1" source="5QbHy8jZmOt01RL8WsuC-26" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="5QbHy8jZmOt01RL8WsuC-27" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="310" y="310" as="sourcePoint" />
+            <mxPoint x="360" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5QbHy8jZmOt01RL8WsuC-30" edge="1" parent="1" source="5QbHy8jZmOt01RL8WsuC-26" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="5QbHy8jZmOt01RL8WsuC-28" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="465" y="290" />
+              <mxPoint x="525" y="290" />
+            </Array>
+            <mxPoint x="450" y="260" as="sourcePoint" />
+            <mxPoint x="390" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5QbHy8jZmOt01RL8WsuC-31" parent="1" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.web_page;" value="Contact" vertex="1">
+          <mxGeometry height="54" width="50" x="560" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="5QbHy8jZmOt01RL8WsuC-37" edge="1" parent="1" source="5QbHy8jZmOt01RL8WsuC-1" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="5QbHy8jZmOt01RL8WsuC-16" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="370" y="110" />
+              <mxPoint x="107" y="110" />
+            </Array>
+            <mxPoint x="310" y="310" as="sourcePoint" />
+            <mxPoint x="360" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5QbHy8jZmOt01RL8WsuC-39" edge="1" parent="1" source="5QbHy8jZmOt01RL8WsuC-1" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="5QbHy8jZmOt01RL8WsuC-13" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="370" y="110" />
+              <mxPoint x="265" y="110" />
+            </Array>
+            <mxPoint x="180" y="170" as="sourcePoint" />
+            <mxPoint x="230" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5QbHy8jZmOt01RL8WsuC-40" edge="1" parent="1" source="5QbHy8jZmOt01RL8WsuC-1" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="5QbHy8jZmOt01RL8WsuC-19" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="370" y="110" />
+              <mxPoint x="185" y="110" />
+            </Array>
+            <mxPoint x="360" y="120" as="sourcePoint" />
+            <mxPoint x="240" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5QbHy8jZmOt01RL8WsuC-42" edge="1" parent="1" source="5QbHy8jZmOt01RL8WsuC-1" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="5QbHy8jZmOt01RL8WsuC-26" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="370" y="110" />
+              <mxPoint x="465" y="110" />
+            </Array>
+            <mxPoint x="450" y="90" as="sourcePoint" />
+            <mxPoint x="490" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5QbHy8jZmOt01RL8WsuC-44" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="5QbHy8jZmOt01RL8WsuC-31" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="393.0000000000001" y="109.99999999999994" as="sourcePoint" />
+            <mxPoint x="585" y="248.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5QbHy8jZmOt01RL8WsuC-47" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" target="5QbHy8jZmOt01RL8WsuC-25" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="370" y="110" as="sourcePoint" />
+            <mxPoint x="340" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
