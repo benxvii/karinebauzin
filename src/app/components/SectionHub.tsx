@@ -37,11 +37,11 @@ function HubGrid({ items }: { items: readonly HubItem[] }) {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
       {items.map((item) => (
         <Link key={item.path} to={item.path} className="group block">
-          <div className="relative aspect-[4/3] overflow-hidden mb-4">
+          <div className="relative aspect-[4/3] overflow-hidden mb-4 bg-white">
             <ImageWithFallback
               src={item.image}
               alt={item.title}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
             />
           </div>
           <h2 className="text-2xl mb-2 group-hover:text-[var(--brand)] transition-colors">

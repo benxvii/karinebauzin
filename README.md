@@ -42,3 +42,4 @@ Déploiement conseillé : [Vercel](https://vercel.com) ou [Netlify](https://netl
 - **Documentaire** : ajoutez un objet dans `documentary.projects` (`site.ts`)
 - **Livres** : ajoutez un objet dans `livres.items` (`site.ts`)
 - Logo : `public/logo.png`
+- Couvertures livres : `public/books/` (à migrer vers Cloudinary : `livres/nom-du-livre`)

@@ -136,9 +136,8 @@ export const livres = {
       slug: "geneve-au-coeur-du-jeu",
       path: "/livres/geneve-au-coeur-du-jeu",
       title: "Genève, au coeur du jeu",
-      description: "Livre photo — à compléter.",
-      image:
-        "https://images.unsplash.com/photo-1567894340315-ef4fffb63a8c?w=800&h=1000&fit=crop",
+      description: "Livre photo — Genève et le football.",
+      image: "/books/geneve-au-coeur-du-jeu.png",
       body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
@@ -148,8 +147,7 @@ export const livres = {
       description:
         "Reportage réalisé en deux saisons à Genève Plage — un autre monde à portée de mains.",
       price: 39,
-      image:
-        "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&h=1000&fit=crop",
+      image: "/books/cabines-de-plage.jpg",
       body: `Indissociables des bords de plage sur lesquels elles s'établissent partout dans le monde, les cabines ont naturellement pour vocation première d'offrir aux estivaliers un endroit où déposer leurs affaires et se changer en toute intimité. Pourtant, elles représentent souvent bien davantage et offrent à leurs utilisateurs l'accès à un véritable mode de vie.
 
 Deuxième maison pour certains, lieux de dépaysement original pour d'autres, les cabines sont souvent l'occasion de créer des liens sociaux précieux entre leurs utilisateurs. C'est le constat auquel s'est livrée Karine Bauzin à travers ce reportage réalisé le temps de deux saisons passées à Genève Plage. Ses photos aux couleurs vives témoignent d'un autre monde à portée de mains qui pourrait tout aussi bien être situé à Palm Spring, Deauville, Rimini ou sur la Costa Brava.
@@ -167,8 +165,7 @@ Commande possible par TWINT au +41 78 649 49 98`,
       description:
         "Une quête du temps à travers des centaines de rencontres — montres et humanité.",
       price: 30,
-      image:
-        "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&h=1000&fit=crop",
+      image: "/books/what-time-is-it.png",
       body: `What time is it? C'est sans doute la phrase que la photographe suisse Karine Bauzin a le plus souvent prononcée ces dix dernières années. Au point d'avoir inventé un verbe : « whatimiser ». Quelle heure est-il ? Cette question d'apparence banale, elle l'a posée des centaines de fois à des inconnus.
 
 Karine Bauzin travaille pour la presse depuis plus de 30 ans. Cette photographe humaniste a effectué de multiples reportages à l'étranger et s'est également spécialisée dans le domaine horloger. Il y a dix ans, elle a eu l'idée de réunir deux de ses passions — les montres et les rencontres — dans un projet qui relève du documentaire plus que de l'œuvre d'art. Elle a décidé de demander l'heure à des personnes croisées par hasard sur cette planète qu'elle adore arpenter, montrant ce même geste répété comme une chorégraphie dans des lieux toujours différents.
@@ -187,8 +184,7 @@ Commande possible par TWINT au +41 78 649 49 98`,
       description:
         "Témoignages photographiques du confinement et du déconfinement à Genève.",
       price: 25,
-      image:
-        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&h=1000&fit=crop",
+      image: "/books/post-tenebras-lux.jpg",
       body: `Pandémie, coronavirus, covid-19, Wuhan, pangolin, confinement : honnêtement, qui connaissait ces noms dans la vie de tous les jours ? À part les fans de mots croisés… Qui pouvait imaginer ce qui allait arriver au monde, à l'Europe, à la Suisse jusqu'à Genève. Du 15 mars au 11 mai 2020, Genève a vécu au ralenti. Ou plutôt à l'arrêt.
 
 Pratiquement tous les soirs, lors du téléjournal, nous étions pendus aux lèvres du conseiller fédéral et ministre de la santé, Alain Berset. Sa citation « Il faut agir aussi vite que possible, mais aussi lentement que nécessaire » est depuis devenue culte. Masque, tousser dans son coude, gestes barrières, gel hydroalcoolique pour les mains et distance sociale sont depuis devenus des réflexes…
@@ -207,8 +203,7 @@ Commande possible par TWINT au +41 78 649 49 98`,
       description:
         "Reportage sur la 19e Fête cantonale genevoise de lutte suisse à Anières.",
       price: 19,
-      image:
-        "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=800&h=1000&fit=crop",
+      image: "/books/c-est-la-lutte-finale.jpg",
       body: `Du 12 au 13 mai 2018, la commune d'Anières dans le canton de Genève en partenariat avec l'Association cantonale genevoise de lutte suisse et le team Gymkhana d'Anières ont organisé la 19ème Fête cantonale genevoise de lutte suisse.
 
 Durant ces deux jours de rencontres sportives et festives, la photographe genevoise Karine Bauzin a posé son regard décalé et original sur cet évènement.
@@ -224,8 +219,7 @@ Commande possible par TWINT au +41 78 649 49 98`,
       title: "Portraits-ge.ch",
       description:
         "Trente portraits de personnalités genevoises, entre juin 2001 et octobre 2002.",
-      image:
-        "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=800&h=1000&fit=crop",
+      image: "/books/portraits-ge-ch.jpg",
       body: `Aux éditions Slatkine, avec M-C Lescaze.
 
 Ce livre, c'est d'abord l'histoire d'une rencontre, celle de Karine Bauzin et de Marie-Claire Lescaze, journaliste. Fascinées par la diversité des gens côtoyés chaque jour à Genève, elles ont rencontré trente personnalités (à conjuguer au masculin comme au féminin), originales par leur itinéraire de vie, leur passion ou leur vision des choses et du monde.
@@ -238,8 +232,7 @@ Des portraits, réalisés entre juin 2001 et octobre 2002, dont quelques-uns fon
       title: "Un jour, tout bascule...",
       description:
         "Vingt photographies et le récit d'une renaissance, avec Thierry Ott.",
-      image:
-        "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=800&h=1000&fit=crop",
+      image: "/books/un-jour-tout-bascule.png",
       body: `Aux éditions du Tricorne, avec Thierry Ott.
 
 Karine Bauzin est une jeune femme au beau regard et au sourire tendre. En février, elle avait fêté ses 20 ans. Le 15 mars, elle est victime d'une rupture d'anévrisme. Bilan : la parole, le bras et la jambe droits sont durement touchés. De plus elle est aphasique. Elle doit réapprendre à parler et à se mouvoir. Elle guérit peu à peu, avec le soutien de sa famille et de ses amis. Elle apprendra la photographie avec Raymond Depardon. Ce livre contient une vingtaine de photographies prises au Vietnam, à New York ou à Genève.

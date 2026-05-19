@@ -28,12 +28,12 @@ function BookPage({ book }: { book: (typeof livres.items)[number] }) {
           </Link>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <div
-              className={`overflow-hidden ${book.kind === "film" ? "aspect-video" : "aspect-[3/4]"}`}
+              className={`overflow-hidden bg-white ${book.kind === "film" ? "aspect-video" : "aspect-[4/3]"}`}
             >
               <ImageWithFallback
                 src={book.image}
                 alt={book.title}
-                className="w-full h-full object-cover"
+                className={`w-full h-full ${book.kind === "film" ? "object-cover" : "object-contain"}`}
               />
             </div>
             <div>
