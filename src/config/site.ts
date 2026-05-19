@@ -203,7 +203,7 @@ Commande possible par TWINT au +41 78 649 49 98`,
       description:
         "Reportage sur la 19e Fête cantonale genevoise de lutte suisse à Anières.",
       price: 19,
-      image: "/books/c-est-la-lutte-finale.jpg",
+      image: "/books/c-est-la-lutte-finale.png",
       body: `Du 12 au 13 mai 2018, la commune d'Anières dans le canton de Genève en partenariat avec l'Association cantonale genevoise de lutte suisse et le team Gymkhana d'Anières ont organisé la 19ème Fête cantonale genevoise de lutte suisse.
 
 Durant ces deux jours de rencontres sportives et festives, la photographe genevoise Karine Bauzin a posé son regard décalé et original sur cet évènement.
@@ -219,7 +219,7 @@ Commande possible par TWINT au +41 78 649 49 98`,
       title: "Portraits-ge.ch",
       description:
         "Trente portraits de personnalités genevoises, entre juin 2001 et octobre 2002.",
-      image: "/books/portraits-ge-ch.jpg",
+      image: "/books/portraits-ge-ch.png",
       body: `Aux éditions Slatkine, avec M-C Lescaze.
 
 Ce livre, c'est d'abord l'histoire d'une rencontre, celle de Karine Bauzin et de Marie-Claire Lescaze, journaliste. Fascinées par la diversité des gens côtoyés chaque jour à Genève, elles ont rencontré trente personnalités (à conjuguer au masculin comme au féminin), originales par leur itinéraire de vie, leur passion ou leur vision des choses et du monde.
@@ -247,8 +247,7 @@ Avec moins de mille mots, qui mieux que lui pouvait raconter l'histoire de Karin
       title: "Mémoires d'une pandémie",
       kind: "film",
       description: "Documentaire — co-réalisation, production Lunafilms, 2022.",
-      image:
-        "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&h=1000&fit=crop",
+      image: "/books/memoires-d-une-pandemie.jpg",
       body: "Co-réalisatrice du documentaire « Mémoires d'une pandémie », production Lunafilms – 2022.",
     },
   ] as readonly Book[],
