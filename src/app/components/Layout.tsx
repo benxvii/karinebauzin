@@ -103,7 +103,7 @@ function HeaderRow({
         to="/"
         className="inline-flex flex-col items-stretch w-fit leading-tight hover:text-[var(--brand)] transition-colors"
       >
-        <span className="site-name text-xl whitespace-nowrap">{site.name}</span>
+        <span className="site-name text-3xl whitespace-nowrap">{site.name}</span>
         <span className="site-tagline text-gray-600" aria-label="Photographe">
           {"Photographe".split("").map((char, i) => (
             <span key={i}>{char}</span>
@@ -141,7 +141,7 @@ function DesktopNav({
           <Link
             key={link.path}
             to={link.path}
-            className={`py-2 text-sm transition-colors hover:text-[var(--brand)] ${
+            className={`py-2 text-sm text-gray-500 transition-colors hover:text-[var(--brand)] ${
               isActive(link.path) ? "border-b-2 border-[var(--brand)]" : ""
             }`}
           >
@@ -168,7 +168,7 @@ function NavDropdown({
       {link.path ? (
         <Link
           to={link.path}
-          className={`py-2 text-sm transition-colors hover:text-[var(--brand)] ${
+          className={`py-2 text-sm text-gray-500 transition-colors hover:text-[var(--brand)] ${
             sectionActive ? "border-b-2 border-[var(--brand)]" : ""
           }`}
         >
@@ -177,7 +177,7 @@ function NavDropdown({
       ) : (
         <button
           type="button"
-          className="py-2 text-sm transition-colors hover:text-[var(--brand)]"
+          className="py-2 text-sm text-gray-500 transition-colors hover:text-[var(--brand)]"
         >
           {link.label}
         </button>
@@ -187,7 +187,7 @@ function NavDropdown({
           <Link
             key={subLink.path}
             to={subLink.path}
-            className={`block px-4 py-3 text-sm transition-colors hover:bg-gray-50 ${
+            className={`block px-4 py-3 text-sm text-gray-500 transition-colors hover:bg-gray-50 hover:text-[var(--brand)] ${
               isActive(subLink.path) ? "bg-gray-50 font-medium" : ""
             }`}
           >
@@ -222,7 +222,7 @@ function MobileNav({
           <Link
             key={link.path}
             to={link.path}
-            className={`block px-4 py-3 transition-colors hover:bg-gray-50 ${
+            className={`block px-4 py-3 text-gray-500 transition-colors hover:bg-gray-50 hover:text-[var(--brand)] ${
               isActive(link.path) ? "bg-gray-50" : ""
             }`}
             onClick={onNavigate}
@@ -251,7 +251,7 @@ function MobileSection({
         <Link
           key={subLink.path}
           to={subLink.path}
-          className={`block px-8 py-2 text-sm transition-colors hover:bg-gray-50 ${
+          className={`block px-8 py-2 text-sm text-gray-500 transition-colors hover:bg-gray-50 hover:text-[var(--brand)] ${
             isActive(subLink.path) ? "bg-gray-50" : ""
           }`}
           onClick={onNavigate}
@@ -274,12 +274,12 @@ function MobileSectionHeader({
     return (
       <Link
         to={link.path}
-        className="block px-4 py-2 font-medium text-gray-800"
+        className="block px-4 py-2 font-medium text-gray-500"
         onClick={onNavigate}
       >
         {link.label}
       </Link>
     );
   }
-  return <div className="px-4 py-2 font-medium text-gray-800">{link.label}</div>;
+  return <div className="px-4 py-2 font-medium text-gray-500">{link.label}</div>;
 }

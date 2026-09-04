@@ -31,8 +31,8 @@ Le routeur déclare un layout racine (`Layout`) commun à toutes les pages :
 /portraits              → GalleryPortraits
 /corporate              → GalleryCorporate
 /portrait-presse        → PortraitPresse
-/documentaire           → DocumentaireIndex
-/documentaire/:slug     → DocumentaireProject
+/reportages             → DocumentaireIndex
+/reportages/:slug       → DocumentaireProject
 /livres                 → LivresIndex
 /livres/:slug           → LivreDetail
 /shop                   → redirige vers /livres
@@ -46,7 +46,7 @@ Le routeur déclare un layout racine (`Layout`) commun à toutes les pages :
 
 | Fichier | Rôle |
 |---------|------|
-| `src/config/site.ts` | Contenu éditorial : identité, galeries, documentaire, livres/films |
+| `src/config/site.ts` | Contenu éditorial : identité, galeries, reportages, livres/films |
 | `src/config/navigation.ts` | Menu principal (dérivé automatiquement de `site.ts`) |
 | `src/lib/cloudinary.ts` | Construction d’URLs Cloudinary pour les **galeries** |
 | `.env` | `VITE_CLOUDINARY_CLOUD_NAME`, `VITE_CLOUDINARY_FOLDER` (voir `.env.example`) |
@@ -78,7 +78,7 @@ Le menu se met à jour **automatiquement** à partir de `site.ts` via `navigatio
   - `GalleryPortraits.tsx` → `/portraits`
   - `GalleryCorporate.tsx` → `/corporate`
   - `PortraitPresse.tsx` → `/portrait-presse`
-  - `DocumentaireProject.tsx` → `/documentaire/:slug`
+  - `DocumentaireProject.tsx` → `/reportages/:slug`
 
 ## Pages (routes)
 
@@ -99,7 +99,7 @@ Le menu se met à jour **automatiquement** à partir de `site.ts` via `navigatio
 - Données : `portraitGalleries[]`, `portraitPresse` dans `site.ts`
 - Images : **Cloudinary** (cible) ; placeholders Unsplash temporaires dans `placeholderImages[]`
 
-### `/documentaire` et `/documentaire/:slug`
+### `/reportages` et `/reportages/:slug`
 
 - Index : `DocumentaireIndex.tsx` → hub `SectionHub`
 - Détail : `DocumentaireProject.tsx` → `GalleryPage`

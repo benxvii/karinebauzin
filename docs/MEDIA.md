@@ -6,7 +6,7 @@ Où sont les images, comment les ajouter, et ce qui est versionné dans Git.
 
 | Type d’image | Où ça vit | Qui gère |
 |--------------|-----------|----------|
-| **Galeries** (portraits, corporate, presse, documentaire, hero, à propos) | **Cloudinary** | Upload Media Library + config dans `site.ts` |
+| **Galeries** (portraits, corporate, presse, reportages, hero, à propos) | **Cloudinary** | Upload Media Library + config dans `site.ts` |
 | **Couvertures livres / affiche film** | `public/books/` (Git) | Fichier local + chemin dans `site.ts` |
 | **Logo / favicon** | `public/logo.png` (Git) | Rarement modifié |
 
@@ -38,13 +38,13 @@ Préfixe = `VITE_CLOUDINARY_FOLDER` (ex. `karine-bauzin`) :
 | Portraits | `portraits/...` |
 | Corporate | `corporate/...` |
 | Portrait presse | `portrait-presse/...` |
-| Documentaire | `documentaire/<slug>/...` |
+| Reportages | `reportages/<slug>/...` |
 | Hero accueil | `home/hero` |
 | À propos | `about/portrait` |
 | Couvertures livres (optionnel plus tard) | `livres/<slug>` |
 
 Exemple : photo d’un projet « swiss-cu » →  
-`karine-bauzin/documentaire/swiss-cu/photo-01`
+`karine-bauzin/reportages/swiss-cu/photo-01`
 
 ### Workflow — ajouter ou enrichir une galerie
 
