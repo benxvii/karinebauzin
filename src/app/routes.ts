@@ -9,6 +9,7 @@ import DocumentaireIndex from "./components/DocumentaireIndex";
 import DocumentaireProject from "./components/DocumentaireProject";
 import LivresIndex from "./components/LivresIndex";
 import LivreDetail from "./components/LivreDetail";
+import Contact from "./components/Contact";
 import NotFound from "./components/NotFound";
 
 export const router = createBrowserRouter([
@@ -26,7 +27,7 @@ export const router = createBrowserRouter([
       { path: "livres", Component: LivresIndex },
       { path: "livres/:slug", Component: LivreDetail },
       { path: "shop", loader: () => redirect("/livres") },
-      { path: "contact", loader: () => redirect("/") },
+      { path: "contact", Component: Contact },
       { path: "gallery/portraits", loader: () => redirect("/portraits") },
       { path: "gallery/corporate", loader: () => redirect("/corporate") },
       { path: "*", Component: NotFound },

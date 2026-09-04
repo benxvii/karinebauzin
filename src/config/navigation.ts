@@ -42,6 +42,7 @@ export const mainNavigation: NavItem[] = [
       })),
     ],
   },
+  { path: "/contact", label: "Contact" },
 ];
 
 export function isNavActive(pathname: string, path: string): boolean {
