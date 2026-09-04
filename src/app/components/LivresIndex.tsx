@@ -5,7 +5,6 @@ export default function LivresIndex() {
   return (
     <SectionHub
       title={livres.title}
-      intro={livres.intro}
       items={livres.items.map((b) => ({
         path: b.path,
         title: b.title,

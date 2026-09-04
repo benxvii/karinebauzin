@@ -1,6 +1,6 @@
 # Karine Bauzin — site photographe
 
-Site vitrine : accueil, à propos, portraits, corporate, portrait presse, reportages (projets extensibles), livres (pages extensibles), contact.
+Site vitrine : accueil, à propos, portraits, reportages (projets extensibles), livres (pages extensibles), contact.
 
 Structure détaillée : voir `Diagramme WebSiteKarine.drawio`.
 
@@ -20,11 +20,11 @@ npm run dev
 
 ## Configuration Cloudinary
 
-Les **galeries** (portraits, corporate, presse, reportages, hero…) passent par Cloudinary dès le départ.
+Les **galeries** (portraits, reportages, hero…) passent par Cloudinary dès le départ.
 
 1. Compte sur [cloudinary.com](https://cloudinary.com)
 2. Copier `.env.example` → `.env` et renseigner `VITE_CLOUDINARY_CLOUD_NAME` (+ `VITE_CLOUDINARY_FOLDER` si besoin)
-3. Uploader les photos dans la Media Library (dossiers : `portraits/`, `corporate/`, `reportages/<slug>/`, etc.)
+3. Uploader les photos dans la Media Library (dossiers : `portraits/`, `reportages/<slug>/`, etc.)
 4. Brancher les `public_id` via `resolveImageUrl()` (`src/lib/cloudinary.ts`) et `site.ts`
 
 Les Unsplash encore affichés sont des placeholders temporaires.  

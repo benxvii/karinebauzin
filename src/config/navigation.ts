@@ -1,4 +1,4 @@
-import { documentary, livres, portraitGalleries, portraitPresse } from "./site";
+import { documentary, livres, portraitGallery } from "./site";
 
 export type NavItem =
   | { path: string; label: string }
@@ -8,18 +8,9 @@ export type NavItem =
       subLinks: { path: string; label: string }[];
     };
 
-const corporateGallery = portraitGalleries[1];
-
 export const mainNavigation: NavItem[] = [
   { path: "/about", label: "À propos" },
-  {
-    label: "Portraits",
-    path: corporateGallery.path,
-    subLinks: [
-      { path: corporateGallery.path, label: "Corporate" },
-      { path: portraitPresse.path, label: "Presse" },
-    ],
-  },
+  { path: portraitGallery.path, label: portraitGallery.title },
   {
     label: documentary.title,
     path: documentary.indexPath,
