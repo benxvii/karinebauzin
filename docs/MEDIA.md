@@ -6,7 +6,7 @@ Où sont les images, comment les ajouter, et ce qui est versionné dans Git.
 
 | Type d’image | Où ça vit | Qui gère |
 |--------------|-----------|----------|
-| **Galeries** (portraits, corporate, presse, reportages, hero, à propos) | **Cloudinary** | Upload Media Library + config dans `site.ts` |
+| **Galeries** (portraits, reportages, hero, à propos) | **Cloudinary** | Upload Media Library + config dans `site.ts` |
 | **Couvertures livres / affiche film** | `public/books/` (Git) | Fichier local + chemin dans `site.ts` |
 | **Logo / favicon** | `public/logo.png` (Git) | Rarement modifié |
 
@@ -36,8 +36,6 @@ Préfixe = `VITE_CLOUDINARY_FOLDER` (ex. `karine-bauzin`) :
 | Contenu | Dossier / public_id |
 |---------|---------------------|
 | Portraits | `portraits/...` |
-| Corporate | `corporate/...` |
-| Portrait presse | `portrait-presse/...` |
 | Reportages | `reportages/<slug>/...` |
 | Hero accueil | `home/hero` |
 | À propos | `about/portrait` |
@@ -91,7 +89,7 @@ Chemins référencés dans `livres.items[].image` (`site.ts`).
 
 Encore utilisés tant que Cloudinary n’est pas rempli :
 
-- `portraitGalleries[]`, `portraitPresse`, `documentary.projects[]` dans `site.ts`
+- `portraitGallery`, `documentary.projects[]` dans `site.ts`
 - Hero dans `Home.tsx`
 
 À remplacer par des `public_id` Cloudinary + `resolveImageUrl()`.

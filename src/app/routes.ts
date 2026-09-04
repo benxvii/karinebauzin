@@ -3,8 +3,6 @@ import Layout from "./components/Layout";
 import Home from "./components/Home";
 import About from "./components/About";
 import GalleryPortraits from "./components/GalleryPortraits";
-import GalleryCorporate from "./components/GalleryCorporate";
-import PortraitPresse from "./components/PortraitPresse";
 import DocumentaireIndex from "./components/DocumentaireIndex";
 import DocumentaireProject from "./components/DocumentaireProject";
 import LivresIndex from "./components/LivresIndex";
@@ -20,8 +18,8 @@ export const router = createBrowserRouter([
       { index: true, Component: Home },
       { path: "about", Component: About },
       { path: "portraits", Component: GalleryPortraits },
-      { path: "corporate", Component: GalleryCorporate },
-      { path: "portrait-presse", Component: PortraitPresse },
+      { path: "corporate", loader: () => redirect("/portraits") },
+      { path: "portrait-presse", loader: () => redirect("/portraits") },
       { path: "reportages", Component: DocumentaireIndex },
       { path: "reportages/:slug", Component: DocumentaireProject },
       { path: "documentaire", loader: () => redirect("/reportages") },
@@ -34,7 +32,7 @@ export const router = createBrowserRouter([
       { path: "shop", loader: () => redirect("/livres") },
       { path: "contact", Component: Contact },
       { path: "gallery/portraits", loader: () => redirect("/portraits") },
-      { path: "gallery/corporate", loader: () => redirect("/corporate") },
+      { path: "gallery/corporate", loader: () => redirect("/portraits") },
       { path: "*", Component: NotFound },
     ],
   },

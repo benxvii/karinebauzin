@@ -22,11 +22,7 @@ const bioParagraphs = [
 export default function About() {
   return (
     <div>
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl">À propos</h1>
-        </div>
-      </section>
+      <h1 className="sr-only">À propos</h1>
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="grid grid-cols-1 md:grid-cols-10 gap-12 items-start">

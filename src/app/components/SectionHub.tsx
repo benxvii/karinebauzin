@@ -11,20 +11,13 @@ type HubItem = {
 
 type SectionHubProps = {
   title: string;
-  intro: string;
   items: readonly HubItem[];
 };
 
-export default function SectionHub({ title, intro, items }: SectionHubProps) {
+export default function SectionHub({ title, items }: SectionHubProps) {
   return (
     <div>
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl mb-6">{title}</h1>
-          <p className="text-xl text-gray-700">{intro}</p>
-        </div>
-      </section>
-
+      <h1 className="sr-only">{title}</h1>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <HubGrid items={items} />
       </section>

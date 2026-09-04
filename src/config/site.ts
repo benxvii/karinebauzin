@@ -23,54 +23,20 @@ export type GallerySection = {
   placeholderImages: readonly string[];
 };
 
-/** Portraits & Corporate — pages galerie fixes */
-export const portraitGalleries: readonly GallerySection[] = [
-  {
-    slug: "portraits",
-    path: "/portraits",
-    title: "Portraits",
-    intro:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
-    placeholderImages: [
-      "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&h=1000&fit=crop",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop",
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=1000&fit=crop",
-      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=800&h=1000&fit=crop",
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&h=1000&fit=crop",
-      "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=800&h=1000&fit=crop",
-    ],
-  },
-  {
-    slug: "corporate",
-    path: "/corporate",
-    title: "Corporate",
-    intro:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.",
-    placeholderImages: [
-      "https://images.unsplash.com/photo-1521737711862-ece3fcc11557?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop",
-    ],
-  },
-];
-
-/** Portrait Presse — page galerie fixe */
-export const portraitPresse: GallerySection = {
-  slug: "portrait-presse",
-  path: "/portrait-presse",
-  title: "Portrait Presse",
+/** Portraits — page galerie fixe */
+export const portraitGallery: GallerySection = {
+  slug: "portraits",
+  path: "/portraits",
+  title: "Portraits",
   intro:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.",
   placeholderImages: [
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop",
-    "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1521737711862-ece3fcc11557?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop",
   ],
 };
 

@@ -29,16 +29,16 @@ Le routeur déclare un layout racine (`Layout`) commun à toutes les pages :
 /                       → Home
 /about                  → About
 /portraits              → GalleryPortraits
-/corporate              → GalleryCorporate
-/portrait-presse        → PortraitPresse
+/corporate              → redirige vers /portraits
+/portrait-presse        → redirige vers /portraits
 /reportages             → DocumentaireIndex
 /reportages/:slug       → DocumentaireProject
 /livres                 → LivresIndex
 /livres/:slug           → LivreDetail
 /shop                   → redirige vers /livres
-/contact                → redirige vers /
+/contact                → Contact
 /gallery/portraits      → redirige vers /portraits
-/gallery/corporate      → redirige vers /corporate
+/gallery/corporate      → redirige vers /portraits
 *                       → NotFound
 ```
 
@@ -76,8 +76,6 @@ Le menu se met à jour **automatiquement** à partir de `site.ts` via `navigatio
 - Composant : `src/app/components/GalleryPage.tsx`
 - Utilisé par :
   - `GalleryPortraits.tsx` → `/portraits`
-  - `GalleryCorporate.tsx` → `/corporate`
-  - `PortraitPresse.tsx` → `/portrait-presse`
   - `DocumentaireProject.tsx` → `/reportages/:slug`
 
 ## Pages (routes)
@@ -85,7 +83,7 @@ Le menu se met à jour **automatiquement** à partir de `site.ts` via `navigatio
 ### `/` — Accueil
 
 - Composant : `src/app/components/Home.tsx`
-- Données : `site`, `portraitGalleries`, `portraitPresse`, `documentary`, `livres`
+- Données : `site`, `portraitGallery`, `documentary`, `livres`
 - Hero plein écran + liens vers les sections principales
 
 ### `/about` — À propos
@@ -93,10 +91,10 @@ Le menu se met à jour **automatiquement** à partir de `site.ts` via `navigatio
 - Composant : `src/app/components/About.tsx`
 - Données : bio en paragraphes, stats, sections Expositions / Philosophie (encore partielles)
 
-### `/portraits`, `/corporate`, `/portrait-presse`
+### `/portraits`
 
-- Composants : `GalleryPortraits.tsx`, `GalleryCorporate.tsx`, `PortraitPresse.tsx`
-- Données : `portraitGalleries[]`, `portraitPresse` dans `site.ts`
+- Composant : `GalleryPortraits.tsx`
+- Données : `portraitGallery` dans `site.ts`
 - Images : **Cloudinary** (cible) ; placeholders Unsplash temporaires dans `placeholderImages[]`
 
 ### `/reportages` et `/reportages/:slug`

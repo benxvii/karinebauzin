@@ -14,7 +14,7 @@ Public cible : Benoît et Karine (éditeur / éditrice via Cursor).
 |---------|------|
 | **Code** (`src/`) | Textes, structure des pages, menu, URLs |
 | **`src/config/site.ts`** | Fichier éditorial principal (copie **locale** sur le Mac) |
-| **Cloudinary** | **Toutes les photos de galeries** (portraits, corporate, presse, reportages, hero…) |
+| **Cloudinary** | **Toutes les photos de galeries** (portraits, reportages, hero…) |
 | **`public/books/`** | Couvertures livres + affiche film (dans Git) |
 | **GitHub** | Code source |
 | **Vercel / Netlify** | Hébergement prévu |
@@ -39,8 +39,7 @@ Les URLs Unsplash encore visibles sont des **placeholders temporaires**. Les vra
 | Objet | Contenu |
 |-------|---------|
 | `site` | Nom, email, téléphone, réseaux, logo |
-| `portraitGalleries` | `/portraits`, `/corporate` |
-| `portraitPresse` | `/portrait-presse` |
+| `portraitGallery` | `/portraits` |
 | `documentary` | Hub + projets `/reportages/:slug` |
 | `livres` | Hub + fiches `/livres/:slug` |
 
@@ -95,7 +94,7 @@ Ouvrir `src/config/site.ts` (ou laisser Cursor le faire).
 | Élément | Où |
 |---------|-----|
 | Email, téléphone, réseaux | objet `site` |
-| Titre / intro galerie | `portraitGalleries[]`, `portraitPresse` |
+| Titre / intro galerie | `portraitGallery` |
 | Projet documentaire | `documentary.projects[]` |
 | Fiche livre | `livres.items[]` |
 | Bio À propos | `src/app/components/About.tsx` |
@@ -142,7 +141,7 @@ Les métadonnées (photographies, ISBN, prix, TWINT) passent par `BookMeta` dans
 
 Pas de modification de `routes.ts` / `navigation.ts` : le menu se met à jour tout seul.
 
-### Autres galeries (portraits, corporate, presse)
+### Autres galeries (portraits)
 
 Même principe Cloudinary + mise à jour des listes d’images dans `site.ts`.  
 Une **nouvelle section** hors Reportages / Livres peut aussi demander une route dans `routes.ts` (plus rare).

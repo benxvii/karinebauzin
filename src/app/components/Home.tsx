@@ -5,8 +5,7 @@ import {
   documentary,
   livres,
   lorem,
-  portraitGalleries,
-  portraitPresse,
+  portraitGallery,
   site,
 } from "../../config/site";
 
@@ -14,15 +13,10 @@ const heroImage =
   "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1920&h=1080&fit=crop";
 
 const homeSections = [
-  ...portraitGalleries.map((g) => ({
-    path: g.path,
-    title: g.title,
-    image: g.placeholderImages[0],
-  })),
   {
-    path: portraitPresse.path,
-    title: portraitPresse.title,
-    image: portraitPresse.placeholderImages[0],
+    path: portraitGallery.path,
+    title: portraitGallery.title,
+    image: portraitGallery.placeholderImages[0],
   },
   {
     path: documentary.indexPath,

@@ -5,7 +5,6 @@ export default function DocumentaireIndex() {
   return (
     <SectionHub
       title={documentary.title}
-      intro={documentary.intro}
       items={documentary.projects.map((p) => ({
         path: p.path,
         title: p.title,
