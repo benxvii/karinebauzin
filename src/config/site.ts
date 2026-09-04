@@ -8,6 +8,11 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/karinebauzin/",
   logoSrc: "/logo.png",
   copyrightYear: new Date().getFullYear(),
+  trustJ: {
+    text: "L’auteur est un journaliste RP vérifié.\nRetrouvez la confirmation sur",
+    href: "https://www.trust-j.org/presseausweis/karinebauzin-10010",
+    logoSrc: "/trustj-logo.png",
+  },
 } as const;
 
 export type GallerySection = {
@@ -71,16 +76,17 @@ export const portraitPresse: GallerySection = {
 
 export type DocumentaryProject = GallerySection;
 
-/** Documentaire — ajoutez des projets ici (nombre de pages libre) */
+/** Reportages — ajoutez des projets ici (nombre de pages libre) */
 export const documentary = {
-  indexPath: "/documentaire",
-  title: "Documentaire",
+  indexPath: "/reportages",
+  title: "Reportages",
+  cloudinaryFolder: "reportages",
   intro:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Projets documentaires et reportages.",
   projects: [
     {
       slug: "swiss-cu",
-      path: "/documentaire/swiss-cu",
+      path: "/reportages/swiss-cu",
       title: "Swiss Cu",
       intro:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Projet documentaire Swiss Cu.",
@@ -95,7 +101,7 @@ export const documentary = {
     },
     {
       slug: "144",
-      path: "/documentaire/144",
+      path: "/reportages/144",
       title: "144",
       intro:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Projet documentaire 144.",

@@ -14,7 +14,7 @@ Public cible : Benoît et Karine (éditeur / éditrice via Cursor).
 |---------|------|
 | **Code** (`src/`) | Textes, structure des pages, menu, URLs |
 | **`src/config/site.ts`** | Fichier éditorial principal (copie **locale** sur le Mac) |
-| **Cloudinary** | **Toutes les photos de galeries** (portraits, corporate, presse, documentaire, hero…) |
+| **Cloudinary** | **Toutes les photos de galeries** (portraits, corporate, presse, reportages, hero…) |
 | **`public/books/`** | Couvertures livres + affiche film (dans Git) |
 | **GitHub** | Code source |
 | **Vercel / Netlify** | Hébergement prévu |
@@ -41,7 +41,7 @@ Les URLs Unsplash encore visibles sont des **placeholders temporaires**. Les vra
 | `site` | Nom, email, téléphone, réseaux, logo |
 | `portraitGalleries` | `/portraits`, `/corporate` |
 | `portraitPresse` | `/portrait-presse` |
-| `documentary` | Hub + projets `/documentaire/:slug` |
+| `documentary` | Hub + projets `/reportages/:slug` |
 | `livres` | Hub + fiches `/livres/:slug` |
 
 Le menu se met à jour **automatiquement** quand on ajoute un livre ou un projet documentaire dans `site.ts`.
@@ -78,9 +78,9 @@ Pas besoin de Cloudinary pour du texte.
 
 ### B. Ajouter une galerie + des images
 
-1. **Cloudinary** → créer le dossier (ex. `karine-bauzin/documentaire/mon-projet/`)
+1. **Cloudinary** → créer le dossier (ex. `karine-bauzin/reportages/mon-projet/`)
 2. **Upload** les photos dans ce dossier
-3. Dans Cursor : *« Ajoute le projet documentaire mon-projet avec ces photos Cloudinary »*
+3. Dans Cursor : *« Ajoute le projet reportage mon-projet avec ces photos Cloudinary »*
 4. L’assistant met à jour `site.ts` (slug, titre, intro, images)
 5. Vérifier en local → commit / push du **code** seulement
 
@@ -125,15 +125,15 @@ Les métadonnées (photographies, ISBN, prix, TWINT) passent par `BookMeta` dans
 2. Demander à Cursor de brancher les nouveaux `public_id` / URLs dans `site.ts`
 3. Pas de commit d’images binaires de galerie
 
-### Créer un nouveau projet documentaire (galerie)
+### Créer un nouveau projet reportage (galerie)
 
-1. Cloudinary : `…/documentaire/<slug>/` + upload
+1. Cloudinary : `…/reportages/<slug>/` + upload
 2. Cursor ajoute dans `documentary.projects` :
 
 ```ts
 {
   slug: "mon-projet",
-  path: "/documentaire/mon-projet",
+  path: "/reportages/mon-projet",
   title: "Mon projet",
   intro: "Texte d'introduction.",
   // images : public_id Cloudinary (pas Unsplash en prod)
@@ -145,7 +145,7 @@ Pas de modification de `routes.ts` / `navigation.ts` : le menu se met à jour to
 ### Autres galeries (portraits, corporate, presse)
 
 Même principe Cloudinary + mise à jour des listes d’images dans `site.ts`.  
-Une **nouvelle section** hors Documentaire / Livres peut aussi demander une route dans `routes.ts` (plus rare).
+Une **nouvelle section** hors Reportages / Livres peut aussi demander une route dans `routes.ts` (plus rare).
 
 ---
 
@@ -190,7 +190,7 @@ Sans `price` : pas de ligne prix/TWINT, pas de bouton commander.
 |----------|-------|----------|
 | Galerie vide / placeholders Unsplash | Photos pas encore sur Cloudinary | Upload + brancher les `public_id` |
 | Mauvais dossier Cloudinary | Slug ≠ chemin | Aligné sur `docs/MEDIA.md` |
-| Page 404 | `path` / `slug` incohérent | `path` = `/documentaire/` ou `/livres/` + slug |
+| Page 404 | `path` / `slug` incohérent | `path` = `/reportages/` ou `/livres/` + slug |
 | Métadonnées en double dans un livre | Texte dans `body` + champs | Garder les champs structurés |
 | `npm run dev` plante (Rollup) | `node_modules` cassé | `rm -rf node_modules && npm install` |
 
@@ -200,9 +200,9 @@ Sans `price` : pas de ligne prix/TWINT, pas de bouton commander.
 
 > Change l’intro de « Cabines de plage » dans site.ts avec ce texte : …
 
-> J’ai uploadé des photos dans Cloudinary sous documentaire/swiss-cu. Branche-les sur le projet Swiss Cu.
+> J’ai uploadé des photos dans Cloudinary sous reportages/swiss-cu. Branche-les sur le projet Swiss Cu.
 
-> Ajoute un projet documentaire « mon-projet » : titre …, intro …, photos déjà sur Cloudinary dans documentaire/mon-projet/.
+> Ajoute un projet reportage « mon-projet » : titre …, intro …, photos déjà sur Cloudinary dans reportages/mon-projet/.
 
 > Remplace la couverture de Portraits-ge.ch : fichier dans public/books/, mockup fond blanc légèrement incliné.
 

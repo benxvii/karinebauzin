@@ -23,24 +23,42 @@ export default function Contact() {
   return (
     <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
-        <div className="md:col-span-4 space-y-1">
-          <h3 className="site-name text-xl">{site.name}</h3>
-          <h3 className="text-sm leading-none font-light">
+        <div className="md:col-span-4">
+          <div className="space-y-1">
+            <h3 className="site-name text-xl">{site.name}</h3>
+            <h3 className="text-sm leading-none font-light">
+              <a
+                href={site.phoneHref}
+                className="hover:text-[var(--brand)] transition-colors"
+              >
+                {site.phone}
+              </a>
+            </h3>
+            <h3 className="text-sm leading-none font-light">
+              <a
+                href={`mailto:${site.email}`}
+                className="hover:text-[var(--brand)] transition-colors"
+              >
+                {site.email}
+              </a>
+            </h3>
+          </div>
+          <div className="mt-32 space-y-4">
+            <p className="text-sm font-light whitespace-pre-line">{site.trustJ.text}</p>
             <a
-              href={site.phoneHref}
-              className="hover:text-[var(--brand)] transition-colors"
+              href={site.trustJ.href}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              {site.phone}
+              <img
+                src={site.trustJ.logoSrc}
+                alt="Trust-J"
+                width={117}
+                height={55}
+                className="w-[117px] h-auto"
+              />
             </a>
-          </h3>
-          <h3 className="text-sm leading-none font-light">
-            <a
-              href={`mailto:${site.email}`}
-              className="hover:text-[var(--brand)] transition-colors"
-            >
-              {site.email}
-            </a>
-          </h3>
+          </div>
         </div>
 
         <div className="md:col-span-8">
