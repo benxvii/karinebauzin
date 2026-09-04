@@ -5,8 +5,11 @@ Site vitrine : accueil, à propos, portraits, corporate, portrait presse, docume
 Structure détaillée : voir `Diagramme WebSiteKarine.drawio`.
 
 - **Code** : GitHub
-- **Images** (à venir) : [Cloudinary](https://cloudinary.com)
+- **Photos de galeries** : [Cloudinary](https://cloudinary.com)
+- **Couvertures livres** : `public/books/` (Git)
 - **Maquette Figma** : [Site web photographe moderne](https://www.figma.com/design/f0hPsOsO9DsyMLAUEMOsJ6/Site-web-photographe-moderne)
+
+Documentation : `docs/ARCHITECTURE.md`, `docs/MEDIA.md`, `docs/MODE-EMPLOI-ASSISTANT.md`.
 
 ## Démarrage local
 
@@ -17,29 +20,27 @@ npm run dev
 
 ## Configuration Cloudinary
 
-1. Créez un compte sur [cloudinary.com](https://cloudinary.com).
-2. Copiez `.env.example` vers `.env` et renseignez `VITE_CLOUDINARY_CLOUD_NAME`.
-3. Uploadez vos photos dans le Media Library (dossier optionnel via `VITE_CLOUDINARY_FOLDER`).
-4. Utilisez le `public_id` Cloudinary dans le code via `resolveImageUrl()` (`src/lib/cloudinary.ts`).
+Les **galeries** (portraits, corporate, presse, documentaire, hero…) passent par Cloudinary dès le départ.
 
-En attendant, le site affiche des images placeholder (Unsplash).
+1. Compte sur [cloudinary.com](https://cloudinary.com)
+2. Copier `.env.example` → `.env` et renseigner `VITE_CLOUDINARY_CLOUD_NAME` (+ `VITE_CLOUDINARY_FOLDER` si besoin)
+3. Uploader les photos dans la Media Library (dossiers : `portraits/`, `corporate/`, `documentaire/<slug>/`, etc.)
+4. Brancher les `public_id` via `resolveImageUrl()` (`src/lib/cloudinary.ts`) et `site.ts`
+
+Les Unsplash encore affichés sont des placeholders temporaires.  
+Les couvertures livres restent dans `public/books/` (voir `docs/MEDIA.md`).
 
 ## GitHub
 
-```bash
-git init
-git add .
-git commit -m "Initial commit — site Karine Bauzin"
-git remote add origin https://github.com/VOTRE_COMPTE/karine-bauzin.git
-git push -u origin main
-```
+Dépôt : `benxvii/karinebauzin`. Push sur `main` après commit.
 
-Déploiement conseillé : [Vercel](https://vercel.com) ou [Netlify](https://netlify.com) connectés au dépôt GitHub. Ajoutez les variables d’environnement Cloudinary dans le tableau de bord de l’hébergeur.
+Déploiement conseillé : [Vercel](https://vercel.com) ou [Netlify](https://netlify.com). Ajouter les variables Cloudinary dans le tableau de bord de l’hébergeur.
 
-## Personnalisation
+## Personnalisation (résumé)
 
-- Textes : `src/config/site.ts` et composants dans `src/app/components/`
-- **Documentaire** : ajoutez un objet dans `documentary.projects` (`site.ts`)
-- **Livres** : ajoutez un objet dans `livres.items` (`site.ts`)
-- Logo : `public/logo.png`
-- Couvertures livres : `public/books/` (à migrer vers Cloudinary : `livres/nom-du-livre`)
+- **Textes** : `src/config/site.ts` (copie locale dans Cursor)
+- **Nouvelle galerie / photos** : upload Cloudinary + entrée dans `site.ts`
+- **Livres** : `livres.items` + couvertures dans `public/books/`
+- **Logo** : `public/logo.png`
+
+Détail pour Karine / Cursor : `docs/MODE-EMPLOI-ASSISTANT.md`.
