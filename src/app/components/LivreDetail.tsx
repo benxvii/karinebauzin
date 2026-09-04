@@ -14,24 +14,29 @@ export default function LivreDetail() {
   return <BookPage book={book} />;
 }
 
-function bookSpecsLine(book: Book): string | null {
+function bookSpecsLines(book: Book): string[] {
   const parts: string[] = [];
+  if (book.publisher) parts.push(book.publisher);
   if (book.isbn) parts.push(`ISBN : ${book.isbn}`);
   if (book.language) parts.push(book.language);
   if (book.pages != null) parts.push(`${book.pages} pages`);
-  if (book.format) parts.push(book.format);
-  return parts.length > 0 ? parts.join(" — ") : null;
+  const lines: string[] = [];
+  if (parts.length > 0) lines.push(parts.join(" — "));
+  if (book.format) lines.push(book.format);
+  return lines;
 }
 
 function BookMeta({ book }: { book: Book }) {
-  const specs = bookSpecsLine(book);
+  const specsLines = bookSpecsLines(book);
   const photographer = book.photographer ?? "Karine Bauzin";
 
   return (
     <div className="mt-8 space-y-2 text-gray-600 leading-relaxed">
       <p>Photographies : {photographer}</p>
       {book.availability && <p>{book.availability}</p>}
-      {specs && <p>{specs}</p>}
+      {specsLines.map((line) => (
+        <p key={line}>{line}</p>
+      ))}
       {book.price != null && (
         <p>
           CHF {book.price}.-

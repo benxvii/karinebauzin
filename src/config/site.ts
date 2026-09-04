@@ -1,8 +1,8 @@
 export const site = {
-  name: "Karine Bauzin",
+  name: "KARINE BAUZIN",
   shortName: "Karine Bauzin",
   email: "info@karinebauzin.ch",
-  phone: "+41 78 649 4998",
+  phone: "+41 78 649 49 98",
   phoneHref: "tel:+41786494998",
   instagram: "https://www.instagram.com/karinebauzin/",
   linkedin: "https://www.linkedin.com/in/karinebauzin/",
@@ -125,6 +125,7 @@ export type Book = {
   price?: number;
   /** Crédit photographies (défaut : Karine Bauzin) */
   photographer?: string;
+  publisher?: string;
   isbn?: string;
   language?: string;
   pages?: number;
@@ -195,6 +196,8 @@ Une décennie et plusieurs centaines de photos plus tard, un livre et une exposi
         "Témoignages photographiques du confinement et du déconfinement à Genève.",
       price: 25,
       shippingFee: 5,
+      publisher: "Éditions GOOD HEIDI Productions",
+      isbn: "9782970140443",
       image: "/books/post-tenebras-lux.jpg",
       body: `Pandémie, coronavirus, covid-19, Wuhan, pangolin, confinement : honnêtement, qui connaissait ces noms dans la vie de tous les jours ? À part les fans de mots croisés… Qui pouvait imaginer ce qui allait arriver au monde, à l'Europe, à la Suisse jusqu'à Genève. Du 15 mars au 11 mai 2020, Genève a vécu au ralenti. Ou plutôt à l'arrêt.
 
@@ -211,8 +214,10 @@ Photographier en noir et blanc, une ville et un canton dans leur immobilité, to
       description:
         "Reportage sur la 19e Fête cantonale genevoise de lutte suisse à Anières.",
       price: 19,
-      format: "23 × 21 cm",
+       format: "23 × 21 cm", 
       shippingFee: 5,
+      publisher: "Éditions GOOD HEIDI Productions",
+      isbn: "9782970112471",
       image: "/books/c-est-la-lutte-finale.png",
       body: `Du 12 au 13 mai 2018, la commune d'Anières dans le canton de Genève en partenariat avec l'Association cantonale genevoise de lutte suisse et le team Gymkhana d'Anières ont organisé la 19ème Fête cantonale genevoise de lutte suisse.
 
@@ -227,6 +232,8 @@ Ce livre retrace son travail de reportage où les protagonistes sont pris de loi
       description:
         "Trente portraits de personnalités genevoises, entre juin 2001 et octobre 2002.",
       availability: "Ouvrage épuisé",
+      publisher: "Éditions Slatkine",
+      isbn: "9782832100882",
       image: "/books/portraits-ge-ch.png",
       body: `Aux éditions Slatkine, avec M-C Lescaze.
 
@@ -241,6 +248,8 @@ Des portraits, réalisés entre juin 2001 et octobre 2002, dont quelques-uns fon
       description:
         "Vingt photographies et le récit d'une renaissance, avec Thierry Ott.",
       availability: "Ouvrage épuisé",
+      publisher: "Éditions du Tricorne",
+      isbn: "2829301994",
       image: "/books/un-jour-tout-bascule.png",
       body: `Aux éditions du Tricorne, avec Thierry Ott.
 
@@ -255,9 +264,25 @@ Avec moins de mille mots, qui mieux que lui pouvait raconter l'histoire de Karin
       path: "/livres/memoires-d-une-pandemie",
       title: "Mémoires d'une pandémie",
       kind: "film",
-      description: "Documentaire — co-réalisation, production Lunafilms, 2022.",
+      description:
+        "Documentaire — témoignages à chaud d'une crise sanitaire, économique et sociale.",
       image: "/books/memoires-d-une-pandemie.jpg",
-      body: "Co-réalisatrice du documentaire « Mémoires d'une pandémie », production Lunafilms – 2022.",
+      body: `Karine Bauzin et Audrey Leclerc, deux professionnelles de l'image basées à Genève, en Suisse, partent en quête de témoignages « à chaud » pour garder la trace d'une crise sanitaire, économique et sociale sans précédent.
+
+Elles se sont données pour mission de donner la parole à des institutions, des indépendants, des particuliers, de tous âges et de toutes conditions, touchés ou non directement par la crise.
+
+Ces archives mêlant une vingtaine d'interviews filmées en couleur et des photographies en noir & blanc, constituent les mémoires des générations d'aujourd'hui et de celles à venir.
+
+Karine Bauzin et Audrey Leclerc ouvrent ici un chapitre et espèrent poursuivre dans ce sens pour créer des archives plus encore représentatives du monde tel qu'il évolue en Suisse depuis l'annonce de la pandémie de la Covid–19, le 16 mars 2020.
+
+Production Luna Films
+
+Genre : Documentaire
+Durée : 45mn
+Pays et année de production : CH – 2022
+Version : FR
+
+1ère diffusion TV : 6 mars 2022 – RTS2 – émission Sur les Docs`,
     },
   ] as readonly Book[],
 };

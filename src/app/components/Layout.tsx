@@ -14,6 +14,7 @@ export default function Layout() {
   const location = useLocation();
 
   const isActive = (path: string) => isNavActive(location.pathname, path);
+  const isContactPage = location.pathname === "/contact";
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -45,18 +46,22 @@ export default function Layout() {
               © {site.copyrightYear} {site.name}
             </p>
             <div className="flex flex-wrap gap-6 justify-center md:justify-end">
-              <a
-                href={site.phoneHref}
-                className="text-gray-500 hover:text-[var(--brand)] transition-colors"
-              >
-                {site.phone}
-              </a>
-              <a
-                href={`mailto:${site.email}`}
-                className="text-gray-500 hover:text-[var(--brand)] transition-colors"
-              >
-                {site.email}
-              </a>
+              {!isContactPage && (
+                <>
+                  <a
+                    href={site.phoneHref}
+                    className="text-gray-500 hover:text-[var(--brand)] transition-colors"
+                  >
+                    {site.phone}
+                  </a>
+                  <a
+                    href={`mailto:${site.email}`}
+                    className="text-gray-500 hover:text-[var(--brand)] transition-colors"
+                  >
+                    {site.email}
+                  </a>
+                </>
+              )}
               <a
                 href={site.instagram}
                 target="_blank"

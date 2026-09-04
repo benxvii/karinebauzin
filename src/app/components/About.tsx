@@ -7,16 +7,16 @@ const portraitPlaceholder =
   "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=800&h=1000&fit=crop";
 
 const bioParagraphs = [
-  "Formée aux Beaux-Arts, Karine Bauzin est une photographe de presse suisse établie à Genève.",
-  "Elle collabore avec la presse nationale et internationale, effectue des reportages, des campagnes publicitaires et collabore avec de grands groupes horlogers.",
-  "Régulièrement exposée, son travail fait l'objet de nombreuses publications. Ses travaux s'inscrivent dans une photographie humaniste, documentaire avec une approche intimiste. L'intérêt pour l'être humain a toujours été à l'initiative de son métier de photo-reporter.",
-  "Elle est l'auteure de sept ouvrages : « Un jour, tout bascule… », « Portraits-ge.ch », « C'est la lutte finale », « Post tenebras lux », « What time is it? », « Cabines de plage » et « Genève au coeur du jeu ».",
-  "Passionnée par les sphères sociales, elle s'oriente vite vers la photographie de presse, berceau de sa pratique artistique; elle a un regard aiguisé sur la société contemporaine.",
-  "Documenter, illustrer, témoigner font partie de son travail quotidien sur le terrain au contact direct avec son sujet.",
-  "Des nomades des steppes mongoles aux diverses actions des gilets jaunes ; du marché des célibataires à Shanghai à la commémoration du 1er anniversaire de la mort de Johnny, de l'explosion des opérations de chirurgie esthétique suite de la pandémie à la profession de dameur, de la vie ordinaire à des situations extraordinaires : Karine ne se lasse jamais d'explorer le monde avec un regard frontal, engagé dans le réel.",
-  "Co-réalisatrice du documentaire « Mémoires d'une pandémie », production Lunafilms – 2022.",
-  "Elle a présenté en avant première au salon Watches & Wonders l'exposition « What time is it? » en mars 2023 puis au Pont de la Machine et à Shanghai la même année.",
-  "Elle remporte deux Swiss Press Photo, en 2023 en catégorie vie quotidienne pour son projet « Les cabines de plage » et en 2024 pour son documentaire sur « Exit » .",
+  "Karine Bauzin est photographe de presse. Formée aux Beaux-Arts, elle vit et travaille à Genève.",
+  "Elle collabore avec la presse suisse et internationale, réalise des reportages, des campagnes publicitaires, et travaille avec de grands groupes horlogers.",
+  "Son travail, régulièrement exposé et publié, s'inscrit dans une photographie humaniste et documentaire, à l'approche intimiste. L'être humain, depuis toujours, guide son métier de photo-reporter.",
+  "Elle a publié sept ouvrages : « Un jour, tout bascule… », « Portraits-ge.ch », « C'est la lutte finale », « Post tenebras lux », « What time is it? », « Cabines de plage » et « Genève au cœur du jeu ».",
+  "Passionnée par les sphères sociales, elle s'oriente vite vers la photographie de presse. Ce sera le berceau de sa pratique artistique, et le point de départ d'un regard aiguisé sur la société contemporaine.",
+  "Documenter, illustrer, témoigner : c'est son travail quotidien, sur le terrain, au contact direct de son sujet.",
+  "Des nomades des steppes mongoles aux gilets jaunes. Du marché des célibataires à Shanghai à la commémoration du premier anniversaire de la mort de Johnny. De l'explosion de la chirurgie esthétique post-pandémie au métier de dameur. De la vie ordinaire aux situations extraordinaires. Karine explore le monde avec un regard frontal, engagé dans le réel.",
+  "Elle coréalise le documentaire « Mémoires d'une pandémie » (Lunafilm - 2022).",
+  "En mars 2023, elle présente en avant-première son exposition « What time is it? » au salon Watches & Wonders, puis au Pont de la Machine et à Shanghai la même année.",
+  "Elle remporte deux Swiss Press Photo : en 2023, catégorie vie quotidienne, pour « Les cabines de plage » ; en 2024, pour son documentaire sur Exit.",
 ];
 
 export default function About() {
