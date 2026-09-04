@@ -34,7 +34,6 @@ export default function About() {
             />
           </div>
           <div className="md:col-span-7 space-y-5">
-            <h2 className="text-3xl">{site.name}</h2>
             {bioParagraphs.map((paragraph, index) => (
               <p key={index} className="text-lg text-gray-700 leading-relaxed text-justify">
                 {paragraph}
