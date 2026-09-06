@@ -1,7 +1,7 @@
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import type { LucideIcon } from "lucide-react";
 import { BookOpen, Camera, Clapperboard, Film, Users } from "lucide-react";
-import { lorem, site } from "../../config/site";
+import { site } from "../../config/site";
 
 const portraitPlaceholder =
   "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=800&h=1000&fit=crop";
@@ -52,26 +52,6 @@ export default function About() {
             <StatItem icon={Film} value="500k+" label="Nombre d'images" />
             <StatItem icon={Users} value="6000+" label="Personnes photographiées" />
           </div>
-        </div>
-      </section>
-
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <h2 className="text-3xl mb-12 text-center">Expositions & Publications</h2>
-        <div className="space-y-8">
-          {[2025, 2024, 2023].map((year) => (
-            <div key={year} className="border-l-2 border-[var(--brand)] pl-6">
-              <div className="text-sm text-gray-500 mb-2">{year}</div>
-              <h3 className="text-xl mb-2">Lorem ipsum dolor</h3>
-              <p className="text-gray-700">{lorem.short}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-gray-50 py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl mb-8">Ma Philosophie</h2>
-          <p className="text-xl text-gray-700 leading-relaxed">{lorem.medium}</p>
         </div>
       </section>
     </div>

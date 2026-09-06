@@ -100,7 +100,7 @@ function HeaderRow({
   return (
     <div className="flex justify-between items-center h-20">
       <Link
-        to="/"
+        to="/reportages"
         className="inline-flex flex-col items-stretch w-fit leading-tight hover:text-[var(--brand)] transition-colors"
       >
         <span className="site-name text-3xl whitespace-nowrap">{site.name}</span>
