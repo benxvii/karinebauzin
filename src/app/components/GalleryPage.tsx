@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { Lightbox } from "./Lightbox";
 
 type GalleryPageProps = {
   title: string;
@@ -40,23 +42,36 @@ function GalleryGrid({
   images: readonly string[];
   title: string;
 }) {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
   return (
-    <div className="flex">
-      <div className="hidden lg:block w-1/3 shrink-0 sticky top-0 h-screen" />
-      <div className="w-full lg:w-2/3 columns-1 md:columns-2 gap-2">
-        {images.map((src, index) => (
-          <div
-            key={`${title}-${index}`}
-            className="break-inside-avoid mb-2"
-          >
-            <ImageWithFallback
-              src={src}
-              alt={`${title} ${index + 1}`}
-              className="w-full h-auto object-contain"
-            />
-          </div>
-        ))}
+    <>
+      <div className="flex">
+        <div className="hidden lg:block w-1/3 shrink-0 sticky top-0 h-screen" />
+        <div className="w-full lg:w-2/3 columns-1 md:columns-2 gap-2">
+          {images.map((src, index) => (
+            <div
+              key={`${title}-${index}`}
+              className="break-inside-avoid mb-2 cursor-pointer"
+              onClick={() => setActiveIndex(index)}
+            >
+              <ImageWithFallback
+                src={src}
+                alt={`${title} ${index + 1}`}
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+      {activeIndex !== null && (
+        <Lightbox
+          images={images}
+          activeIndex={activeIndex}
+          onClose={() => setActiveIndex(null)}
+          onNavigate={setActiveIndex}
+        />
+      )}
+    </>
   );
 }
