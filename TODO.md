@@ -9,7 +9,7 @@ Le code et la doc sont à jour. Le dossier dans Cloudinary, lui, reste à corrig
 CLOUDINARY
 - [ ] Ouvrir [console.cloudinary.com](https://console.cloudinary.com) → **Assets**
 - [ ] Renommer `documentaire` en `reportages` (ou recréer le dossier sous ce nom)
-- [ ] Vérifier les sous-dossiers de projets (`swiss-cu`, `144`, etc.) : ils doivent vivre sous `reportages/<slug>/`
+- [ ] Vérifier les sous-dossiers de projets (`swiss-cup-mulet`, `144-smur`, etc.) : ils doivent vivre sous `reportages/<slug>/`
 - [ ] Les nouveaux uploads vont dans `reportages/<slug>/`, plus dans `documentaire/`
 
 LOOK DU SITE
@@ -17,6 +17,6 @@ LOOK DU SITE
 
 Convention cible (préfixe `VITE_CLOUDINARY_FOLDER`, ex. `karine-bauzin`) :
 
-`karine-bauzin/reportages/swiss-cu/photo-01`
+`karine-bauzin/reportages/swiss-cup-mulet/photo-01`
 
 Détail : `docs/MEDIA.md`.

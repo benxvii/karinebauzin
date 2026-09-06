@@ -16,6 +16,7 @@ Public cible : Benoît et Karine (éditeur / éditrice via Cursor).
 | **`src/config/site.ts`** | Fichier éditorial principal (copie **locale** sur le Mac) |
 | **Cloudinary** | **Toutes les photos de galeries** (portraits, reportages, hero…) |
 | **`public/books/`** | Couvertures livres + affiche film (dans Git) |
+| **`public/trustj-logo.png`** | Badge Trust-J (page Contact, dans Git) |
 | **GitHub** | Code source |
 | **Vercel / Netlify** | Hébergement prévu |
 
@@ -29,7 +30,10 @@ Les URLs Unsplash encore visibles sont des **placeholders temporaires**. Les vra
 |---------|---------|
 | `src/config/site.ts` | Contenu éditorial |
 | `src/config/navigation.ts` | Menu (généré depuis `site.ts`) |
+| `src/app/components/About.tsx` | Bio, stats, expositions, philosophie |
+| `src/app/components/Contact.tsx` | Formulaire + affichage Trust-J |
 | `public/books/` | Couvertures livres/films |
+| `public/trustj-logo.png` | Logo Trust-J |
 | `docs/ARCHITECTURE.md` | Structure technique |
 | `docs/MEDIA.md` | Emplacement des images + Cloudinary |
 | `.env` | `VITE_CLOUDINARY_CLOUD_NAME`, `VITE_CLOUDINARY_FOLDER` |
@@ -38,7 +42,7 @@ Les URLs Unsplash encore visibles sont des **placeholders temporaires**. Les vra
 
 | Objet | Contenu |
 |-------|---------|
-| `site` | Nom, email, téléphone, réseaux, logo |
+| `site` | Nom, email, téléphone, réseaux, logo, Trust-J (`trustJ`) |
 | `portraitGallery` | `/portraits` |
 | `documentary` | Hub + projets `/reportages/:slug` |
 | `livres` | Hub + fiches `/livres/:slug` |
@@ -70,7 +74,7 @@ git push origin main
 
 1. Ouvrir le projet dans Cursor
 2. Demander : *« Change l’intro de Cabines de plage avec ce texte : … »*
-3. L’assistant modifie **`src/config/site.ts`** (parfois `About.tsx` pour la bio)
+3. L’assistant modifie **`src/config/site.ts`** (parfois `About.tsx` pour la bio, `Contact.tsx` pour le formulaire)
 4. Vérifier en local → commit / push
 
 Pas besoin de Cloudinary pour du texte.
@@ -94,10 +98,12 @@ Ouvrir `src/config/site.ts` (ou laisser Cursor le faire).
 | Élément | Où |
 |---------|-----|
 | Email, téléphone, réseaux | objet `site` |
+| Badge Trust-J (texte, URL, logo) | `site.trustJ` |
 | Titre / intro galerie | `portraitGallery` |
 | Projet documentaire | `documentary.projects[]` |
 | Fiche livre | `livres.items[]` |
-| Bio À propos | `src/app/components/About.tsx` |
+| Bio À propos | `src/app/components/About.tsx` (pas `site.ts`) |
+| Formulaire / mise en page Contact | `src/app/components/Contact.tsx` |
 
 Champs d’une fiche livre :
 
@@ -108,11 +114,12 @@ Champs d’une fiche livre :
 | `body` | Texte principal |
 | `image` | Couverture `/books/...` |
 | `price`, `shippingFee` | CHF |
+| `publisher` | Éditeur (affiché dans `BookMeta`) |
 | `isbn`, `language`, `pages`, `format` | Specs sous « Photographies » |
 | `availability` | « Ouvrage épuisé », « Ouvrage privé - Ville de Genève », etc. |
 | `kind: "film"` | Pas de prix ni bouton commander |
 
-Les métadonnées (photographies, ISBN, prix, TWINT) passent par `BookMeta` dans `LivreDetail.tsx` — **ne pas** les coller dans `body`.
+Les métadonnées (photographies, éditeur, ISBN, prix, TWINT) passent par `BookMeta` dans `LivreDetail.tsx` — **ne pas** les coller dans `body`.
 
 ---
 
@@ -176,7 +183,8 @@ Sans `price` : pas de ligne prix/TWINT, pas de bouton commander.
 
 | Tâche | Cloudinary | Fichiers | Git push |
 |-------|------------|----------|----------|
-| Modifier un texte | — | `site.ts` (ou `About.tsx`) | ✅ |
+| Modifier un texte | — | `site.ts` (ou `About.tsx` / `Contact.tsx`) | ✅ |
+| Badge Trust-J | — | `site.trustJ` + `public/trustj-logo.png` | ✅ |
 | Ajouter photos / nouvelle galerie | ✅ upload | `site.ts` | ✅ code |
 | Couverture de livre | — | `public/books/` + `site.ts` | ✅ |
 | Livre / film | — | `site.ts` | ✅ |
@@ -199,11 +207,13 @@ Sans `price` : pas de ligne prix/TWINT, pas de bouton commander.
 
 > Change l’intro de « Cabines de plage » dans site.ts avec ce texte : …
 
-> J’ai uploadé des photos dans Cloudinary sous reportages/swiss-cu. Branche-les sur le projet Swiss Cu.
+> J’ai uploadé des photos dans Cloudinary sous reportages/swiss-cup-mulet. Branche-les sur le projet Swiss Cup Mulet.
 
 > Ajoute un projet reportage « mon-projet » : titre …, intro …, photos déjà sur Cloudinary dans reportages/mon-projet/.
 
 > Remplace la couverture de Portraits-ge.ch : fichier dans public/books/, mockup fond blanc légèrement incliné.
+
+> Change le texte Trust-J sur la page Contact.
 
 > Commit les changements avec un message en français.
 

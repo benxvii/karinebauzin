@@ -5,3 +5,4 @@ dist
 .env.local
 .env.*.local
 *.log
+ZZ_picture_retrieve_from_ori/
