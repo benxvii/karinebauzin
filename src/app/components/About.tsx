@@ -38,7 +38,7 @@ export default function About() {
           </div>
           <div className="md:col-span-7 space-y-5">
             {bioParagraphs.map((paragraph, index) => (
-              <p key={index} className="text-lg text-gray-700 leading-relaxed text-justify">
+              <p key={index}>
                 {paragraph}
               </p>
             ))}

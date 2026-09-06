@@ -1,5 +1,4 @@
 import { Link } from "react-router";
-import { ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 type HubItem = {
@@ -7,27 +6,24 @@ type HubItem = {
   title: string;
   description: string;
   image: string;
-  ctaLabel?: string;
 };
 
 type SectionHubProps = {
   title: string;
   items: readonly HubItem[];
   imageFit?: "contain" | "cover";
-  ctaLabel?: string;
 };
 
 export default function SectionHub({
   title,
   items,
   imageFit = "contain",
-  ctaLabel = "Voir le projet",
 }: SectionHubProps) {
   return (
     <div>
       <h1 className="sr-only">{title}</h1>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <HubGrid items={items} imageFit={imageFit} ctaLabel={ctaLabel} />
+        <HubGrid items={items} imageFit={imageFit} />
       </section>
     </div>
   );
@@ -36,11 +32,9 @@ export default function SectionHub({
 function HubGrid({
   items,
   imageFit,
-  ctaLabel,
 }: {
   items: readonly HubItem[];
   imageFit: "contain" | "cover";
-  ctaLabel: string;
 }) {
   const fitClass =
     imageFit === "cover" ? "object-cover" : "object-contain";
@@ -48,7 +42,7 @@ function HubGrid({
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
       {items.map((item) => (
         <Link key={item.path} to={item.path} className="group block">
-          <div className="relative aspect-[4/3] overflow-hidden mb-4 bg-white">
+          <div className="relative aspect-[4/3] overflow-hidden mb-1.5 bg-white">
             <ImageWithFallback
               src={item.image}
               alt={item.title}
@@ -56,17 +50,13 @@ function HubGrid({
             />
           </div>
           <h2
-            className={`text-2xl group-hover:text-[var(--brand)] transition-colors ${item.description ? "mb-2" : "mb-4"}`}
+            className={`text-base uppercase group-hover:text-[var(--brand)] transition-colors ${item.description ? "mb-2" : ""}`}
           >
             {item.title}
           </h2>
           {item.description ? (
-            <p className="text-gray-600 mb-4">{item.description}</p>
+            <p>{item.description}</p>
           ) : null}
-          <span className="inline-flex items-center gap-2 text-sm text-[var(--brand)]">
-            {item.ctaLabel ?? ctaLabel}
-            <ArrowRight size={16} />
-          </span>
         </Link>
       ))}
     </div>

@@ -31,7 +31,7 @@ function BookMeta({ book }: { book: Book }) {
   const photographer = book.photographer ?? "Karine Bauzin";
 
   return (
-    <div className="mt-8 space-y-2 text-gray-600 leading-relaxed">
+    <div className="mt-8 space-y-2">
       <p>Photographies : {photographer}</p>
       {book.availability && <p>{book.availability}</p>}
       {specsLines.map((line) => (
@@ -76,9 +76,9 @@ function BookPage({ book }: { book: (typeof livres.items)[number] }) {
               />
             </div>
             <div>
-              <h1 className="text-4xl md:text-5xl mb-4">{book.title}</h1>
-              <p className="text-lg text-gray-700 mb-4">{book.description}</p>
-              <p className="text-gray-600 leading-relaxed whitespace-pre-line">{book.body}</p>
+              <h1 className="text-3xl md:text-4xl mb-4 uppercase">{book.title}</h1>
+              <p className="mb-4">{book.description}</p>
+              <p className="whitespace-pre-line">{book.body}</p>
               {book.kind !== "film" && <BookMeta book={book} />}
               {book.kind !== "film" && book.price != null && (
                 <a

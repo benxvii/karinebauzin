@@ -44,7 +44,7 @@ export default function Contact() {
             </h3>
           </div>
           <div className="mt-32 space-y-4">
-            <p className="text-sm font-light whitespace-pre-line">{site.trustJ.text}</p>
+            <p className="whitespace-pre-line">{site.trustJ.text}</p>
             <a
               href={site.trustJ.href}
               target="_blank"
