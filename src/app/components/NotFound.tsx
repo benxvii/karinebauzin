@@ -8,11 +8,11 @@ export default function NotFound() {
         <h1 className="text-6xl mb-4">404</h1>
         <p className="text-2xl mb-8 text-gray-700">Page non trouvée</p>
         <Link
-          to="/"
+          to="/reportages"
           className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white hover:bg-gray-800 transition-colors"
         >
           <Home size={20} />
-          Retour à l'accueil
+          Retour aux reportages
         </Link>
       </div>
     </div>

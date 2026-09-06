@@ -9,7 +9,6 @@
 
 ## Cloudinary — images encore manquantes
 
-- [ ] Hero accueil (`Home.tsx`) : Unsplash → `home/hero`
 - [ ] Portrait À propos (`About.tsx`) : Unsplash → `about/portrait`
 
 Les galeries Portraits et Reportages sont branchées. Détail : `docs/MEDIA.md`.
@@ -19,8 +18,6 @@ Les galeries Portraits et Reportages sont branchées. Détail : `docs/MEDIA.md`.
 - [ ] Intro Portraits (`portraitGallery.intro`)
 - [ ] Intro hub Reportages (`documentary.intro`)
 - [ ] Intros des 13 projets reportage (vides : pas de texte sur l’ancien site)
-- [ ] Accueil : accroche hero, bloc À propos, bandeau Livres
-- [ ] À propos : sections Expositions & Publications / Philosophie
 
 ## Look du site
 

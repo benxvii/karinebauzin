@@ -1,6 +1,5 @@
 import { createBrowserRouter, redirect } from "react-router";
 import Layout from "./components/Layout";
-import Home from "./components/Home";
 import About from "./components/About";
 import GalleryPortraits from "./components/GalleryPortraits";
 import DocumentaireIndex from "./components/DocumentaireIndex";
@@ -15,7 +14,7 @@ export const router = createBrowserRouter([
     path: "/",
     Component: Layout,
     children: [
-      { index: true, Component: Home },
+      { index: true, loader: () => redirect("/reportages") },
       { path: "about", Component: About },
       { path: "portraits", Component: GalleryPortraits },
       { path: "corporate", loader: () => redirect("/portraits") },
