@@ -41,19 +41,22 @@ function GalleryGrid({
   title: string;
 }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {images.map((src, index) => (
-        <div
-          key={`${title}-${index}`}
-          className="group relative aspect-[4/5] overflow-hidden cursor-pointer"
-        >
-          <ImageWithFallback
-            src={src}
-            alt={`${title} ${index + 1}`}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          />
-        </div>
-      ))}
+    <div className="flex">
+      <div className="hidden lg:block w-1/3 shrink-0 sticky top-0 h-screen" />
+      <div className="w-full lg:w-2/3 columns-1 md:columns-2 gap-2">
+        {images.map((src, index) => (
+          <div
+            key={`${title}-${index}`}
+            className="break-inside-avoid mb-2"
+          >
+            <ImageWithFallback
+              src={src}
+              alt={`${title} ${index + 1}`}
+              className="w-full h-auto object-contain"
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
