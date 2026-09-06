@@ -1,4 +1,4 @@
-import { Outlet, Link, useLocation } from "react-router";
+import { Outlet, Link, ScrollRestoration, useLocation } from "react-router";
 import { Instagram, Linkedin, Menu, X } from "lucide-react";
 import { useState } from "react";
 import {
@@ -38,6 +38,7 @@ export default function Layout() {
       <main className="flex-1">
         <Outlet />
       </main>
+      <ScrollRestoration />
 
       <footer className="border-t border-gray-100 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
