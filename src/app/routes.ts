@@ -21,6 +21,14 @@ export const router = createBrowserRouter([
       { path: "corporate", loader: () => redirect("/portraits") },
       { path: "portrait-presse", loader: () => redirect("/portraits") },
       { path: "reportages", Component: DocumentaireIndex },
+      {
+        path: "reportages/swiss-cu",
+        loader: () => redirect("/reportages/swiss-cup-mulet"),
+      },
+      {
+        path: "reportages/144",
+        loader: () => redirect("/reportages/144-smur"),
+      },
       { path: "reportages/:slug", Component: DocumentaireProject },
       { path: "documentaire", loader: () => redirect("/reportages") },
       {

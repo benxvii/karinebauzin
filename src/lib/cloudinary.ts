@@ -43,3 +43,17 @@ export function resolveImageUrl(
   }
   return fallbackUrl;
 }
+
+/** Public ID Cloudinary si le cloud name est configuré, sinon les fallbacks. */
+export function resolveGalleryImages(
+  cloudinaryIds: readonly string[] | undefined,
+  fallbacks: readonly string[],
+  options?: CloudinaryTransform,
+): string[] {
+  if (cloudinaryIds?.length) {
+    return cloudinaryIds.map((id, index) =>
+      resolveImageUrl(id, fallbacks[index] ?? fallbacks[0] ?? "", options),
+    );
+  }
+  return [...fallbacks];
+}

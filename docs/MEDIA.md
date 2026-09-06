@@ -9,6 +9,7 @@ Où sont les images, comment les ajouter, et ce qui est versionné dans Git.
 | **Galeries** (portraits, reportages, hero, à propos) | **Cloudinary** | Upload Media Library + config dans `site.ts` |
 | **Couvertures livres / affiche film** | `public/books/` (Git) | Fichier local + chemin dans `site.ts` |
 | **Logo / favicon** | `public/logo.png` (Git) | Rarement modifié |
+| **Badge Trust-J** | `public/trustj-logo.png` (Git) | Page Contact (`site.trustJ`) |
 
 Les galeries passent **directement par Cloudinary**. Pas d’upload de photos de galerie dans Git, sauf exception temporaire.
 
@@ -41,8 +42,8 @@ Préfixe = `VITE_CLOUDINARY_FOLDER` (ex. `karine-bauzin`) :
 | À propos | `about/portrait` |
 | Couvertures livres (optionnel plus tard) | `livres/<slug>` |
 
-Exemple : photo d’un projet « swiss-cu » →  
-`karine-bauzin/reportages/swiss-cu/photo-01`
+Exemple : photo d’un projet « swiss-cup-mulet » →  
+`karine-bauzin/reportages/swiss-cup-mulet/photo-01`
 
 ### Workflow — ajouter ou enrichir une galerie
 
@@ -62,6 +63,7 @@ Exception volontaire : les mockups et affiches restent dans le repo pour l’ins
 | Fichier | URL | Usage |
 |---------|-----|-------|
 | `public/logo.png` | `/logo.png` | Favicon |
+| `public/trustj-logo.png` | `/trustj-logo.png` | Badge Trust-J (page Contact) |
 | `public/books/geneve-au-coeur-du-jeu.png` | `/books/geneve-au-coeur-du-jeu.png` | Mockup fond blanc, incliné |
 | `public/books/cabines-de-plage.jpg` | `/books/cabines-de-plage.jpg` | Couverture |
 | `public/books/what-time-is-it.png` | `/books/what-time-is-it.png` | Couverture |
@@ -90,7 +92,8 @@ Chemins référencés dans `livres.items[].image` (`site.ts`).
 Encore utilisés tant que Cloudinary n’est pas rempli :
 
 - `portraitGallery`, `documentary.projects[]` dans `site.ts`
-- Hero dans `Home.tsx`
+- Hero accueil : Unsplash en dur dans `Home.tsx` (cible Cloudinary `home/hero`)
+- Portrait À propos : Unsplash en dur dans `About.tsx` (cible Cloudinary `about/portrait`)
 
 À remplacer par des `public_id` Cloudinary + `resolveImageUrl()`.
 

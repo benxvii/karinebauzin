@@ -1,6 +1,7 @@
 import { Navigate, useParams } from "react-router";
 import GalleryPage from "./GalleryPage";
 import { documentary } from "../../config/site";
+import { resolveGalleryImages } from "../../lib/cloudinary";
 
 export default function DocumentaireProject() {
   const { slug } = useParams<{ slug: string }>();
@@ -14,7 +15,7 @@ export default function DocumentaireProject() {
     <GalleryPage
       title={project.title}
       intro={project.intro}
-      images={project.placeholderImages}
+      images={resolveGalleryImages(project.cloudinaryIds, project.placeholderImages)}
     />
   );
 }

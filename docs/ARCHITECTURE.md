@@ -33,6 +33,8 @@ Le routeur déclare un layout racine (`Layout`) commun à toutes les pages :
 /portrait-presse        → redirige vers /portraits
 /reportages             → DocumentaireIndex
 /reportages/:slug       → DocumentaireProject
+/documentaire           → redirige vers /reportages
+/documentaire/:slug     → redirige vers /reportages/:slug
 /livres                 → LivresIndex
 /livres/:slug           → LivreDetail
 /shop                   → redirige vers /livres
@@ -61,12 +63,13 @@ Le menu se met à jour **automatiquement** à partir de `site.ts` via `navigatio
 
 - Composant : `src/app/components/Layout.tsx`
 - Données : `navigation.ts` (`mainNavigation`), `site.ts` (`site`)
-- Header : texte « Karine Bauzin » + sous-titre « PHOTOGRAPHE », lien vers `/`
-- Footer : téléphone, email, Instagram, LinkedIn
+- Header : `site.name` + sous-titre « Photographe » (classes `.site-name` / `.site-tagline` dans `src/styles/fonts.css`), lien vers `/`
+- Footer : téléphone, email, Instagram, LinkedIn — téléphone et email masqués sur `/contact`
 
 ### Wrapper « hub » (grille de cartes)
 
 - Composant : `src/app/components/SectionHub.tsx`
+- Titre de section en `sr-only` (pas de bandeau visible)
 - Utilisé par :
   - `DocumentaireIndex.tsx`
   - `LivresIndex.tsx`
@@ -74,8 +77,9 @@ Le menu se met à jour **automatiquement** à partir de `site.ts` via `navigatio
 ### Galerie photo (grille d’images)
 
 - Composant : `src/app/components/GalleryPage.tsx`
+- `showHeader` (défaut `true`) : bandeau titre + intro ; `false` = grille seule
 - Utilisé par :
-  - `GalleryPortraits.tsx` → `/portraits`
+  - `GalleryPortraits.tsx` → `/portraits` (`showHeader={false}`)
   - `DocumentaireProject.tsx` → `/reportages/:slug`
 
 ## Pages (routes)
@@ -84,25 +88,29 @@ Le menu se met à jour **automatiquement** à partir de `site.ts` via `navigatio
 
 - Composant : `src/app/components/Home.tsx`
 - Données : `site`, `portraitGallery`, `documentary`, `livres`
-- Hero plein écran + liens vers les sections principales
+- Hero plein écran (Unsplash temporaire) + liens vers les sections principales
 
 ### `/about` — À propos
 
 - Composant : `src/app/components/About.tsx`
-- Données : bio en paragraphes, stats, sections Expositions / Philosophie (encore partielles)
+- Bio : 10 paragraphes **dans** `About.tsx` (pas dans `site.ts`), sans titre « KARINE BAUZIN » au-dessus
+- Stats réelles (caméras, ouvrages, documentaire, images, personnes)
+- Sections Expositions & Publications / Philosophie : encore en lorem
+- Portrait : Unsplash temporaire (cible Cloudinary `about/portrait`)
 
 ### `/portraits`
 
 - Composant : `GalleryPortraits.tsx`
 - Données : `portraitGallery` dans `site.ts`
+- Grille seule, sans bandeau titre/intro
 - Images : **Cloudinary** (cible) ; placeholders Unsplash temporaires dans `placeholderImages[]`
 
 ### `/reportages` et `/reportages/:slug`
 
 - Index : `DocumentaireIndex.tsx` → hub `SectionHub`
 - Détail : `DocumentaireProject.tsx` → `GalleryPage`
-- Données : `documentary.projects[]` dans `site.ts`
-- Projets actuels : Swiss Cu, 144
+- Données : `documentary.projects[]` dans `site.ts` (`cloudinaryFolder: "reportages"`)
+- Projets : 13 galeries Press (Swiss Cup Mulet, 144 – SMUR, EXIT, etc.)
 
 ### `/livres` et `/livres/:slug`
 
@@ -113,25 +121,33 @@ Le menu se met à jour **automatiquement** à partir de `site.ts` via `navigatio
 - Métadonnées page détail (livres uniquement) : composant `BookMeta` dans `LivreDetail.tsx`
   - Photographies : Karine Bauzin
   - Statut (`availability`) si défini — ex. « Ouvrage épuisé »
+  - Éditeur (`publisher`) si défini
   - ISBN, langue, pages, format
   - Prix, frais de port, commande TWINT
   - Bouton « Commander par email » si `price` défini
+
+### `/contact`
+
+- Composant : `src/app/components/Contact.tsx`
+- Colonne gauche : nom, téléphone, email, badge Trust-J (`site.trustJ`)
+- Colonne droite : formulaire (nom, email, sujet, message) → ouvre `mailto:` vers `site.email`
 
 ## Composants partagés (UI)
 
 - Images avec repli : `src/app/components/figma/ImageWithFallback.tsx`
 - Composants shadcn : `src/app/components/ui/*.tsx`
-- Styles : `src/styles/theme.css` (couleur accent `--brand: #7a2032`), `fonts.css` (DM Sans)
+- Styles : `src/styles/theme.css` (couleur accent `--brand: #7a2032`), `fonts.css` (DM Sans, `.site-name` / `.site-tagline`)
 
 ## Identité du site (`site.ts` → objet `site`)
 
 | Champ | Valeur actuelle |
 |-------|-----------------|
 | Email | info@karinebauzin.ch |
-| Téléphone | +41 78 649 4998 |
+| Téléphone | +41 78 649 49 98 |
 | Instagram | instagram.com/karinebauzin |
 | LinkedIn | linkedin.com/in/karinebauzin |
 | Logo | `/logo.png` (favicon ; header en texte) |
+| Trust-J | `site.trustJ` — texte, URL trust-j.org, logo `/trustj-logo.png` |
 
 ## Déploiement prévu
 
@@ -139,3 +155,4 @@ Le menu se met à jour **automatiquement** à partir de `site.ts` via `navigatio
 - **Hébergement** : Vercel ou Netlify (recommandé dans le README)
 - **Images galeries** : Cloudinary (dès le départ — voir `MEDIA.md`)
 - **Couvertures livres** : `public/books/` dans Git
+- **Logo Trust-J** : `public/trustj-logo.png` dans Git

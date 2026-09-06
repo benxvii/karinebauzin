@@ -8,20 +8,31 @@ import {
   portraitGallery,
   site,
 } from "../../config/site";
+import { resolveGalleryImages } from "../../lib/cloudinary";
 
 const heroImage =
   "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1920&h=1080&fit=crop";
+
+const portraitImages = resolveGalleryImages(
+  portraitGallery.cloudinaryIds,
+  portraitGallery.placeholderImages,
+);
+
+const reportageCoverImages = resolveGalleryImages(
+  documentary.projects[0]?.cloudinaryIds,
+  documentary.projects[0]?.placeholderImages ?? [],
+);
 
 const homeSections = [
   {
     path: portraitGallery.path,
     title: portraitGallery.title,
-    image: portraitGallery.placeholderImages[0],
+    image: portraitImages[0] ?? heroImage,
   },
   {
     path: documentary.indexPath,
     title: documentary.title,
-    image: documentary.projects[0]?.placeholderImages[0] ?? heroImage,
+    image: reportageCoverImages[0] ?? heroImage,
   },
   {
     path: livres.indexPath,
