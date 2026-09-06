@@ -7,6 +7,7 @@ export default function DocumentaireIndex() {
     <SectionHub
       title={documentary.title}
       imageFit="cover"
+      ctaLabel="Voir le reportage"
       items={documentary.projects.map((p) => ({
         path: p.path,
         title: p.title,

@@ -7,24 +7,27 @@ type HubItem = {
   title: string;
   description: string;
   image: string;
+  ctaLabel?: string;
 };
 
 type SectionHubProps = {
   title: string;
   items: readonly HubItem[];
   imageFit?: "contain" | "cover";
+  ctaLabel?: string;
 };
 
 export default function SectionHub({
   title,
   items,
   imageFit = "contain",
+  ctaLabel = "Voir le projet",
 }: SectionHubProps) {
   return (
     <div>
       <h1 className="sr-only">{title}</h1>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <HubGrid items={items} imageFit={imageFit} />
+        <HubGrid items={items} imageFit={imageFit} ctaLabel={ctaLabel} />
       </section>
     </div>
   );
@@ -33,9 +36,11 @@ export default function SectionHub({
 function HubGrid({
   items,
   imageFit,
+  ctaLabel,
 }: {
   items: readonly HubItem[];
   imageFit: "contain" | "cover";
+  ctaLabel: string;
 }) {
   const fitClass =
     imageFit === "cover" ? "object-cover" : "object-contain";
@@ -59,7 +64,7 @@ function HubGrid({
             <p className="text-gray-600 mb-4">{item.description}</p>
           ) : null}
           <span className="inline-flex items-center gap-2 text-sm text-[var(--brand)]">
-            Voir le projet
+            {item.ctaLabel ?? ctaLabel}
             <ArrowRight size={16} />
           </span>
         </Link>
