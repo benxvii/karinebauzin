@@ -2,9 +2,12 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 import type { LucideIcon } from "lucide-react";
 import { BookOpen, Camera, Clapperboard, Film, Users } from "lucide-react";
 import { site } from "../../config/site";
+import { resolveImageUrl } from "../../lib/cloudinary";
 
 const portraitPlaceholder =
   "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=800&h=1000&fit=crop";
+
+const portraitSrc = resolveImageUrl("Karine_Bauzin_cfgzty", portraitPlaceholder);
 
 const bioParagraphs = [
   "Karine Bauzin est photographe de presse. Formée aux Beaux-Arts, elle vit et travaille à Genève.",
@@ -28,9 +31,9 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-10 gap-12 items-start">
           <div className="md:col-span-3">
             <ImageWithFallback
-              src={portraitPlaceholder}
+              src={portraitSrc}
               alt={site.name}
-              className="w-full h-auto aspect-[4/5] object-cover"
+              className="w-full h-auto"
             />
           </div>
           <div className="md:col-span-7 space-y-5">
