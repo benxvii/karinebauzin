@@ -10,6 +10,8 @@ export default function LivresIndex() {
         title: b.title,
         description: b.description,
         image: b.image,
+        ctaLabel:
+          b.kind === "film" ? "Voir le documentaire" : "Voir le livre",
       }))}
     />
   );

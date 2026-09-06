@@ -1,22 +1,27 @@
 # TODO
 
-## Cloudinary — renommer le dossier Documentaire
+## Fait
 
-La page **Documentaire** s’appelle maintenant **Reportages** (`/reportages`).
+- Page **Reportages** (`/reportages`) : 13 galeries Press, photos sur Cloudinary
+- Media Library : `karinebauzin/portraits/` et `karinebauzin/reportages/<slug>/`
+- Public ID reportages (dans `site.ts`) : `reportages/<slug>/nom-fichier`
+- `VITE_CLOUDINARY_FOLDER` reste **vide** (sinon les URLs portraits cassent)
 
-Le code et la doc sont à jour. Le dossier dans Cloudinary, lui, reste à corriger à la main (pas d’accès au compte depuis ici).
+## Cloudinary — images encore manquantes
 
-CLOUDINARY
-- [ ] Ouvrir [console.cloudinary.com](https://console.cloudinary.com) → **Assets**
-- [ ] Renommer `documentaire` en `reportages` (ou recréer le dossier sous ce nom)
-- [ ] Vérifier les sous-dossiers de projets (`swiss-cup-mulet`, `144-smur`, etc.) : ils doivent vivre sous `reportages/<slug>/`
-- [ ] Les nouveaux uploads vont dans `reportages/<slug>/`, plus dans `documentaire/`
+- [ ] Hero accueil (`Home.tsx`) : Unsplash → `home/hero`
+- [ ] Portrait À propos (`About.tsx`) : Unsplash → `about/portrait`
 
-LOOK DU SITE
+Les galeries Portraits et Reportages sont branchées. Détail : `docs/MEDIA.md`.
+
+## Textes encore en lorem / vides
+
+- [ ] Intro Portraits (`portraitGallery.intro`)
+- [ ] Intro hub Reportages (`documentary.intro`)
+- [ ] Intros des 13 projets reportage (vides : pas de texte sur l’ancien site)
+- [ ] Accueil : accroche hero, bloc À propos, bandeau Livres
+- [ ] À propos : sections Expositions & Publications / Philosophie
+
+## Look du site
+
 - [ ] Revoir si les fonts sont uniformes (polices et tailles)
-
-Convention cible (préfixe `VITE_CLOUDINARY_FOLDER`, ex. `karine-bauzin`) :
-
-`karine-bauzin/reportages/swiss-cup-mulet/photo-01`
-
-Détail : `docs/MEDIA.md`.
