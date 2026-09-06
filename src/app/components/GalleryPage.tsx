@@ -20,8 +20,8 @@ export default function GalleryPage({
       {showHeader ? (
         <section className="py-20 bg-gray-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className={intro ? "text-5xl mb-6" : "text-5xl"}>{title}</h1>
-            {intro ? <p className="text-xl text-gray-700">{intro}</p> : null}
+            <h1 className={intro ? "text-4xl mb-6 uppercase" : "text-4xl uppercase"}>{title}</h1>
+            {intro ? <p>{intro}</p> : null}
           </div>
         </section>
       ) : (

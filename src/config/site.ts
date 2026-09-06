@@ -110,7 +110,6 @@ export const portraitGallery: GallerySection = {
     "20210312-kb-01-2_tahjsn",
     "L1010737-1600x2400_sg2i8u",
     "20191106_kb_06-2_pvnupo",
-    "L1000710-1_eubtlq",
     "BR-2022-10-01-Festival-du-lac2189-1_y8v0kn",
     "KBZ_7371-2-1_qhoqzx",
     "L1070676-1800x1800_ex6lup",
@@ -513,7 +512,7 @@ export const documentary = {
     {
       slug: "ete-2020-covid",
       path: "/reportages/ete-2020-covid",
-      title: "Eté 2020 – Covid",
+      title: "été 2020 – Covid",
       intro: "",
       placeholderImages: [
         "https://karinebauzin.ch/wp-content/uploads/2020/08/040820_kb_04-2-scaled.jpg",
@@ -639,7 +638,7 @@ export const documentary = {
     {
       slug: "transsiberien-moscou-oulanbator",
       path: "/reportages/transsiberien-moscou-oulanbator",
-      title: "Transsiberien de Moscou à OulanBator",
+      title: "Transsibérien de Moscou à Oulan-Bator",
       intro: "",
       placeholderImages: [
         "https://karinebauzin.ch/wp-content/uploads/2018/05/L1060382-1.jpg",
@@ -838,7 +837,7 @@ export const livres = {
       description: "Livre photo — Genève et le football.",
       availability: "Ouvrage privé - Ville de Genève",
       image: "/books/geneve-au-coeur-du-jeu.png",
-      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      body: "Ouvrage privé - Commande pour le Conseil d'Etat de la République et Canton de Genève",
     },
     {
       slug: "cabines-de-plage",

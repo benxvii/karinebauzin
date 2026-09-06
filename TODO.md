@@ -22,3 +22,7 @@ Les galeries Portraits et Reportages sont branchées. Détail : `docs/MEDIA.md`.
 ## Look du site
 
 - [ ] Revoir si les fonts sont uniformes (polices et tailles)
+
+## Stats
+
+- [ ] Implémenter un outil statistique sur les visites du site

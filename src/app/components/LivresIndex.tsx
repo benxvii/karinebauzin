@@ -8,10 +8,8 @@ export default function LivresIndex() {
       items={livres.items.map((b) => ({
         path: b.path,
         title: b.title,
-        description: b.description,
+        description: "",
         image: b.image,
-        ctaLabel:
-          b.kind === "film" ? "Voir le documentaire" : "Voir le livre",
       }))}
     />
   );

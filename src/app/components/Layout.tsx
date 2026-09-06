@@ -14,7 +14,6 @@ export default function Layout() {
   const location = useLocation();
 
   const isActive = (path: string) => isNavActive(location.pathname, path);
-  const isContactPage = location.pathname === "/contact";
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -42,27 +41,11 @@ export default function Layout() {
 
       <footer className="border-t border-gray-100 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500">
+          <div className="relative flex flex-col md:flex-row items-center justify-center gap-4">
+            <p className="text-xs md:absolute md:left-0">
               © {site.copyrightYear} {site.name}
             </p>
-            <div className="flex flex-wrap gap-6 justify-center md:justify-end">
-              {!isContactPage && (
-                <>
-                  <a
-                    href={site.phoneHref}
-                    className="text-gray-500 hover:text-[var(--brand)] transition-colors"
-                  >
-                    {site.phone}
-                  </a>
-                  <a
-                    href={`mailto:${site.email}`}
-                    className="text-gray-500 hover:text-[var(--brand)] transition-colors"
-                  >
-                    {site.email}
-                  </a>
-                </>
-              )}
+            <div className="flex gap-6">
               <a
                 href={site.instagram}
                 target="_blank"
