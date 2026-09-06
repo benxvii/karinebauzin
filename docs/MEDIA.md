@@ -6,53 +6,53 @@ Où sont les images, comment les ajouter, et ce qui est versionné dans Git.
 
 | Type d’image | Où ça vit | Qui gère |
 |--------------|-----------|----------|
-| **Galeries** (portraits, reportages, hero, à propos) | **Cloudinary** | Upload Media Library + config dans `site.ts` |
+| **Galeries** (portraits, reportages) | **Cloudinary** | Upload Media Library + `cloudinaryIds` dans `site.ts` |
+| **Portrait À propos** | **Cloudinary** | `Karine_Bauzin_cfgzty` dans `About.tsx` |
 | **Couvertures livres / affiche film** | `public/books/` (Git) | Fichier local + chemin dans `site.ts` |
 | **Logo / favicon** | `public/logo.png` (Git) | Rarement modifié |
 | **Badge Trust-J** | `public/trustj-logo.png` (Git) | Page Contact (`site.trustJ`) |
 
-Les galeries passent **directement par Cloudinary**. Pas d’upload de photos de galerie dans Git, sauf exception temporaire.
+Les galeries passent **directement par Cloudinary**. Pas d’upload de photos de galerie dans Git.
 
-Les URLs Unsplash encore présentes dans le code sont des **placeholders** le temps de brancher le compte Cloudinary et d’uploader les vraies photos.
+Les URLs Unsplash (et quelques anciennes URLs `karinebauzin.ch`) dans `placeholderImages[]` sont des **replis** : elles ne s’affichent que si `VITE_CLOUDINARY_CLOUD_NAME` est vide.
 
 ## Cloudinary (source de vérité pour les galeries)
+
+Cloud : `VITE_CLOUDINARY_CLOUD_NAME` (ex. `duvuxd5kh`).
+
+**`VITE_CLOUDINARY_FOLDER` reste vide.** Les public ID n’incluent pas de préfixe de compte. Si on le remplit, les URLs portraits cassent.
 
 ### Config locale
 
 ```env
 # .env (copier depuis .env.example)
 VITE_CLOUDINARY_CLOUD_NAME=
-VITE_CLOUDINARY_FOLDER=   # ex. karine-bauzin
+VITE_CLOUDINARY_FOLDER=
 ```
 
 Fichier utilitaire : `src/lib/cloudinary.ts`
 
 - `cloudinaryUrl(publicId, options)` → URL transformée
 - `resolveImageUrl(publicId, fallbackUrl)` → Cloudinary ou repli
+- `resolveGalleryImages(ids, fallbacks)` → liste d’URLs
 
-### Convention de dossiers Cloudinary
+### Convention des public ID
 
-Préfixe = `VITE_CLOUDINARY_FOLDER` (ex. `karine-bauzin`) :
+| Contenu | Public ID dans `site.ts` | Dossier Media Library (indicatif) |
+|---------|--------------------------|-----------------------------------|
+| Portraits | `NomFichier_hash` (racine) | `karinebauzin/portraits/` |
+| Reportages | `reportages/<slug>/nom-fichier` | `karinebauzin/reportages/<slug>/` |
+| À propos | `Karine_Bauzin_cfgzty` | racine du cloud |
 
-| Contenu | Dossier / public_id |
-|---------|---------------------|
-| Portraits | `portraits/...` |
-| Reportages | `reportages/<slug>/...` |
-| Hero accueil | `home/hero` |
-| À propos | `about/portrait` |
-| Couvertures livres (optionnel plus tard) | `livres/<slug>` |
-
-Exemple : photo d’un projet « swiss-cup-mulet » →  
-`karine-bauzin/reportages/swiss-cup-mulet/photo-01`
+Exemple reportage : `reportages/swiss-cup-mulet/DSC3225`
 
 ### Workflow — ajouter ou enrichir une galerie
 
 1. Ouvrir [console.cloudinary.com](https://console.cloudinary.com) → **Assets**
-2. Créer / ouvrir le dossier correspondant au slug (voir tableau ci-dessus)
-3. **Upload** les JPG / PNG
-4. Dans Cursor : demander d’ajouter la galerie ou les photos dans `src/config/site.ts` (titre, intro, `public_id` / liste d’images)
-5. Vérifier en local avec `npm run dev`
-6. Commit + push du **code** uniquement (pas les binaires Cloudinary)
+2. Uploader dans le dossier du slug
+3. Dans Cursor : demander d’ajouter les `public_id` dans `src/config/site.ts`
+4. Vérifier en local avec `npm run dev`
+5. Commit + push du **code** uniquement (pas les binaires Cloudinary)
 
 Aucune photo de galerie à committer dans Git.
 
@@ -87,15 +87,14 @@ Chemins référencés dans `livres.items[].image` (`site.ts`).
 2. Mettre à jour `image: "/books/..."` dans `site.ts`
 3. Commit du fichier + du code
 
-## Placeholders Unsplash (temporaire)
+## Replis Unsplash / ancien site
 
-Encore utilisés tant que Cloudinary n’est pas rempli :
+Toujours dans le code, **non affichés** tant que `.env` a un cloud name :
 
-- `portraitGallery`, `documentary.projects[]` dans `site.ts`
-- Hero accueil : Unsplash en dur dans `Home.tsx` (cible Cloudinary `home/hero`)
-- Portrait À propos : Unsplash en dur dans `About.tsx` (cible Cloudinary `about/portrait`)
+- `portraitGallery.placeholderImages` et `documentary.projects[].placeholderImages` dans `site.ts`
+- Portrait À propos : Unsplash en repli dans `About.tsx`
 
-À remplacer par des `public_id` Cloudinary + `resolveImageUrl()`.
+Les galeries Portraits et Reportages, et le portrait À propos, sont **branchés Cloudinary**.
 
 ## Développement local
 

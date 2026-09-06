@@ -14,7 +14,7 @@ Public cible : Benoît et Karine (éditeur / éditrice via Cursor).
 |---------|------|
 | **Code** (`src/`) | Textes, structure des pages, menu, URLs |
 | **`src/config/site.ts`** | Fichier éditorial principal (copie **locale** sur le Mac) |
-| **Cloudinary** | **Toutes les photos de galeries** (portraits, reportages, hero…) |
+| **Cloudinary** | **Photos de galeries** (portraits, reportages) + portrait À propos |
 | **`public/books/`** | Couvertures livres + affiche film (dans Git) |
 | **`public/trustj-logo.png`** | Badge Trust-J (page Contact, dans Git) |
 | **GitHub** | Code source |
@@ -22,7 +22,7 @@ Public cible : Benoît et Karine (éditeur / éditrice via Cursor).
 
 **Important :** `site.ts` se modifie en local (projet ouvert dans Cursor), pas directement sur GitHub. Après commit + push, GitHub se met à jour.
 
-Les URLs Unsplash encore visibles sont des **placeholders temporaires**. Les vraies photos de galerie vont sur **Cloudinary**.
+Les URLs Unsplash encore dans le code sont des **replis**. Les photos de galerie et le portrait À propos sont sur **Cloudinary**.
 
 ### Fichiers utiles
 
@@ -30,13 +30,13 @@ Les URLs Unsplash encore visibles sont des **placeholders temporaires**. Les vra
 |---------|---------|
 | `src/config/site.ts` | Contenu éditorial |
 | `src/config/navigation.ts` | Menu (généré depuis `site.ts`) |
-| `src/app/components/About.tsx` | Bio, stats, expositions, philosophie |
+| `src/app/components/About.tsx` | Bio, stats, portrait Cloudinary |
 | `src/app/components/Contact.tsx` | Formulaire + affichage Trust-J |
 | `public/books/` | Couvertures livres/films |
 | `public/trustj-logo.png` | Logo Trust-J |
 | `docs/ARCHITECTURE.md` | Structure technique |
 | `docs/MEDIA.md` | Emplacement des images + Cloudinary |
-| `.env` | `VITE_CLOUDINARY_CLOUD_NAME`, `VITE_CLOUDINARY_FOLDER` |
+| `.env` | `VITE_CLOUDINARY_CLOUD_NAME` ; `VITE_CLOUDINARY_FOLDER` **vide** |
 
 ### Sections dans `site.ts`
 
@@ -81,11 +81,10 @@ Pas besoin de Cloudinary pour du texte.
 
 ### B. Ajouter une galerie + des images
 
-1. **Cloudinary** → créer le dossier (ex. `karine-bauzin/reportages/mon-projet/`)
-2. **Upload** les photos dans ce dossier
-3. Dans Cursor : *« Ajoute le projet reportage mon-projet avec ces photos Cloudinary »*
-4. L’assistant met à jour `site.ts` (slug, titre, intro, images)
-5. Vérifier en local → commit / push du **code** seulement
+1. **Cloudinary** → uploader dans le dossier du slug (ex. `karinebauzin/reportages/mon-projet/`)
+2. Dans Cursor : *« Ajoute le projet reportage mon-projet avec ces photos Cloudinary »*
+3. L’assistant met à jour `site.ts` (slug, titre, intro, `cloudinaryIds` du type `reportages/mon-projet/nom`)
+4. Vérifier en local → commit / push du **code** seulement
 
 Voir `docs/MEDIA.md` pour la convention de dossiers Cloudinary.
 
@@ -110,7 +109,7 @@ Champs d’une fiche livre :
 | Champ | Usage |
 |-------|-------|
 | `slug`, `path`, `title` | URL et titre |
-| `description` | Résumé (hub + haut de page) |
+| `description` | Résumé (page détail livre ; **pas** affiché sur le hub `/livres`) |
 | `body` | Texte principal |
 | `image` | Couverture `/books/...` |
 | `price`, `shippingFee` | CHF |
@@ -142,7 +141,7 @@ Les métadonnées (photographies, éditeur, ISBN, prix, TWINT) passent par `Book
   path: "/reportages/mon-projet",
   title: "Mon projet",
   intro: "Texte d'introduction.",
-  // images : public_id Cloudinary (pas Unsplash en prod)
+  cloudinaryIds: ["reportages/mon-projet/photo-01"],
 },
 ```
 
@@ -195,7 +194,7 @@ Sans `price` : pas de ligne prix/TWINT, pas de bouton commander.
 
 | Problème | Cause | Solution |
 |----------|-------|----------|
-| Galerie vide / placeholders Unsplash | Photos pas encore sur Cloudinary | Upload + brancher les `public_id` |
+| Galerie vide / Unsplash | `.env` sans cloud name, ou IDs manquants | Remplir `VITE_CLOUDINARY_CLOUD_NAME` (folder **vide**) + `cloudinaryIds` |
 | Mauvais dossier Cloudinary | Slug ≠ chemin | Aligné sur `docs/MEDIA.md` |
 | Page 404 | `path` / `slug` incohérent | `path` = `/reportages/` ou `/livres/` + slug |
 | Métadonnées en double dans un livre | Texte dans `body` + champs | Garder les champs structurés |

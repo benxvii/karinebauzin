@@ -3,13 +3,13 @@
 ## Fait
 
 - Page **Reportages** (`/reportages`) : 13 galeries Press, photos sur Cloudinary
+- `/` redirige vers `/reportages`
+- Portrait À propos : Cloudinary `Karine_Bauzin_cfgzty`
 - Media Library : `karinebauzin/portraits/` et `karinebauzin/reportages/<slug>/`
 - Public ID reportages (dans `site.ts`) : `reportages/<slug>/nom-fichier`
 - `VITE_CLOUDINARY_FOLDER` reste **vide** (sinon les URLs portraits cassent)
-
-## Cloudinary — images encore manquantes
-
-- [ ] Portrait À propos (`About.tsx`) : Unsplash → `about/portrait`
+- Galeries : masonry + lightbox
+- Hubs sans CTA ; titres en majuscules ; hub Livres sans texte sous le titre
 
 Les galeries Portraits et Reportages sont branchées. Détail : `docs/MEDIA.md`.
 
@@ -21,7 +21,7 @@ Les galeries Portraits et Reportages sont branchées. Détail : `docs/MEDIA.md`.
 
 ## Look du site
 
-- [ ] Revoir si les fonts sont uniformes (polices et tailles)
+- [ ] Revoir si les fonts sont uniformes (DM Sans au header, IBM Plex chargé, corps encore stack système)
 
 ## Stats
 

@@ -26,7 +26,7 @@ Diagramme fonctionnel : `Diagramme WebSiteKarine.drawio` (racine du repo).
 Le routeur déclare un layout racine (`Layout`) commun à toutes les pages :
 
 ```
-/                       → Home
+/                       → redirige vers /reportages
 /about                  → About
 /portraits              → GalleryPortraits
 /corporate              → redirige vers /portraits
@@ -44,6 +44,8 @@ Le routeur déclare un layout racine (`Layout`) commun à toutes les pages :
 *                       → NotFound
 ```
 
+Redirections courtes : `/reportages/swiss-cu` → Swiss Cup Mulet, `/reportages/144` → 144 – SMUR.
+
 ## Fichiers de configuration
 
 | Fichier | Rôle |
@@ -53,9 +55,9 @@ Le routeur déclare un layout racine (`Layout`) commun à toutes les pages :
 | `src/lib/cloudinary.ts` | Construction d’URLs Cloudinary pour les **galeries** |
 | `.env` | `VITE_CLOUDINARY_CLOUD_NAME`, `VITE_CLOUDINARY_FOLDER` (voir `.env.example`) |
 
-**Médias :** les photos de galeries vivent sur **Cloudinary** (voir `docs/MEDIA.md`). Les couvertures livres restent dans `public/books/` (Git). Les Unsplash encore présents sont des placeholders temporaires.
+**Médias :** les photos de galeries et le portrait À propos vivent sur **Cloudinary** (voir `docs/MEDIA.md`). Les couvertures livres restent dans `public/books/` (Git). Les Unsplash encore présents sont des **replis** si Cloudinary n’est pas configuré.
 
-Le menu se met à jour **automatiquement** à partir de `site.ts` via `navigation.ts`. Pas besoin de toucher à `navigation.ts` pour ajouter un livre ou un projet documentaire.
+Le menu se met à jour **automatiquement** à partir de `site.ts` via `navigation.ts`. Pas besoin de toucher à `navigation.ts` pour ajouter un livre ou un projet reportage.
 
 ## Layouts et wrappers partagés
 
@@ -63,20 +65,25 @@ Le menu se met à jour **automatiquement** à partir de `site.ts` via `navigatio
 
 - Composant : `src/app/components/Layout.tsx`
 - Données : `navigation.ts` (`mainNavigation`), `site.ts` (`site`)
-- Header : `site.name` + sous-titre « Photographe » (classes `.site-name` / `.site-tagline` dans `src/styles/fonts.css`), lien vers `/`
-- Footer : téléphone, email, Instagram, LinkedIn — téléphone et email masqués sur `/contact`
+- Header : `site.name` + sous-titre « Photographe » (classes `.site-name` / `.site-tagline` dans `src/styles/fonts.css`), lien vers `/reportages`
+- Footer : copyright (plus petit) à gauche, icônes Instagram et LinkedIn **centrées**. Pas de téléphone ni d’email (ils restent sur `/contact`)
 
 ### Wrapper « hub » (grille de cartes)
 
 - Composant : `src/app/components/SectionHub.tsx`
 - Titre de section en `sr-only` (pas de bandeau visible)
+- Cartes : image + titre en majuscules (`text-base`), sans CTA « Voir le… »
+- Hub Livres : titres seuls (descriptions non passées)
+- Hub Reportages : intro du projet sous le titre si elle n’est pas vide
 - Utilisé par :
   - `DocumentaireIndex.tsx`
   - `LivresIndex.tsx`
 
-### Galerie photo (grille d’images)
+### Galerie photo
 
 - Composant : `src/app/components/GalleryPage.tsx`
+- Layout : colonne vide sticky 1/3 à gauche (desktop `lg`), masonry CSS (`columns-1 md:columns-2`) dans les 2/3 droits
+- Clic image → `Lightbox.tsx` (plein écran, Escape, flèches, clic gauche/droite)
 - `showHeader` (défaut `true`) : bandeau titre + intro ; `false` = grille seule
 - Utilisé par :
   - `GalleryPortraits.tsx` → `/portraits` (`showHeader={false}`)
@@ -84,45 +91,43 @@ Le menu se met à jour **automatiquement** à partir de `site.ts` via `navigatio
 
 ## Pages (routes)
 
-### `/` — Accueil
+### `/` — Entrée
 
-- Composant : `src/app/components/Home.tsx`
-- Données : `site`, `portraitGallery`, `documentary`, `livres`
-- Hero plein écran (Unsplash temporaire) + liens vers les sections principales
+Redirige vers `/reportages`. Pas de composant `Home.tsx`.
 
 ### `/about` — À propos
 
 - Composant : `src/app/components/About.tsx`
 - Bio : 10 paragraphes **dans** `About.tsx` (pas dans `site.ts`), sans titre « KARINE BAUZIN » au-dessus
-- Stats réelles (caméras, ouvrages, documentaire, images, personnes)
-- Sections Expositions & Publications / Philosophie : encore en lorem
-- Portrait : Unsplash temporaire (cible Cloudinary `about/portrait`)
+- Paragraphes : style global (`p` dans `theme.css`) — 16px, gray-600, interligne 1.375, alignés à gauche
+- Stats (caméras, ouvrages, documentaire, images, personnes)
+- Portrait : Cloudinary `Karine_Bauzin_cfgzty` via `resolveImageUrl()` (Unsplash en repli)
 
 ### `/portraits`
 
 - Composant : `GalleryPortraits.tsx`
 - Données : `portraitGallery` dans `site.ts`
 - Grille seule, sans bandeau titre/intro
-- Images : **Cloudinary** (cible) ; placeholders Unsplash temporaires dans `placeholderImages[]`
+- Images : **Cloudinary** (`cloudinaryIds[]`) ; Unsplash dans `placeholderImages[]` uniquement en repli
 
 ### `/reportages` et `/reportages/:slug`
 
 - Index : `DocumentaireIndex.tsx` → hub `SectionHub`
 - Détail : `DocumentaireProject.tsx` → `GalleryPage`
-- Données : `documentary.projects[]` dans `site.ts` (`cloudinaryFolder: "reportages"`)
-- Projets : 13 galeries Press (Swiss Cup Mulet, 144 – SMUR, EXIT, etc.)
+- Données : `documentary.projects[]` dans `site.ts`
+- Public ID : `reportages/<slug>/nom-fichier` (`VITE_CLOUDINARY_FOLDER` vide)
+- 13 galeries Press (Swiss Cup Mulet, 144 – SMUR, EXIT, etc.)
 
 ### `/livres` et `/livres/:slug`
 
-- Index : `LivresIndex.tsx` → hub `SectionHub`
-- Détail : `LivreDetail.tsx`
+- Index : `LivresIndex.tsx` → hub `SectionHub` (image + titre, pas de résumé)
+- Détail : `LivreDetail.tsx` (titre en majuscules)
 - Données : `livres.items[]` dans `site.ts`
-- Livres : 7 ouvrages + 1 film (`kind: "film"`)
-- Métadonnées page détail (livres uniquement) : composant `BookMeta` dans `LivreDetail.tsx`
+- 7 ouvrages + 1 film (`kind: "film"`)
+- Métadonnées page détail (livres uniquement) : `BookMeta` dans `LivreDetail.tsx`
   - Photographies : Karine Bauzin
-  - Statut (`availability`) si défini — ex. « Ouvrage épuisé »
-  - Éditeur (`publisher`) si défini
-  - ISBN, langue, pages, format
+  - Statut (`availability`) si défini
+  - Éditeur, ISBN, langue, pages, format
   - Prix, frais de port, commande TWINT
   - Bouton « Commander par email » si `price` défini
 
@@ -135,8 +140,10 @@ Le menu se met à jour **automatiquement** à partir de `site.ts` via `navigatio
 ## Composants partagés (UI)
 
 - Images avec repli : `src/app/components/figma/ImageWithFallback.tsx`
+- Lightbox : `src/app/components/Lightbox.tsx`
 - Composants shadcn : `src/app/components/ui/*.tsx`
-- Styles : `src/styles/theme.css` (couleur accent `--brand: #7a2032`), `fonts.css` (DM Sans, `.site-name` / `.site-tagline`)
+- Styles : `src/styles/theme.css` (`--brand: #7a2032`, style des `p`), `fonts.css` (DM Sans pour `.site-name` / `.site-tagline`)
+- Polices chargées dans `index.html` : DM Sans (header) + IBM Plex Sans
 
 ## Identité du site (`site.ts` → objet `site`)
 
@@ -153,6 +160,6 @@ Le menu se met à jour **automatiquement** à partir de `site.ts` via `navigatio
 
 - **Code** : GitHub (`benxvii/karinebauzin`)
 - **Hébergement** : Vercel ou Netlify (recommandé dans le README)
-- **Images galeries** : Cloudinary (dès le départ — voir `MEDIA.md`)
+- **Images galeries + portrait À propos** : Cloudinary
 - **Couvertures livres** : `public/books/` dans Git
 - **Logo Trust-J** : `public/trustj-logo.png` dans Git
