@@ -13,6 +13,7 @@ export default function DocumentaireIndex() {
     <SectionHub
       title={documentary.title}
       imageFit="cover"
+      loading={loading}
       items={documentary.projects.map((p) => {
         const entry = findManifestGallery(
           galleries,
