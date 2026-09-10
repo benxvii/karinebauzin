@@ -53,9 +53,11 @@ Redirections courtes : `/reportages/swiss-cu` → Swiss Cup Mulet, `/reportages/
 | `src/config/site.ts` | Contenu éditorial : identité, galeries, reportages, livres/films |
 | `src/config/navigation.ts` | Menu principal (dérivé automatiquement de `site.ts`) |
 | `src/lib/cloudinary.ts` | Construction d’URLs Cloudinary pour les **galeries** |
-| `.env` | `VITE_CLOUDINARY_CLOUD_NAME`, `VITE_CLOUDINARY_FOLDER` (voir `.env.example`) |
+| `.env` | `VITE_CLOUDINARY_CLOUD_NAME`, `VITE_CLOUDINARY_FOLDER` (`karinebauzin`), `VITE_MANIFEST_URL` (voir `.env.example`) |
+| `src/hooks/useGalleries.ts` | Charge le manifeste `_galleries.json` (Cloudinary, puis copie locale) |
+| `scripts/sync-galleries.mjs` | Liste les photos Cloudinary et publie le manifeste |
 
-**Médias :** les photos de galeries et le portrait À propos vivent sur **Cloudinary** (voir `docs/MEDIA.md`). Les couvertures livres restent dans `public/books/` (Git). Les Unsplash encore présents sont des **replis** si Cloudinary n’est pas configuré.
+**Médias :** les photos de galeries vivent sur **Cloudinary** et sont listées par le manifeste `_galleries.json` (voir `docs/MEDIA.md`). Le portrait À propos reste un public ID fixe. Les couvertures livres restent dans `public/books/` (Git). Les Unsplash encore présents sont des **replis** si une galerie n’est pas dans le manifeste.
 
 Le menu se met à jour **automatiquement** à partir de `site.ts` via `navigation.ts`. Pas besoin de toucher à `navigation.ts` pour ajouter un livre ou un projet reportage.
 
@@ -108,14 +110,14 @@ Redirige vers `/reportages`. Pas de composant `Home.tsx`.
 - Composant : `GalleryPortraits.tsx`
 - Données : `portraitGallery` dans `site.ts`
 - Grille seule, sans bandeau titre/intro
-- Images : **Cloudinary** (`cloudinaryIds[]`) ; Unsplash dans `placeholderImages[]` uniquement en repli
+- Images : manifeste Cloudinary (`useGalleries`) ; Unsplash dans `placeholderImages[]` uniquement si la galerie n’est pas encore sync
 
 ### `/reportages` et `/reportages/:slug`
 
 - Index : `DocumentaireIndex.tsx` → hub `SectionHub`
-- Détail : `DocumentaireProject.tsx` → `GalleryPage`
-- Données : `documentary.projects[]` dans `site.ts`
-- Public ID : `reportages/<slug>/nom-fichier` (`VITE_CLOUDINARY_FOLDER` vide)
+- Détail : `DocumentaireProject.tsx` → `GalleryPage` (photos via manifeste)
+- Données éditoriales : `documentary.projects[]` dans `site.ts` (slug, titre, intro)
+- Dossier Cloudinary : `karinebauzin/reportages/<slug>/`
 - 13 galeries Press (Swiss Cup Mulet, 144 – SMUR, EXIT, etc.)
 
 ### `/livres` et `/livres/:slug`
@@ -156,10 +158,10 @@ Redirige vers `/reportages`. Pas de composant `Home.tsx`.
 | Logo | `/logo.png` (favicon ; header en texte) |
 | Trust-J | `site.trustJ` — texte, URL trust-j.org, logo `/trustj-logo.png` |
 
-## Déploiement prévu
+## Déploiement
 
-- **Code** : GitHub (`benxvii/karinebauzin`)
-- **Hébergement** : Vercel ou Netlify (recommandé dans le README)
-- **Images galeries + portrait À propos** : Cloudinary
+- **Code** : GitHub (`benxvii/karinebauzin`) → FTP Infomaniak (`.github/workflows/deploy.yml`)
+- **Galeries** : Cloudinary + workflow **Sync galleries from Cloudinary** (cron 5h UTC)
+- **Portrait À propos** : Cloudinary `Karine_Bauzin_cfgzty`
 - **Couvertures livres** : `public/books/` dans Git
 - **Logo Trust-J** : `public/trustj-logo.png` dans Git

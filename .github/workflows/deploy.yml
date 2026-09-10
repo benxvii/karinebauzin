@@ -29,7 +29,8 @@ jobs:
       - name: Build
         env:
           VITE_CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
-          VITE_CLOUDINARY_FOLDER: ${{ secrets.CLOUDINARY_FOLDER }}
+          VITE_CLOUDINARY_FOLDER: ${{ secrets.CLOUDINARY_FOLDER || 'karinebauzin' }}
+          VITE_MANIFEST_URL: https://res.cloudinary.com/${{ secrets.CLOUDINARY_CLOUD_NAME }}/raw/upload/${{ secrets.CLOUDINARY_FOLDER || 'karinebauzin' }}/_galleries.json
         run: npm run build
 
       - name: Deploy via FTP

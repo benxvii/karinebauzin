@@ -17,12 +17,12 @@ Public cible : Benoît et Karine (éditeur / éditrice via Cursor).
 | **Cloudinary** | **Photos de galeries** (portraits, reportages) + portrait À propos |
 | **`public/books/`** | Couvertures livres + affiche film (dans Git) |
 | **`public/trustj-logo.png`** | Badge Trust-J (page Contact, dans Git) |
-| **GitHub** | Code source |
-| **Vercel / Netlify** | Hébergement prévu |
+| **GitHub** | Code source + workflow **Sync galleries from Cloudinary** |
+| **Infomaniak** | Hébergement (deploy FTP via GitHub Actions) |
 
 **Important :** `site.ts` se modifie en local (projet ouvert dans Cursor), pas directement sur GitHub. Après commit + push, GitHub se met à jour.
 
-Les URLs Unsplash encore dans le code sont des **replis**. Les photos de galerie et le portrait À propos sont sur **Cloudinary**.
+Les photos de galerie viennent du manifeste Cloudinary (`_galleries.json`). Les URLs Unsplash dans `placeholderImages[]` ne s’affichent que si une galerie n’est pas encore dans le manifeste.
 
 ### Fichiers utiles
 
@@ -36,7 +36,9 @@ Les URLs Unsplash encore dans le code sont des **replis**. Les photos de galerie
 | `public/trustj-logo.png` | Logo Trust-J |
 | `docs/ARCHITECTURE.md` | Structure technique |
 | `docs/MEDIA.md` | Emplacement des images + Cloudinary |
-| `.env` | `VITE_CLOUDINARY_CLOUD_NAME` ; `VITE_CLOUDINARY_FOLDER` **vide** |
+| `.env` | `VITE_CLOUDINARY_CLOUD_NAME` ; `VITE_CLOUDINARY_FOLDER=karinebauzin` ; `VITE_MANIFEST_URL` |
+| `scripts/sync-galleries.mjs` | Scan Cloudinary → `_galleries.json` |
+| `public/_galleries.json` | Copie locale du manifeste (secours) |
 
 ### Sections dans `site.ts`
 
@@ -79,14 +81,15 @@ git push origin main
 
 Pas besoin de Cloudinary pour du texte.
 
-### B. Ajouter une galerie + des images
+### B. Ajouter des photos à une galerie existante
 
-1. **Cloudinary** → uploader dans le dossier du slug (ex. `karinebauzin/reportages/mon-projet/`)
-2. Dans Cursor : *« Ajoute le projet reportage mon-projet avec ces photos Cloudinary »*
-3. L’assistant met à jour `site.ts` (slug, titre, intro, `cloudinaryIds` du type `reportages/mon-projet/nom`)
-4. Vérifier en local → commit / push du **code** seulement
+**Aucune modification de code.** Uniquement Cloudinary + sync.
 
-Voir `docs/MEDIA.md` pour la convention de dossiers Cloudinary.
+1. **Cloudinary** → uploader dans le dossier du slug (ex. `karinebauzin/reportages/swiss-cup-mulet/`)
+2. GitHub → **Actions** → **Sync galleries from Cloudinary** → Run
+3. Recharger la page. Pas de `git push`.
+
+Pour un **nouveau** reportage : upload Cloudinary + une entrée slug/titre dans `site.ts` (sans liste de photos) + sync. Voir section 2.
 
 ---
 
@@ -126,13 +129,47 @@ Les métadonnées (photographies, éditeur, ISBN, prix, TWINT) passent par `Book
 
 ### Ajouter des photos à une galerie existante
 
-1. Upload Cloudinary dans le **bon dossier** (même slug que dans `site.ts`)
-2. Demander à Cursor de brancher les nouveaux `public_id` / URLs dans `site.ts`
-3. Pas de commit d’images binaires de galerie
+**Aucune modification de code.**
+
+#### Étape A — Uploader sur Cloudinary
+
+1. [console.cloudinary.com](https://console.cloudinary.com) → **Assets**
+2. Dossier de la galerie, par exemple :
+
+```
+karinebauzin/portraits/
+karinebauzin/reportages/swiss-cup-mulet/
+```
+
+3. **Upload** → glisser les JPG
+
+| Galerie dans `site.ts` | Dossier Cloudinary |
+|------------------------|--------------------|
+| `portraitGallery` (`slug: "portraits"`) | `karinebauzin/portraits/` |
+| `slug: "swiss-cup-mulet"` | `karinebauzin/reportages/swiss-cup-mulet/` |
+| `slug: "144-smur"` | `karinebauzin/reportages/144-smur/` |
+
+#### Étape B — Synchroniser le manifeste
+
+1. GitHub → repo → **Actions**
+2. **Sync galleries from Cloudinary** → **Run workflow**
+3. Attendre le ✅ vert (~30 s)
+
+En local : `npm run sync:galleries` si les clés API sont dans l’environnement. Sinon GitHub → **Actions** → **Sync galleries from Cloudinary**.
+
+Sur GitHub, le workflow a besoin des secrets `CLOUDINARY_API_KEY` et `CLOUDINARY_API_SECRET` (en plus de `CLOUDINARY_CLOUD_NAME` déjà présent).
+
+Le workflow tourne aussi tout seul chaque jour à 5h UTC.
+
+#### Étape C — Vérifier
+
+Recharger `/portraits` ou `/reportages/<slug>`.
+
+**Pas de `git push` nécessaire.**
 
 ### Créer un nouveau projet reportage (galerie)
 
-1. Cloudinary : `…/reportages/<slug>/` + upload
+1. Cloudinary : `karinebauzin/reportages/<slug>/` + upload
 2. Cursor ajoute dans `documentary.projects` :
 
 ```ts
@@ -141,16 +178,18 @@ Les métadonnées (photographies, éditeur, ISBN, prix, TWINT) passent par `Book
   path: "/reportages/mon-projet",
   title: "Mon projet",
   intro: "Texte d'introduction.",
-  cloudinaryIds: ["reportages/mon-projet/photo-01"],
+  placeholderImages: [],
 },
 ```
+
+3. Optionnel : titre dans `scripts/galleries-meta.json` sous `"reportages/mon-projet"`
+4. Lancer **Sync galleries from Cloudinary**
 
 Pas de modification de `routes.ts` / `navigation.ts` : le menu se met à jour tout seul.
 
 ### Autres galeries (portraits)
 
-Même principe Cloudinary + mise à jour des listes d’images dans `site.ts`.  
-Une **nouvelle section** hors Reportages / Livres peut aussi demander une route dans `routes.ts` (plus rare).
+Même geste : upload dans `karinebauzin/portraits/` + sync. Pas de liste de photos dans `site.ts`.
 
 ---
 
@@ -184,7 +223,8 @@ Sans `price` : pas de ligne prix/TWINT, pas de bouton commander.
 |-------|------------|----------|----------|
 | Modifier un texte | — | `site.ts` (ou `About.tsx` / `Contact.tsx`) | ✅ |
 | Badge Trust-J | — | `site.trustJ` + `public/trustj-logo.png` | ✅ |
-| Ajouter photos / nouvelle galerie | ✅ upload | `site.ts` | ✅ code |
+| Ajouter photos (galerie existante) | ✅ upload + sync | — | non |
+| Nouveau projet reportage | ✅ upload + sync | `site.ts` (slug/titre) | ✅ code |
 | Couverture de livre | — | `public/books/` + `site.ts` | ✅ |
 | Livre / film | — | `site.ts` | ✅ |
 
@@ -194,7 +234,7 @@ Sans `price` : pas de ligne prix/TWINT, pas de bouton commander.
 
 | Problème | Cause | Solution |
 |----------|-------|----------|
-| Galerie vide / Unsplash | `.env` sans cloud name, ou IDs manquants | Remplir `VITE_CLOUDINARY_CLOUD_NAME` (folder **vide**) + `cloudinaryIds` |
+| Galerie vide / Unsplash | Manifeste pas à jour, ou `.env` sans cloud name | Lancer **Sync galleries** |
 | Mauvais dossier Cloudinary | Slug ≠ chemin | Aligné sur `docs/MEDIA.md` |
 | Page 404 | `path` / `slug` incohérent | `path` = `/reportages/` ou `/livres/` + slug |
 | Métadonnées en double dans un livre | Texte dans `body` + champs | Garder les champs structurés |
@@ -206,9 +246,9 @@ Sans `price` : pas de ligne prix/TWINT, pas de bouton commander.
 
 > Change l’intro de « Cabines de plage » dans site.ts avec ce texte : …
 
-> J’ai uploadé des photos dans Cloudinary sous reportages/swiss-cup-mulet. Branche-les sur le projet Swiss Cup Mulet.
+> J’ai uploadé des photos dans Cloudinary sous karinebauzin/reportages/swiss-cup-mulet. Comment je lance le sync ?
 
-> Ajoute un projet reportage « mon-projet » : titre …, intro …, photos déjà sur Cloudinary dans reportages/mon-projet/.
+> Ajoute un projet reportage « mon-projet » : titre …, intro …. Photos déjà sur Cloudinary dans karinebauzin/reportages/mon-projet/.
 
 > Remplace la couverture de Portraits-ge.ch : fichier dans public/books/, mockup fond blanc légèrement incliné.
 

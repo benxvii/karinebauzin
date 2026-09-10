@@ -25,10 +25,11 @@ export function cloudinaryUrl(
 
   const transformSegment =
     transforms.length > 0 ? `${transforms.join(",")}/` : "";
-  const folder = import.meta.env.VITE_CLOUDINARY_FOLDER;
-  const path = folder ? `${folder}/${publicId}` : publicId;
 
-  return `https://res.cloudinary.com/${cloudName}/image/upload/${transformSegment}${path}`;
+  // Public ID Cloudinary tel quel. VITE_CLOUDINARY_FOLDER est la racine Media
+  // Library (manifeste + sync), pas un préfixe d’URL : chez Karine les portraits
+  // sont à la racine du cloud (`KB06434-1_bd3zvy`), pas sous karinebauzin/.
+  return `https://res.cloudinary.com/${cloudName}/image/upload/${transformSegment}${publicId}`;
 }
 
 /** URL Cloudinary ou image de repli (placeholder local / Unsplash). */
@@ -42,18 +43,4 @@ export function resolveImageUrl(
     if (url) return url;
   }
   return fallbackUrl;
-}
-
-/** Public ID Cloudinary si le cloud name est configuré, sinon les fallbacks. */
-export function resolveGalleryImages(
-  cloudinaryIds: readonly string[] | undefined,
-  fallbacks: readonly string[],
-  options?: CloudinaryTransform,
-): string[] {
-  if (cloudinaryIds?.length) {
-    return cloudinaryIds.map((id, index) =>
-      resolveImageUrl(id, fallbacks[index] ?? fallbacks[0] ?? "", options),
-    );
-  }
-  return [...fallbacks];
 }

@@ -6,7 +6,7 @@ Où sont les images, comment les ajouter, et ce qui est versionné dans Git.
 
 | Type d’image | Où ça vit | Qui gère |
 |--------------|-----------|----------|
-| **Galeries** (portraits, reportages) | **Cloudinary** | Upload Media Library + `cloudinaryIds` dans `site.ts` |
+| **Galeries** (portraits, reportages) | **Cloudinary** | Upload Media Library + workflow **Sync galleries** |
 | **Portrait À propos** | **Cloudinary** | `Karine_Bauzin_cfgzty` dans `About.tsx` |
 | **Couvertures livres / affiche film** | `public/books/` (Git) | Fichier local + chemin dans `site.ts` |
 | **Logo / favicon** | `public/logo.png` (Git) | Rarement modifié |
@@ -14,47 +14,62 @@ Où sont les images, comment les ajouter, et ce qui est versionné dans Git.
 
 Les galeries passent **directement par Cloudinary**. Pas d’upload de photos de galerie dans Git.
 
-Les URLs Unsplash (et quelques anciennes URLs `karinebauzin.ch`) dans `placeholderImages[]` sont des **replis** : elles ne s’affichent que si `VITE_CLOUDINARY_CLOUD_NAME` est vide.
+Les URLs Unsplash (et quelques anciennes URLs `karinebauzin.ch`) dans `placeholderImages[]` sont des **replis** : elles ne s’affichent que si la galerie n’est pas encore dans le manifeste `_galleries.json`.
 
 ## Cloudinary (source de vérité pour les galeries)
 
 Cloud : `VITE_CLOUDINARY_CLOUD_NAME` (ex. `duvuxd5kh`).
 
-**`VITE_CLOUDINARY_FOLDER` reste vide.** Les public ID n’incluent pas de préfixe de compte. Si on le remplit, les URLs portraits cassent.
+`VITE_CLOUDINARY_FOLDER=karinebauzin` : racine Media Library (manifeste `_galleries.json` + script de sync). **Pas** un préfixe d’URL image. Les public ID vont tels quels dans `res.cloudinary.com/.../image/upload/<public_id>` (portraits à la racine du cloud, reportages sous `reportages/<slug>/`).
+
+Même contrat que benoitdepagnier.ch (`VITE_CLOUDINARY_FOLDER=benoitdepagnier`).
 
 ### Config locale
 
 ```env
 # .env (copier depuis .env.example)
 VITE_CLOUDINARY_CLOUD_NAME=
-VITE_CLOUDINARY_FOLDER=
+VITE_CLOUDINARY_FOLDER=karinebauzin
+VITE_MANIFEST_URL=https://res.cloudinary.com/<cloud>/raw/upload/karinebauzin/_galleries.json
 ```
 
-Fichier utilitaire : `src/lib/cloudinary.ts`
+Les clés API (`CLOUDINARY_API_KEY` / `SECRET`, ou `CLOUDINARY_URL`) ne vont **pas** dans ce fichier. Elles restent dans GitHub Secrets pour le workflow de sync.
 
-- `cloudinaryUrl(publicId, options)` → URL transformée
-- `resolveImageUrl(publicId, fallbackUrl)` → Cloudinary ou repli
-- `resolveGalleryImages(ids, fallbacks)` → liste d’URLs
+Fichiers :
 
-### Convention des public ID
+- `src/lib/cloudinary.ts` — URLs images
+- `src/lib/galleryManifest.ts` — URLs du manifeste
+- `src/hooks/useGalleries.ts` — chargement runtime
+- `scripts/sync-galleries.mjs` — scan Cloudinary + upload `_galleries.json`
 
-| Contenu | Public ID dans `site.ts` | Dossier Media Library (indicatif) |
-|---------|--------------------------|-----------------------------------|
-| Portraits | `NomFichier_hash` (racine) | `karinebauzin/portraits/` |
+### Convention des dossiers
+
+| Contenu | Public ID | Dossier Media Library |
+|---------|-----------|------------------------|
+| Portraits | `NomFichier_hash` (racine du cloud) | `karinebauzin/portraits/` |
 | Reportages | `reportages/<slug>/nom-fichier` | `karinebauzin/reportages/<slug>/` |
-| À propos | `Karine_Bauzin_cfgzty` | racine du cloud |
+| À propos | `Karine_Bauzin_cfgzty` | racine du cloud (hors sync galeries) |
+| Manifeste | `karinebauzin/_galleries.json` | raw upload |
 
 Exemple reportage : `reportages/swiss-cup-mulet/DSC3225`
 
-### Workflow — ajouter ou enrichir une galerie
+### Workflow — ajouter des photos (galerie existante)
 
 1. Ouvrir [console.cloudinary.com](https://console.cloudinary.com) → **Assets**
 2. Uploader dans le dossier du slug
-3. Dans Cursor : demander d’ajouter les `public_id` dans `src/config/site.ts`
-4. Vérifier en local avec `npm run dev`
-5. Commit + push du **code** uniquement (pas les binaires Cloudinary)
+3. GitHub → **Actions** → **Sync galleries from Cloudinary** → Run (ou `npm run sync:galleries` en local)
+4. Recharger la page. **Pas de commit de photos**, pas besoin d’éditer `site.ts`
 
-Aucune photo de galerie à committer dans Git.
+Le cron GitHub relance le sync tous les jours à 5h UTC.
+
+### Workflow — nouveau reportage
+
+1. Upload Cloudinary dans `karinebauzin/reportages/<slug>/`
+2. Ajouter slug / titre / intro dans `documentary.projects` (`site.ts`)
+3. Optionnel : titre dans `scripts/galleries-meta.json`
+4. Lancer le sync
+
+Aucune photo de galerie à committer dans Git. `public/_galleries.json` est une copie de secours du manifeste.
 
 ## Couvertures livres (`public/books/`)
 
@@ -89,12 +104,21 @@ Chemins référencés dans `livres.items[].image` (`site.ts`).
 
 ## Replis Unsplash / ancien site
 
-Toujours dans le code, **non affichés** tant que `.env` a un cloud name :
+Toujours dans le code, **non affichés** tant que la galerie figure dans `_galleries.json` :
 
 - `portraitGallery.placeholderImages` et `documentary.projects[].placeholderImages` dans `site.ts`
 - Portrait À propos : Unsplash en repli dans `About.tsx`
 
 Les galeries Portraits et Reportages, et le portrait À propos, sont **branchés Cloudinary**.
+
+## Secrets GitHub Actions
+
+Le workflow **Sync galleries from Cloudinary** a besoin de (Settings → Secrets → Actions) :
+
+- `CLOUDINARY_CLOUD_NAME` (déjà là pour le deploy)
+- `CLOUDINARY_API_KEY`
+- `CLOUDINARY_API_SECRET`
+- `CLOUDINARY_FOLDER=karinebauzin` (optionnel : le workflow a ce défaut)
 
 ## Développement local
 

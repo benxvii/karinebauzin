@@ -1,18 +1,36 @@
 import SectionHub from "./SectionHub";
 import { documentary } from "../../config/site";
-import { resolveGalleryImages } from "../../lib/cloudinary";
+import { useGalleries } from "../../hooks/useGalleries";
+import {
+  findManifestGallery,
+  resolveGalleryDisplay,
+} from "../../lib/galleryImages";
 
 export default function DocumentaireIndex() {
+  const { galleries, loading } = useGalleries();
+
   return (
     <SectionHub
       title={documentary.title}
       imageFit="cover"
-      items={documentary.projects.map((p) => ({
-        path: p.path,
-        title: p.title,
-        description: p.intro,
-        image: resolveGalleryImages(p.cloudinaryIds, p.placeholderImages)[0],
-      }))}
+      items={documentary.projects.map((p) => {
+        const entry = findManifestGallery(
+          galleries,
+          p.slug,
+          documentary.cloudinaryFolder,
+        );
+        const images = resolveGalleryDisplay(
+          entry,
+          p.placeholderImages,
+          loading,
+        );
+        return {
+          path: p.path,
+          title: p.title,
+          description: p.intro,
+          image: images[0] ?? "",
+        };
+      })}
     />
   );
 }

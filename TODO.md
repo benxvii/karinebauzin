@@ -6,8 +6,7 @@
 - `/` redirige vers `/reportages`
 - Portrait À propos : Cloudinary `Karine_Bauzin_cfgzty`
 - Media Library : `karinebauzin/portraits/` et `karinebauzin/reportages/<slug>/`
-- Public ID reportages (dans `site.ts`) : `reportages/<slug>/nom-fichier`
-- `VITE_CLOUDINARY_FOLDER` reste **vide** (sinon les URLs portraits cassent)
+- Media Library : `karinebauzin/portraits/` et `karinebauzin/reportages/<slug>/`
 - Galeries : masonry + lightbox
 - Hubs sans CTA ; titres en majuscules ; hub Livres sans texte sous le titre
 

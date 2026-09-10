@@ -7,6 +7,9 @@ type GalleryPageProps = {
   intro: string;
   images: readonly string[];
   showHeader?: boolean;
+  loading?: boolean;
+  error?: string | null;
+  emptyMessage?: string;
 };
 
 export default function GalleryPage({
@@ -14,6 +17,9 @@ export default function GalleryPage({
   intro,
   images,
   showHeader = true,
+  loading = false,
+  error = null,
+  emptyMessage,
 }: GalleryPageProps) {
   return (
     <div>
@@ -29,7 +35,19 @@ export default function GalleryPage({
       )}
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <GalleryGrid images={images} title={title} />
+        {loading ? (
+          <p className="text-center text-gray-600">Chargement des photos…</p>
+        ) : error ? (
+          <p className="text-center text-red-700">
+            Impossible de charger la galerie ({error}). Vérifie{" "}
+            <code className="text-sm">VITE_MANIFEST_URL</code> et le workflow
+            Cloudinary.
+          </p>
+        ) : images.length === 0 && emptyMessage ? (
+          <p className="text-center text-gray-600 max-w-xl mx-auto">{emptyMessage}</p>
+        ) : (
+          <GalleryGrid images={images} title={title} />
+        )}
       </section>
     </div>
   );

@@ -20,14 +20,15 @@ npm run dev
 
 ## Configuration Cloudinary
 
-Les **galeries** (portraits, reportages) et le **portrait À propos** passent par Cloudinary.
+Les **galeries** (portraits, reportages) passent par Cloudinary + un manifeste `_galleries.json`.
+Le **portrait À propos** est un public ID fixe.
 
 1. Compte sur [cloudinary.com](https://cloudinary.com)
-2. Copier `.env.example` → `.env` et renseigner `VITE_CLOUDINARY_CLOUD_NAME` (`VITE_CLOUDINARY_FOLDER` reste **vide**)
-3. Uploader les photos dans la Media Library (`portraits/`, `reportages/<slug>/`, etc.)
-4. Brancher les `public_id` via `resolveImageUrl()` / `resolveGalleryImages()` (`src/lib/cloudinary.ts`) et `site.ts`
+2. Copier `.env.example` → `.env` : `VITE_CLOUDINARY_CLOUD_NAME`, `VITE_CLOUDINARY_FOLDER=karinebauzin`
+3. Uploader les photos dans la Media Library (`karinebauzin/portraits/`, `karinebauzin/reportages/<slug>/`)
+4. Lancer **Sync galleries from Cloudinary** (GitHub Actions) ou `npm run sync:galleries`
 
-Les Unsplash encore dans le code sont des **replis**.  
+Les Unsplash encore dans le code sont des **replis** si une galerie n’est pas dans le manifeste.
 Les couvertures livres restent dans `public/books/` (voir `docs/MEDIA.md`).
 
 ## GitHub
@@ -39,7 +40,7 @@ Déploiement conseillé : [Vercel](https://vercel.com) ou [Netlify](https://netl
 ## Personnalisation (résumé)
 
 - **Textes** : `src/config/site.ts` (copie locale dans Cursor)
-- **Nouvelle galerie / photos** : upload Cloudinary + entrée dans `site.ts`
+- **Nouvelle galerie / photos** : upload Cloudinary + workflow Sync galleries (`site.ts` seulement pour un nouveau slug)
 - **Livres** : `livres.items` + couvertures dans `public/books/`
 - **Logo** : `public/logo.png`
 

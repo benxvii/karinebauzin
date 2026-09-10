@@ -1,0 +1,44 @@
+{
+  "portraits": {
+    "title": "Portraits"
+  },
+  "reportages/swiss-cup-mulet": {
+    "title": "Swiss Cup Mulet"
+  },
+  "reportages/144-smur": {
+    "title": "144 – SMUR"
+  },
+  "reportages/dernier-voyage-exit": {
+    "title": "Dernier voyage – EXIT"
+  },
+  "reportages/agriculteurs-en-colere": {
+    "title": "Agriculteurs en colère"
+  },
+  "reportages/prune-nourry": {
+    "title": "Prune Nourry"
+  },
+  "reportages/maison-clarte-le-corbusier": {
+    "title": "Maison Clarté – Le Corbusier"
+  },
+  "reportages/grece-sans-bleu": {
+    "title": "Grèce sans bleu"
+  },
+  "reportages/paris-septembre-2020": {
+    "title": "Paris septembre 2020 – une rentrée sous virus"
+  },
+  "reportages/ete-2020-covid": {
+    "title": "été 2020 – Covid"
+  },
+  "reportages/johnny-ceremonie-anniversaire": {
+    "title": "Johnny – cérémonie anniversaire"
+  },
+  "reportages/paris-8-decembre-2018": {
+    "title": "Paris 8 décembre 2018"
+  },
+  "reportages/transsiberien-moscou-oulanbator": {
+    "title": "Transsibérien de Moscou à Oulan-Bator"
+  },
+  "reportages/mongolie": {
+    "title": "Mongolie"
+  }
+}
