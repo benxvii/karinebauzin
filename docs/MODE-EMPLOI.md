@@ -1,14 +1,20 @@
-# Mode d'emploi — modifications du site karinebauzin.ch
+# Mode d'emploi — karinebauzin.ch
 
-Guide pour travailler sur le site via **Cursor**, repo `benxvii/karinebauzin`.
+Tu n’as pas besoin d’apprendre à coder.
 
-Public cible : Benoît et Karine (éditeur / éditrice via Cursor).
+Tu parles à un assistant, en français, dans Cursor. Il fait les changements.
+
+Public : Karine (quotidien) et Benoît / l’assistant (détail technique). Repo `benxvii/karinebauzin`.
 
 ---
 
-## Avant de commencer
+## Trois endroits, trois rôles
 
-### Comment le site fonctionne
+**Les textes** (intros, fiches livres, email, téléphone, menu) vivent dans le projet, sur ton ordinateur. Tu les changes dans Cursor.
+
+**Les photos des galeries** (portraits, reportages) vivent dans une bibliothèque en ligne : Cloudinary. Tu y déposes tes images.
+
+**Le site en ligne** (karinebauzin.ch) se met à jour tout seul une fois tes changements envoyés. Tu n’as pas à te connecter chez l’hébergeur.
 
 | Élément | Rôle |
 |---------|------|
@@ -18,13 +24,100 @@ Public cible : Benoît et Karine (éditeur / éditrice via Cursor).
 | **`public/books/`** | Couvertures livres + affiche film (dans Git) |
 | **`public/trustj-logo.png`** | Badge Trust-J (page Contact, dans Git) |
 | **GitHub** | Code source + workflow **Sync galleries from Cloudinary** |
-| **Infomaniak** | Hébergement (deploy FTP via GitHub Actions) |
+| **Infomaniak** | Hébergement (deploy FTP via GitHub Actions). Benoît s’en occupe. |
 
-**Important :** `site.ts` se modifie en local (projet ouvert dans Cursor), pas directement sur GitHub. Après commit + push, GitHub se met à jour.
+`site.ts` se modifie en local (projet ouvert dans Cursor), pas directement sur GitHub. Après commit + push, le site se met à jour.
 
-Les photos de galerie viennent du manifeste Cloudinary (`_galleries.json`). Les URLs Unsplash dans `placeholderImages[]` ne s’affichent que si une galerie n’est pas encore dans le manifeste.
+Les photos de galerie viennent du manifeste Cloudinary (`_galleries.json`). Pas de liste de photos dans `site.ts`.
 
-### Fichiers utiles
+---
+
+## Quoi installer sur ton Mac
+
+**1. Cursor**  
+L’application où tu ouvres le projet et tu parles à l’assistant.
+
+[cursor.com](https://cursor.com)
+
+**2. Node.js**  
+Un petit programme (prendre la version **LTS**). Sans lui, tu ne peux pas voir le site sur ton ordi avant de publier.
+
+[nodejs.org](https://nodejs.org)
+
+Git est souvent déjà là. Cursor le propose aussi à l’installation.
+
+### Première mise en route
+
+1. Ouvrir le projet dans Cursor
+2. Dans le terminal, une seule fois : `npm install`
+3. Pour voir le site chez toi : `npm run dev`
+4. Ouvrir l’adresse qui s’affiche (souvent http://localhost:5173)
+
+---
+
+## Où te connecter
+
+Benoît t’invite sur le projet GitHub et te donne l’accès Cloudinary. Dans Cursor, tu te connectes une fois avec GitHub.
+
+| Où | Adresse | À quoi ça sert |
+| --- | --- | --- |
+| **Cursor** | l’appli sur ton Mac | Modifier les textes, ajouter un livre ou un reportage. Tu parles à l’assistant. |
+| **GitHub** | [github.com](https://github.com) | Envoyer tes changements. Après un dépôt de photos : Actions → *Sync galleries from Cloudinary* → Run. |
+| **Cloudinary** | [console.cloudinary.com](https://console.cloudinary.com) | Déposer tes photos dans le bon dossier. |
+
+Tu n’as pas besoin du compte Infomaniak au quotidien.
+
+---
+
+## Les 2 gestes du quotidien
+
+### Changer un texte
+
+1. Ouvrir Cursor
+2. Dire par exemple : *Change l’intro de Cabines de plage avec ce texte : …*
+3. Regarder le résultat en local
+4. Demander à l’assistant d’envoyer les changements
+
+Pas besoin de Cloudinary pour du texte.
+
+### Ajouter des photos à une galerie qui existe déjà
+
+Aucune modification de code. Uniquement Cloudinary + sync.
+
+1. Aller sur Cloudinary
+2. Glisser tes JPG dans le dossier du reportage (ou Portraits)
+3. GitHub → Actions → *Sync galleries from Cloudinary* → Run
+4. Recharger la page
+
+Pas besoin de Cursor pour ça. Pas de `git push`.
+
+Un **nouveau reportage**, c’est les deux : une ligne de texte via Cursor, plus les photos via Cloudinary.
+
+---
+
+## Phrases à dire à l’assistant
+
+> Change l’intro de Cabines de plage avec ce texte : …
+
+> Ajoute un projet reportage « mon-projet », titre …, intro …
+
+> Remplace la couverture de Portraits-ge.ch. Le fichier est dans public/books/.
+
+> Envoie les changements avec un message en français.
+
+> J’ai uploadé des photos dans Cloudinary sous karinebauzin/reportages/swiss-cup-mulet. Comment je lance le sync ?
+
+> Ajoute un projet reportage « mon-projet » : titre …, intro …. Photos déjà sur Cloudinary dans karinebauzin/reportages/mon-projet/.
+
+> Remplace la couverture de Portraits-ge.ch : fichier dans public/books/, mockup fond blanc légèrement incliné.
+
+> Sur `/reportages`, utilise cette photo en couverture de Coupe Weuro : https://res.cloudinary.com/…/kb_….jpg
+
+> Commit les changements avec un message en français.
+
+---
+
+## Fichiers utiles
 
 | Fichier | Contenu |
 |---------|---------|
@@ -51,15 +144,6 @@ Les photos de galerie viennent du manifeste Cloudinary (`_galleries.json`). Les 
 
 Le menu se met à jour **automatiquement** quand on ajoute un livre ou un projet documentaire dans `site.ts`.
 
-### Prévisualiser en local
-
-```bash
-npm install   # si besoin
-npm run dev
-```
-
-Ouvrir l’URL affichée (souvent http://localhost:5173).
-
 ### Déployer du code
 
 ```bash
@@ -68,28 +152,7 @@ git commit -m "description courte"
 git push origin main
 ```
 
----
-
-## Les 2 gestes les plus simples
-
-### A. Modifier du texte
-
-1. Ouvrir le projet dans Cursor
-2. Demander : *« Change l’intro de Cabines de plage avec ce texte : … »*
-3. L’assistant modifie **`src/config/site.ts`** (parfois `About.tsx` pour la bio, `Contact.tsx` pour le formulaire)
-4. Vérifier en local → commit / push
-
-Pas besoin de Cloudinary pour du texte.
-
-### B. Ajouter des photos à une galerie existante
-
-**Aucune modification de code.** Uniquement Cloudinary + sync.
-
-1. **Cloudinary** → uploader dans le dossier du slug (ex. `karinebauzin/reportages/swiss-cup-mulet/`)
-2. GitHub → **Actions** → **Sync galleries from Cloudinary** → Run
-3. Recharger la page. Pas de `git push`.
-
-Pour un **nouveau** reportage : upload Cloudinary + une entrée slug/titre dans `site.ts` (sans liste de photos) + sync. Voir section 2.
+Ou demander à l’assistant : *Envoie les changements avec un message en français.*
 
 ---
 
@@ -159,13 +222,15 @@ En local : `npm run sync:galleries` si les clés API sont dans l’environnement
 
 Sur GitHub, le workflow a besoin des secrets `CLOUDINARY_API_KEY` et `CLOUDINARY_API_SECRET` (en plus de `CLOUDINARY_CLOUD_NAME` déjà présent).
 
-Le workflow tourne aussi tout seul chaque jour à 5h UTC.
+Le workflow tourne aussi tout seul chaque jour à 5h UTC (7h en Suisse).
 
 #### Étape C — Vérifier
 
 Recharger `/portraits` ou `/reportages/<slug>`.
 
 **Pas de `git push` nécessaire.**
+
+Pour retirer une photo : la supprimer dans Cloudinary, puis lancer le sync (ou attendre 7h). Pas de liste d’exceptions dans le code.
 
 ### Créer un nouveau projet reportage (galerie)
 
@@ -178,9 +243,11 @@ Recharger `/portraits` ou `/reportages/<slug>`.
   path: "/reportages/mon-projet",
   title: "Mon projet",
   intro: "Texte d'introduction.",
-  placeholderImages: [],
+  coverPublicId: "reportages/mon-projet/nom-fichier",
 },
 ```
+
+Sans `coverPublicId`, le hub `/reportages` prend la première photo de la galerie.
 
 3. Optionnel : titre dans `scripts/galleries-meta.json` sous `"reportages/mon-projet"`
 4. Lancer **Sync galleries from Cloudinary**
@@ -242,27 +309,12 @@ Sans `price` : pas de ligne prix/TWINT, pas de bouton commander.
 
 ---
 
-## Prompts Cursor (exemples)
-
-> Change l’intro de « Cabines de plage » dans site.ts avec ce texte : …
-
-> J’ai uploadé des photos dans Cloudinary sous karinebauzin/reportages/swiss-cup-mulet. Comment je lance le sync ?
-
-> Ajoute un projet reportage « mon-projet » : titre …, intro …. Photos déjà sur Cloudinary dans karinebauzin/reportages/mon-projet/.
-
-> Remplace la couverture de Portraits-ge.ch : fichier dans public/books/, mockup fond blanc légèrement incliné.
-
-> Change le texte Trust-J sur la page Contact.
-
-> Commit les changements avec un message en français.
-
----
-
 ## Ce que l'assistant ne doit pas faire sans demande explicite
 
 - Créer des commits ou pousser sur GitHub
 - Modifier les secrets / `.env` de production
 - Committer des photos de **galeries** dans Git (→ Cloudinary)
+- Filtrer une photo dans le code au lieu de la retirer de Cloudinary + sync
 - Supprimer des fichiers dans `public/books/` sans remplacement
 - Toucher à `navigation.ts` pour un simple ajout livre/projet (automatique)
 

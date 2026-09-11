@@ -9,7 +9,7 @@ Structure détaillée : voir `Diagramme WebSiteKarine.drawio`.
 - **Couvertures livres** : `public/books/` (Git)
 - **Maquette Figma** : [Site web photographe moderne](https://www.figma.com/design/f0hPsOsO9DsyMLAUEMOsJ6/Site-web-photographe-moderne)
 
-Documentation : `docs/ARCHITECTURE.md`, `docs/MEDIA.md`, `docs/MODE-EMPLOI-ASSISTANT.md`.
+Documentation : `docs/ARCHITECTURE.md`, `docs/MEDIA.md`, `docs/MODE-EMPLOI.md`.
 
 ## Démarrage local
 
@@ -44,4 +44,4 @@ Déploiement conseillé : [Vercel](https://vercel.com) ou [Netlify](https://netl
 - **Livres** : `livres.items` + couvertures dans `public/books/`
 - **Logo** : `public/logo.png`
 
-Détail pour Karine / Cursor : `docs/MODE-EMPLOI-ASSISTANT.md`.
+Mode d’emploi (Karine / Cursor) : `docs/MODE-EMPLOI.md`.
