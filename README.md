@@ -28,14 +28,14 @@ Le **portrait À propos** est un public ID fixe.
 3. Uploader les photos dans la Media Library (`karinebauzin/portraits/`, `karinebauzin/reportages/<slug>/`)
 4. Lancer **Sync galleries from Cloudinary** (GitHub Actions) ou `npm run sync:galleries`
 
-Les Unsplash encore dans le code sont des **replis** si une galerie n’est pas dans le manifeste.
+Si une galerie n’est pas dans le manifeste, la page reste vide (message), sans images Unsplash.
 Les couvertures livres restent dans `public/books/` (voir `docs/MEDIA.md`).
 
 ## GitHub
 
 Dépôt : `benxvii/karinebauzin`. Push sur `main` après commit.
 
-Déploiement conseillé : [Vercel](https://vercel.com) ou [Netlify](https://netlify.com). Ajouter les variables Cloudinary dans le tableau de bord de l’hébergeur.
+Déploiement : GitHub Actions → FTP Infomaniak (`.github/workflows/deploy.yml`).
 
 ## Personnalisation (résumé)
 
