@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T21:16:41.749Z",
+  "generatedAt": "2026-09-11T21:31:50.093Z",
   "cloudFolder": "karinebauzin",
   "galleries": [
     {
@@ -8,427 +8,42 @@
       "folder": "karinebauzin/portraits",
       "images": [
         {
-          "publicId": "098-1_ptqc0s",
-          "width": 800,
-          "height": 800
-        },
-        {
-          "publicId": "20191106_kb_06-1_vmvxyr",
-          "width": 800,
-          "height": 533
-        },
-        {
-          "publicId": "20210312-kb-01-1_eea6ya",
-          "width": 800,
-          "height": 533
-        },
-        {
-          "publicId": "Alessandra-Serra-01-1_ieiq5a",
-          "width": 800,
-          "height": 1205
-        },
-        {
-          "publicId": "Aline-Erbeia-02-1_gd34ec",
-          "width": 800,
-          "height": 1203
-        },
-        {
-          "publicId": "Arielle-Harboe-Schmidt-06-1_xiuihw",
-          "width": 810,
-          "height": 1200
-        },
-        {
-          "publicId": "Bahina-jewels-01-1_n5yynb",
-          "width": 800,
-          "height": 1260
-        },
-        {
-          "publicId": "Bessa-Myftiu-01-1_ylr2oi",
-          "width": 800,
-          "height": 1202
-        },
-        {
-          "publicId": "BR-2021-05-03-Nicolas-Mirabaud-cover-Sphere0045-v2-1_o4mr4f",
-          "width": 800,
-          "height": 800
-        },
-        {
-          "publicId": "BR-2022-10-01-Festival-du-lac1939-1_keivrs",
-          "width": 533,
-          "height": 800
-        },
-        {
-          "publicId": "BR-2022-10-01-Festival-du-lac2189-1_y8v0kn",
-          "width": 533,
-          "height": 800
-        },
-        {
-          "publicId": "Carine-Casteu-4-1_hr48mg",
-          "width": 800,
-          "height": 1202
-        },
-        {
-          "publicId": "Carolina-Frias-01-1_bxrvo5",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "Charles-Chardonnens-5-1_xveutc",
-          "width": 800,
-          "height": 1202
-        },
-        {
-          "publicId": "Charles-Chardonnens-Michel-Salomon-02-1_fsecln",
-          "width": 800,
-          "height": 800
-        },
-        {
-          "publicId": "Citadel-Finance-12-1_kgnd2e",
-          "width": 1200,
-          "height": 798
-        },
-        {
-          "publicId": "Collectionneur-Ferrari-06-1_heryl6",
-          "width": 800,
-          "height": 1200
-        },
-        {
-          "publicId": "Costanza-Papasogli-03-1_twbqdh",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "Dan-Bensimon-26-1_ickf7h",
-          "width": 800,
-          "height": 1200
-        },
-        {
-          "publicId": "DSC_0216-1_hxkxj9",
-          "width": 800,
-          "height": 800
-        },
-        {
-          "publicId": "DSC_0443-1_vcol2z",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "DSC_1108-1_zdxplx",
-          "width": 1200,
-          "height": 800
-        },
-        {
-          "publicId": "DSC_1549-Modifier-1_cinn4k",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "DSC_1918-1_cwlk8f",
-          "width": 1200,
-          "height": 799
-        },
-        {
-          "publicId": "DSC_1969-1_btzpuv",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "DSC_2074-1_c1qm39",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "DSC_2113-1_blumpo",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "DSC_2326-1_tqnlsb",
-          "width": 1200,
-          "height": 799
-        },
-        {
-          "publicId": "DSC_3538-Modifier-1_iazlun",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "DSC_3795-1_adr5r3",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "DSC_4149-1_neguzt",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "DSC_5307-1_x30qph",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "DSC_5783-1_vmvwpu",
-          "width": 1200,
-          "height": 798
-        },
-        {
-          "publicId": "DSC_5872-1_jcea14",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "DSC_6176-1_kohuii",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "DSC_7047-retouchee_rrjyoo",
-          "width": 1200,
-          "height": 798
-        },
-        {
-          "publicId": "DSC_7838-1_gdwfwe",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "DSC_7897-1_ci6l9y",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "DSC_8031-1_eov2o9",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "DSC_9603-1_hfax5w",
-          "width": 800,
-          "height": 800
-        },
-        {
-          "publicId": "DSC1113-1_ewcij9",
-          "width": 800,
-          "height": 1202
-        },
-        {
-          "publicId": "DSC1403-1_pdc8ve",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "DSC3149-1_nn5vic",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "DSC3424-1_turcmr",
-          "width": 800,
-          "height": 800
-        },
-        {
-          "publicId": "DSC5036-Modifier-1_ynjyrf",
-          "width": 800,
-          "height": 800
-        },
-        {
-          "publicId": "DSC6892-1_f0j0b9",
-          "width": 800,
-          "height": 1202
-        },
-        {
-          "publicId": "Eli-Lilly-02-1_ybpeax",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "Eli-Lilly-18-1_qvtuyt",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "Eli-Lilly-44-1_p4bumf",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "Eli-Lilly-58-1_trerug",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "Eli-Lilly-82-1_ft7xab",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "empty_state_folder_w6hnib",
-          "width": 350,
-          "height": 211
-        },
-        {
-          "publicId": "Florence-Heiniger-01-1_id0oui",
-          "width": 800,
-          "height": 1202
-        },
-        {
-          "publicId": "Galerie-Charly-Bailly-02-1_zyltoj",
-          "width": 862,
-          "height": 1200
-        },
-        {
-          "publicId": "Gestiparcs-08-1_l5buw7",
-          "width": 1200,
-          "height": 798
-        },
-        {
-          "publicId": "Jean-Frederic-Dufour-02_v1qhj2",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "Jean-Frederic-Dufour-04-2_xdyuak",
-          "width": 800,
-          "height": 1202
-        },
-        {
-          "publicId": "Jerome-Batsard-01_xnaank",
-          "width": 800,
-          "height": 1202
-        },
-        {
-          "publicId": "kb_24-09-19_098_xqe1sp",
-          "width": 1080,
-          "height": 1621
-        },
-        {
-          "publicId": "kb_24-10-08_073-1800x1800_bc2ta9",
-          "width": 1800,
-          "height": 1800
-        },
-        {
-          "publicId": "kb_24-10-11_123-1800x1200_ecrjkj",
-          "width": 1800,
-          "height": 1200
-        },
-        {
-          "publicId": "kb_24-11-08_070-1800x1800_oi3ihe",
-          "width": 1800,
-          "height": 1800
-        },
-        {
-          "publicId": "kb_24-11-21_027-1800x1200_egokbz",
-          "width": 1800,
-          "height": 1200
-        },
-        {
-          "publicId": "kb_24-11-28_045_zwwbxm",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "publicId": "kb_24-12-02_046-1800x1800_nhtt2z",
-          "width": 1800,
-          "height": 1800
-        },
-        {
-          "publicId": "kb_24-12-12_037-1800x1800_g3pm7b",
-          "width": 1800,
-          "height": 1800
-        },
-        {
-          "publicId": "kb_24-12-18_110-1600x2400_q89pjl",
-          "width": 1600,
-          "height": 2400
-        },
-        {
-          "publicId": "kb_25-01-10_029-1800x1800_grnogn",
-          "width": 1800,
-          "height": 1800
-        },
-        {
-          "publicId": "kb_25-01-16_044-1600x2400_pnrxoi",
-          "width": 1600,
-          "height": 2400
-        },
-        {
-          "publicId": "kb_25-03-28_068-1600x2400_ygttmp",
-          "width": 1600,
-          "height": 2400
-        },
-        {
-          "publicId": "kb_25-04-08_196-1800x1800_zpwdfe",
-          "width": 1800,
-          "height": 1800
-        },
-        {
-          "publicId": "kb_25-11-25_011-1800x1200_i10wom",
-          "width": 1800,
-          "height": 1200
-        },
-        {
-          "publicId": "kb_25-11-28_013-1800x1800_l8xyuq",
-          "width": 1800,
-          "height": 1800
-        },
-        {
-          "publicId": "kb_26-01-09_142-1600x2400_jyfgw4",
-          "width": 1600,
-          "height": 2400
-        },
-        {
-          "publicId": "kb_26-09-11_516_eby1g9",
-          "width": 1500,
-          "height": 1500
-        },
-        {
-          "publicId": "kb_26-09-11_517_zw35e4",
-          "width": 1500,
-          "height": 1500
-        },
-        {
-          "publicId": "kb_26-09-11_518_velroy",
+          "publicId": "kb_26-09-11_535_emrcty",
           "width": 1000,
           "height": 1500
         },
         {
-          "publicId": "kb_26-09-11_519_wabn2o",
+          "publicId": "kb_26-09-11_534_ws07w0",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_533_ax4c8y",
           "width": 1500,
           "height": 1500
         },
         {
-          "publicId": "kb_26-09-11_520_oeqmb3",
+          "publicId": "kb_26-09-11_532_w0olvl",
           "width": 1500,
           "height": 1500
         },
         {
-          "publicId": "kb_26-09-11_521_wdmmcq",
-          "width": 1500,
-          "height": 1500
-        },
-        {
-          "publicId": "kb_26-09-11_522_pryuzx",
-          "width": 1000,
-          "height": 1500
-        },
-        {
-          "publicId": "kb_26-09-11_523_fx8xh9",
-          "width": 1000,
-          "height": 1500
-        },
-        {
-          "publicId": "kb_26-09-11_524_qne0mk",
-          "width": 1000,
-          "height": 1500
-        },
-        {
-          "publicId": "kb_26-09-11_525_lh0riv",
+          "publicId": "kb_26-09-11_531_ivuxak",
           "width": 999,
           "height": 1500
         },
         {
-          "publicId": "kb_26-09-11_526_h8awa2",
+          "publicId": "kb_26-09-11_530_getgjh",
+          "width": 1000,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_529_ic7bjb",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_528_zf9npt",
           "width": 1500,
           "height": 1000
         },
@@ -438,227 +53,72 @@
           "height": 1000
         },
         {
-          "publicId": "kb_26-09-11_528_zf9npt",
+          "publicId": "kb_26-09-11_526_h8awa2",
           "width": 1500,
           "height": 1000
         },
         {
-          "publicId": "kb_26-09-11_529_ic7bjb",
-          "width": 1500,
-          "height": 1500
-        },
-        {
-          "publicId": "kb_26-09-11_530_getgjh",
-          "width": 1000,
-          "height": 1500
-        },
-        {
-          "publicId": "kb_26-09-11_531_ivuxak",
+          "publicId": "kb_26-09-11_525_lh0riv",
           "width": 999,
           "height": 1500
         },
         {
-          "publicId": "kb_26-09-11_532_w0olvl",
-          "width": 1500,
-          "height": 1500
-        },
-        {
-          "publicId": "kb_26-09-11_533_ax4c8y",
-          "width": 1500,
-          "height": 1500
-        },
-        {
-          "publicId": "kb_26-09-11_534_ws07w0",
-          "width": 1500,
-          "height": 1000
-        },
-        {
-          "publicId": "kb_26-09-11_535_emrcty",
+          "publicId": "kb_26-09-11_524_qne0mk",
           "width": 1000,
           "height": 1500
         },
         {
-          "publicId": "KB0_3833-1_bw5whd",
-          "width": 800,
-          "height": 800
+          "publicId": "kb_26-09-11_523_fx8xh9",
+          "width": 1000,
+          "height": 1500
         },
         {
-          "publicId": "KB00108-1_jegmk9",
-          "width": 800,
-          "height": 1202
+          "publicId": "kb_26-09-11_522_pryuzx",
+          "width": 1000,
+          "height": 1500
         },
         {
-          "publicId": "KB00322-1_gujlee",
-          "width": 800,
-          "height": 800
+          "publicId": "kb_26-09-11_521_wdmmcq",
+          "width": 1500,
+          "height": 1500
         },
         {
-          "publicId": "KB00390-1_icwubb",
-          "width": 1202,
-          "height": 800
+          "publicId": "kb_26-09-11_520_oeqmb3",
+          "width": 1500,
+          "height": 1500
         },
         {
-          "publicId": "KB00438-desature-2_blz0te",
-          "width": 800,
-          "height": 1202
+          "publicId": "kb_26-09-11_519_wabn2o",
+          "width": 1500,
+          "height": 1500
         },
         {
-          "publicId": "KB00575-1_xkeys4",
-          "width": 799,
-          "height": 1200
+          "publicId": "kb_26-09-11_518_velroy",
+          "width": 1000,
+          "height": 1500
         },
         {
-          "publicId": "KB005970-desature-2_w3iupk",
-          "width": 800,
-          "height": 1202
+          "publicId": "kb_26-09-11_517_zw35e4",
+          "width": 1500,
+          "height": 1500
         },
         {
-          "publicId": "KB01434-1_gpyl02",
-          "width": 800,
-          "height": 800
+          "publicId": "kb_26-09-11_516_eby1g9",
+          "width": 1500,
+          "height": 1500
         },
         {
-          "publicId": "KB01946-1_wtcfy2",
-          "width": 800,
-          "height": 1202
+          "publicId": "Sebastien-Vorger-02_jeotp3",
+          "width": 1200,
+          "height": 798
         },
         {
-          "publicId": "KB01948-1_okqfkk",
-          "width": 800,
-          "height": 1202
-        },
-        {
-          "publicId": "KB02154-1_j1bkla",
-          "width": 799,
-          "height": 1200
-        },
-        {
-          "publicId": "KB02511-3-1_naoi3u",
-          "width": 800,
-          "height": 800
-        },
-        {
-          "publicId": "KB02783-1_zu2op2",
-          "width": 800,
-          "height": 1202
-        },
-        {
-          "publicId": "KB02914-1_fxfz8p",
-          "width": 803,
-          "height": 803
-        },
-        {
-          "publicId": "KB02941-1_gu6bhj",
-          "width": 800,
-          "height": 1202
-        },
-        {
-          "publicId": "KB03334-1_rxg9qb",
-          "width": 800,
-          "height": 1203
-        },
-        {
-          "publicId": "KB05653-1_sn4afd",
-          "width": 800,
-          "height": 800
-        },
-        {
-          "publicId": "KB06033-1_fnteck",
-          "width": 800,
-          "height": 1201
-        },
-        {
-          "publicId": "KB06345-1_iwbcgr",
-          "width": 800,
-          "height": 1202
-        },
-        {
-          "publicId": "KB06434-1_bd3zvy",
-          "width": 800,
-          "height": 1202
-        },
-        {
-          "publicId": "KB07338-1_yngjny",
-          "width": 800,
-          "height": 1202
-        },
-        {
-          "publicId": "KB07610-1_t812gh",
-          "width": 800,
-          "height": 1202
-        },
-        {
-          "publicId": "KB08955-1_zuoek3",
-          "width": 800,
-          "height": 800
-        },
-        {
-          "publicId": "KB09433-1_zbdxfg",
-          "width": 800,
-          "height": 800
-        },
-        {
-          "publicId": "KBZ_1192-1_vbxnzi",
-          "width": 533,
-          "height": 800
-        },
-        {
-          "publicId": "KBZ_1706-1800x1200_vnhigw",
+          "publicId": "L1070746-1800x1800_miglv8",
           "width": 1800,
-          "height": 1200
+          "height": 1800
         },
         {
-          "publicId": "KBZ_2851-1-1600x2400_kwyj93",
-          "width": 1600,
-          "height": 2400
-        },
-        {
-          "publicId": "KBZ_3125-1600x2400_gxvau2",
-          "width": 1600,
-          "height": 2400
-        },
-        {
-          "publicId": "KBZ_3318-1800x1200_apynpr",
-          "width": 1800,
-          "height": 1200
-        },
-        {
-          "publicId": "KBZ_3630-1800x1200_gxpd1l",
-          "width": 1800,
-          "height": 1200
-        },
-        {
-          "publicId": "KBZ_5164-1800x1200_k1g7xx",
-          "width": 1800,
-          "height": 1200
-        },
-        {
-          "publicId": "KBZ_6799-1_mpoiev",
-          "width": 640,
-          "height": 427
-        },
-        {
-          "publicId": "KBZ_7097-1-1_wsxs9x",
-          "width": 640,
-          "height": 427
-        },
-        {
-          "publicId": "KBZ_7371-2-1_qhoqzx",
-          "width": 800,
-          "height": 800
-        },
-        {
-          "publicId": "KBZ2150-1600x2400_b7fko5",
-          "width": 1600,
-          "height": 2400
-        },
-        {
-          "publicId": "KBZ4567-1600x2400_skg3jn",
-          "width": 1600,
-          "height": 2400
-        },
-        {
-          "publicId": "KBZ4753-1600x2400_ismpws",
+          "publicId": "L1010629-1600x2400_ehdsjp",
           "width": 1600,
           "height": 2400
         },
@@ -668,122 +128,272 @@
           "height": 1800
         },
         {
-          "publicId": "KBZ7925-1600x2400_pssmnz",
+          "publicId": "KBZ4753-1600x2400_ismpws",
           "width": 1600,
           "height": 2400
         },
         {
-          "publicId": "L1000452-1_tfnhib",
-          "width": 533,
-          "height": 800
-        },
-        {
-          "publicId": "L1010629-1600x2400_ehdsjp",
+          "publicId": "KBZ4567-1600x2400_skg3jn",
           "width": 1600,
           "height": 2400
         },
         {
-          "publicId": "L1010737-1600x2400_sg2i8u",
+          "publicId": "KBZ2150-1600x2400_b7fko5",
           "width": 1600,
           "height": 2400
         },
         {
-          "publicId": "L1010838-1600x2400_sxjloe",
-          "width": 1600,
-          "height": 2400
-        },
-        {
-          "publicId": "L1020366-1_cwqmi2",
-          "width": 427,
-          "height": 640
-        },
-        {
-          "publicId": "L1060897-1_zbqdib",
-          "width": 533,
-          "height": 800
-        },
-        {
-          "publicId": "L1070676-1800x1800_ex6lup",
+          "publicId": "KBZ_5164-1800x1200_k1g7xx",
           "width": 1800,
-          "height": 1800
+          "height": 1200
         },
         {
-          "publicId": "L1070746-1800x1800_miglv8",
+          "publicId": "KBZ_3630-1800x1200_gxpd1l",
           "width": 1800,
-          "height": 1800
+          "height": 1200
         },
         {
-          "publicId": "L1080453-1_audtfh",
-          "width": 533,
-          "height": 800
+          "publicId": "KBZ_3318-1800x1200_apynpr",
+          "width": 1800,
+          "height": 1200
         },
         {
-          "publicId": "L1080636-1_hvxjnf",
-          "width": 533,
-          "height": 800
+          "publicId": "KBZ_3125-1600x2400_gxvau2",
+          "width": 1600,
+          "height": 2400
         },
         {
-          "publicId": "Laure-Mi-Hyung-Croset-08-1_vqjyf1",
+          "publicId": "KB06033-1_fnteck",
+          "width": 800,
+          "height": 1201
+        },
+        {
+          "publicId": "KB005970-desature-2_w3iupk",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "KB03334-1_rxg9qb",
           "width": 800,
           "height": 1203
         },
         {
-          "publicId": "Lina-Frangie-01_u4xq9e",
+          "publicId": "KB02941-1_gu6bhj",
           "width": 800,
           "height": 1202
         },
         {
-          "publicId": "Maison-Nicolas-Musin-05-1_n6oaah",
+          "publicId": "KB02914-1_fxfz8p",
+          "width": 803,
+          "height": 803
+        },
+        {
+          "publicId": "KB02783-1_zu2op2",
           "width": 800,
           "height": 1202
         },
         {
-          "publicId": "Maison-Nicolas-Musin-08-1_xcwigi",
-          "width": 800,
-          "height": 1192
-        },
-        {
-          "publicId": "Mariam-Lefebre-1_etvppz",
-          "width": 800,
-          "height": 1202
-        },
-        {
-          "publicId": "Nathalie-Egea-04-1_nwss4w",
-          "width": 800,
-          "height": 1202
-        },
-        {
-          "publicId": "Nicole-Kranz-06-1_eauhcl",
-          "width": 800,
-          "height": 1202
-        },
-        {
-          "publicId": "Olivier-Berthet-02-1_gpr94f",
-          "width": 800,
-          "height": 1205
-        },
-        {
-          "publicId": "Orianne-Collins-01-1_bpxcho",
-          "width": 800,
-          "height": 1202
-        },
-        {
-          "publicId": "Pippao-01-1_nanr61",
+          "publicId": "KB02511-3-1_naoi3u",
           "width": 800,
           "height": 800
         },
         {
-          "publicId": "Sebastien-Vorger-02_jeotp3",
+          "publicId": "KB02154-1_j1bkla",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "KB00438-desature-2_blz0te",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "KB00390-1_icwubb",
+          "width": 1202,
+          "height": 800
+        },
+        {
+          "publicId": "KB00322-1_gujlee",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "publicId": "KB0_3833-1_bw5whd",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "publicId": "kb_25-11-28_013-1800x1800_l8xyuq",
+          "width": 1800,
+          "height": 1800
+        },
+        {
+          "publicId": "kb_25-04-08_196-1800x1800_zpwdfe",
+          "width": 1800,
+          "height": 1800
+        },
+        {
+          "publicId": "kb_25-03-28_068-1600x2400_ygttmp",
+          "width": 1600,
+          "height": 2400
+        },
+        {
+          "publicId": "Jean-Frederic-Dufour-04-2_xdyuak",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "Jean-Frederic-Dufour-02_v1qhj2",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "Gestiparcs-08-1_l5buw7",
           "width": 1200,
           "height": 798
         },
         {
-          "publicId": "Silvia-Oliveira-02-1_a8j3jw",
+          "publicId": "Eli-Lilly-82-1_ft7xab",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "Eli-Lilly-58-1_trerug",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "Eli-Lilly-44-1_p4bumf",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "Eli-Lilly-18-1_qvtuyt",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "Eli-Lilly-02-1_ybpeax",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "DSC3424-1_turcmr",
           "width": 800,
           "height": 800
         },
         {
-          "publicId": "Stephanie-Aulestia-03-2_pb9kzl",
+          "publicId": "DSC1403-1_pdc8ve",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "DSC_9603-1_hfax5w",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "publicId": "DSC_8031-1_eov2o9",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "DSC_7897-1_ci6l9y",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "DSC_7838-1_gdwfwe",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "DSC_7047-retouchee_rrjyoo",
+          "width": 1200,
+          "height": 798
+        },
+        {
+          "publicId": "DSC_6176-1_kohuii",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "DSC_5783-1_vmvwpu",
+          "width": 1200,
+          "height": 798
+        },
+        {
+          "publicId": "DSC_2113-1_blumpo",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "DSC_1108-1_zdxplx",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "publicId": "DSC_0216-1_hxkxj9",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "publicId": "Dan-Bensimon-26-1_ickf7h",
+          "width": 800,
+          "height": 1200
+        },
+        {
+          "publicId": "Citadel-Finance-12-1_kgnd2e",
+          "width": 1200,
+          "height": 798
+        },
+        {
+          "publicId": "Charles-Chardonnens-Michel-Salomon-02-1_fsecln",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "publicId": "Charles-Chardonnens-5-1_xveutc",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "Carine-Casteu-4-1_hr48mg",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "BR-2021-05-03-Nicolas-Mirabaud-cover-Sphere0045-v2-1_o4mr4f",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "publicId": "20210312-kb-01-1_eea6ya",
+          "width": 800,
+          "height": 533
+        },
+        {
+          "publicId": "20191106_kb_06-1_vmvxyr",
+          "width": 800,
+          "height": 533
+        },
+        {
+          "publicId": "098-1_ptqc0s",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "publicId": "Xavier-Casile-02-1_az8r6j",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "Tomer-Sisley-06-1_j46dko",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "Thomas-Wartel-04-1_fh9cfw",
           "width": 800,
           "height": 1202
         },
@@ -793,19 +403,409 @@
           "height": 1200
         },
         {
-          "publicId": "Thomas-Wartel-04-1_fh9cfw",
+          "publicId": "Stephanie-Aulestia-03-2_pb9kzl",
           "width": 800,
           "height": 1202
         },
         {
-          "publicId": "Tomer-Sisley-06-1_j46dko",
+          "publicId": "Silvia-Oliveira-02-1_a8j3jw",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "publicId": "Pippao-01-1_nanr61",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "publicId": "Orianne-Collins-01-1_bpxcho",
           "width": 800,
           "height": 1202
         },
         {
-          "publicId": "Xavier-Casile-02-1_az8r6j",
+          "publicId": "Olivier-Berthet-02-1_gpr94f",
+          "width": 800,
+          "height": 1205
+        },
+        {
+          "publicId": "Nicole-Kranz-06-1_eauhcl",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "Nathalie-Egea-04-1_nwss4w",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "Mariam-Lefebre-1_etvppz",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "Maison-Nicolas-Musin-08-1_xcwigi",
+          "width": 800,
+          "height": 1192
+        },
+        {
+          "publicId": "Maison-Nicolas-Musin-05-1_n6oaah",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "Lina-Frangie-01_u4xq9e",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "Laure-Mi-Hyung-Croset-08-1_vqjyf1",
+          "width": 800,
+          "height": 1203
+        },
+        {
+          "publicId": "L1080636-1_hvxjnf",
+          "width": 533,
+          "height": 800
+        },
+        {
+          "publicId": "L1080453-1_audtfh",
+          "width": 533,
+          "height": 800
+        },
+        {
+          "publicId": "L1070676-1800x1800_ex6lup",
+          "width": 1800,
+          "height": 1800
+        },
+        {
+          "publicId": "L1060897-1_zbqdib",
+          "width": 533,
+          "height": 800
+        },
+        {
+          "publicId": "L1020366-1_cwqmi2",
+          "width": 427,
+          "height": 640
+        },
+        {
+          "publicId": "L1010838-1600x2400_sxjloe",
+          "width": 1600,
+          "height": 2400
+        },
+        {
+          "publicId": "L1010737-1600x2400_sg2i8u",
+          "width": 1600,
+          "height": 2400
+        },
+        {
+          "publicId": "L1000452-1_tfnhib",
+          "width": 533,
+          "height": 800
+        },
+        {
+          "publicId": "KBZ7925-1600x2400_pssmnz",
+          "width": 1600,
+          "height": 2400
+        },
+        {
+          "publicId": "KBZ_7371-2-1_qhoqzx",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "publicId": "KBZ_7097-1-1_wsxs9x",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "publicId": "KBZ_6799-1_mpoiev",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "publicId": "KBZ_2851-1-1600x2400_kwyj93",
+          "width": 1600,
+          "height": 2400
+        },
+        {
+          "publicId": "KBZ_1706-1800x1200_vnhigw",
+          "width": 1800,
+          "height": 1200
+        },
+        {
+          "publicId": "KBZ_1192-1_vbxnzi",
+          "width": 533,
+          "height": 800
+        },
+        {
+          "publicId": "KB09433-1_zbdxfg",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "publicId": "KB08955-1_zuoek3",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "publicId": "KB07610-1_t812gh",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "KB07338-1_yngjny",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "KB06434-1_bd3zvy",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "KB06345-1_iwbcgr",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "KB05653-1_sn4afd",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "publicId": "KB01948-1_okqfkk",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "KB01946-1_wtcfy2",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "KB01434-1_gpyl02",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "publicId": "KB00575-1_xkeys4",
           "width": 799,
           "height": 1200
+        },
+        {
+          "publicId": "KB00108-1_jegmk9",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "kb_26-01-09_142-1600x2400_jyfgw4",
+          "width": 1600,
+          "height": 2400
+        },
+        {
+          "publicId": "kb_25-11-25_011-1800x1200_i10wom",
+          "width": 1800,
+          "height": 1200
+        },
+        {
+          "publicId": "kb_25-01-16_044-1600x2400_pnrxoi",
+          "width": 1600,
+          "height": 2400
+        },
+        {
+          "publicId": "kb_25-01-10_029-1800x1800_grnogn",
+          "width": 1800,
+          "height": 1800
+        },
+        {
+          "publicId": "kb_24-12-18_110-1600x2400_q89pjl",
+          "width": 1600,
+          "height": 2400
+        },
+        {
+          "publicId": "kb_24-12-12_037-1800x1800_g3pm7b",
+          "width": 1800,
+          "height": 1800
+        },
+        {
+          "publicId": "kb_24-12-02_046-1800x1800_nhtt2z",
+          "width": 1800,
+          "height": 1800
+        },
+        {
+          "publicId": "kb_24-11-28_045_zwwbxm",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "publicId": "kb_24-11-21_027-1800x1200_egokbz",
+          "width": 1800,
+          "height": 1200
+        },
+        {
+          "publicId": "kb_24-11-08_070-1800x1800_oi3ihe",
+          "width": 1800,
+          "height": 1800
+        },
+        {
+          "publicId": "kb_24-10-11_123-1800x1200_ecrjkj",
+          "width": 1800,
+          "height": 1200
+        },
+        {
+          "publicId": "kb_24-10-08_073-1800x1800_bc2ta9",
+          "width": 1800,
+          "height": 1800
+        },
+        {
+          "publicId": "kb_24-09-19_098_xqe1sp",
+          "width": 1080,
+          "height": 1621
+        },
+        {
+          "publicId": "Jerome-Batsard-01_xnaank",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "Galerie-Charly-Bailly-02-1_zyltoj",
+          "width": 862,
+          "height": 1200
+        },
+        {
+          "publicId": "Florence-Heiniger-01-1_id0oui",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "DSC6892-1_f0j0b9",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "DSC5036-Modifier-1_ynjyrf",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "publicId": "DSC3149-1_nn5vic",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "DSC1113-1_ewcij9",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "DSC_5872-1_jcea14",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "DSC_5307-1_x30qph",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "DSC_4149-1_neguzt",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "DSC_3795-1_adr5r3",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "DSC_3538-Modifier-1_iazlun",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "DSC_2326-1_tqnlsb",
+          "width": 1200,
+          "height": 799
+        },
+        {
+          "publicId": "DSC_2074-1_c1qm39",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "DSC_1969-1_btzpuv",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "DSC_1918-1_cwlk8f",
+          "width": 1200,
+          "height": 799
+        },
+        {
+          "publicId": "DSC_1549-Modifier-1_cinn4k",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "DSC_0443-1_vcol2z",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "Costanza-Papasogli-03-1_twbqdh",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "Collectionneur-Ferrari-06-1_heryl6",
+          "width": 800,
+          "height": 1200
+        },
+        {
+          "publicId": "Carolina-Frias-01-1_bxrvo5",
+          "width": 799,
+          "height": 1200
+        },
+        {
+          "publicId": "BR-2022-10-01-Festival-du-lac2189-1_y8v0kn",
+          "width": 533,
+          "height": 800
+        },
+        {
+          "publicId": "BR-2022-10-01-Festival-du-lac1939-1_keivrs",
+          "width": 533,
+          "height": 800
+        },
+        {
+          "publicId": "Bessa-Myftiu-01-1_ylr2oi",
+          "width": 800,
+          "height": 1202
+        },
+        {
+          "publicId": "Bahina-jewels-01-1_n5yynb",
+          "width": 800,
+          "height": 1260
+        },
+        {
+          "publicId": "Arielle-Harboe-Schmidt-06-1_xiuihw",
+          "width": 810,
+          "height": 1200
+        },
+        {
+          "publicId": "Aline-Erbeia-02-1_gd34ec",
+          "width": 800,
+          "height": 1203
+        },
+        {
+          "publicId": "Alessandra-Serra-01-1_ieiq5a",
+          "width": 800,
+          "height": 1205
+        },
+        {
+          "publicId": "empty_state_folder_w6hnib",
+          "width": 350,
+          "height": 211
         }
       ]
     },
@@ -1336,7 +1336,7 @@
     },
     {
       "slug": "reportages/for-free",
-      "title": "For Free",
+      "title": "For free",
       "folder": "karinebauzin/reportages/for-free",
       "images": [
         {
@@ -1666,7 +1666,7 @@
     },
     {
       "slug": "reportages/les-plongeuses-de-jeju",
-      "title": "Les Plongeuses De Jeju",
+      "title": "Les plongeuses de Jeju",
       "folder": "karinebauzin/reportages/les-plongeuses-de-jeju",
       "images": [
         {
@@ -2434,7 +2434,7 @@
     },
     {
       "slug": "reportages/tour-de-france-feminin",
-      "title": "Tour De France Feminin",
+      "title": "Tour de France féminin",
       "folder": "karinebauzin/reportages/tour-de-france-feminin",
       "images": [
         {
@@ -2773,7 +2773,7 @@
     },
     {
       "slug": "reportages/tu-flashes-ou-tu-tires",
-      "title": "Tu Flashes Ou Tu Tires",
+      "title": "Tu flashes ou tu tires",
       "folder": "karinebauzin/reportages/tu-flashes-ou-tu-tires",
       "images": [
         {
@@ -2917,7 +2917,7 @@
     },
     {
       "slug": "reportages/youth-in-cannes",
-      "title": "Youth In Cannes",
+      "title": "Youth in Cannes",
       "folder": "karinebauzin/reportages/youth-in-cannes",
       "images": [
         {
