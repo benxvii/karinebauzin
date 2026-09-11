@@ -242,12 +242,12 @@ Pour retirer une photo : la supprimer dans Cloudinary, puis lancer le sync (ou a
   slug: "mon-projet",
   path: "/reportages/mon-projet",
   title: "Mon projet",
-  intro: "Texte d'introduction.",
+  intro: "",
   coverPublicId: "reportages/mon-projet/nom-fichier",
 },
 ```
 
-Sans `coverPublicId`, le hub `/reportages` prend la première photo de la galerie.
+`intro` peut rester vide. Sans `coverPublicId`, le hub `/reportages` prend la première photo de la galerie.
 
 3. Optionnel : titre dans `scripts/galleries-meta.json` sous `"reportages/mon-projet"`
 4. Lancer **Sync galleries from Cloudinary**
@@ -301,7 +301,7 @@ Sans `price` : pas de ligne prix/TWINT, pas de bouton commander.
 
 | Problème | Cause | Solution |
 |----------|-------|----------|
-| Galerie vide / Unsplash | Manifeste pas à jour, ou `.env` sans cloud name | Lancer **Sync galleries** |
+| Galerie vide | Manifeste pas à jour, ou `.env` sans cloud name | Lancer **Sync galleries** |
 | Mauvais dossier Cloudinary | Slug ≠ chemin | Aligné sur `docs/MEDIA.md` |
 | Page 404 | `path` / `slug` incohérent | `path` = `/reportages/` ou `/livres/` + slug |
 | Métadonnées en double dans un livre | Texte dans `body` + champs | Garder les champs structurés |

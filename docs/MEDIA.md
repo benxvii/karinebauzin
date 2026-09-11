@@ -12,9 +12,9 @@ Où sont les images, comment les ajouter, et ce qui est versionné dans Git.
 | **Logo / favicon** | `public/logo.png` (Git) | Rarement modifié |
 | **Badge Trust-J** | `public/trustj-logo.png` (Git) | Page Contact (`site.trustJ`) |
 
-Les galeries passent **directement par Cloudinary**. Pas d’upload de photos de galerie dans Git.
+Les galeries passent **uniquement** par Cloudinary. Pas d’upload de photos de galerie dans Git. Pas de liste Unsplash / `placeholderImages` dans `site.ts`.
 
-Les URLs Unsplash (et quelques anciennes URLs `karinebauzin.ch`) dans `placeholderImages[]` sont des **replis** : elles ne s’affichent que si la galerie n’est pas encore dans le manifeste `_galleries.json`.
+Si une galerie n’est pas (encore) dans le manifeste, la page affiche un message vide. Elle n’affiche pas d’images de repli.
 
 ## Cloudinary (source de vérité pour les galeries)
 
@@ -53,6 +53,17 @@ Fichiers :
 
 Exemple reportage : `reportages/swiss-cup-mulet/DSC3225`
 
+Le dossier Media Library se crée **en uploadant** des photos dedans. Pas de workflow GitHub pour pré-créer les dossiers.
+
+### Ordre des photos
+
+Le sync (`scripts/sync-galleries.mjs`) fixe l’ordre dans le manifeste :
+
+| Galerie | Ordre |
+|---------|--------|
+| Portraits | Plus récent d’abord (`created_at` Cloudinary) |
+| Reportages | `public_id` alphabétique |
+
 ### Workflow — ajouter des photos (galerie existante)
 
 1. Ouvrir [console.cloudinary.com](https://console.cloudinary.com) → **Assets**
@@ -65,9 +76,11 @@ Le cron GitHub relance le sync tous les jours à 5h UTC.
 ### Workflow — nouveau reportage
 
 1. Upload Cloudinary dans `karinebauzin/reportages/<slug>/`
-2. Ajouter slug / titre / intro dans `documentary.projects` (`site.ts`)
-3. Optionnel : titre dans `scripts/galleries-meta.json`
-4. Lancer le sync
+2. Ajouter une entrée dans `documentary.projects` (`site.ts`) : slug, titre, `path`
+3. `coverPublicId` : public ID de la photo du hub `/reportages`. Sans ce champ, le hub prend la première image du manifeste.
+4. `intro` : optionnel. Vide (`""`) est normal ; rien ne s’affiche sous le titre.
+5. Optionnel : titre dans `scripts/galleries-meta.json`
+6. Lancer le sync
 
 Aucune photo de galerie à committer dans Git. `public/_galleries.json` est une copie de secours du manifeste.
 
@@ -102,14 +115,11 @@ Chemins référencés dans `livres.items[].image` (`site.ts`).
 2. Mettre à jour `image: "/books/..."` dans `site.ts`
 3. Commit du fichier + du code
 
-## Replis Unsplash / ancien site
+## Portrait À propos
 
-Toujours dans le code, **non affichés** tant que la galerie figure dans `_galleries.json` :
+Public ID fixe : `Karine_Bauzin_cfgzty` (`About.tsx`).
 
-- `portraitGallery.placeholderImages` et `documentary.projects[].placeholderImages` dans `site.ts`
-- Portrait À propos : Unsplash en repli dans `About.tsx`
-
-Les galeries Portraits et Reportages, et le portrait À propos, sont **branchés Cloudinary**.
+Si `VITE_CLOUDINARY_CLOUD_NAME` est absent, `resolveImageUrl()` retombe sur une URL Unsplash. Ce n’est pas un repli galerie.
 
 ## Secrets GitHub Actions
 
