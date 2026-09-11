@@ -2,6 +2,24 @@
   "portraits": {
     "title": "Portraits"
   },
+  "reportages/kirkenes": {
+    "title": "Kirkenes"
+  },
+  "reportages/tu-flashes-ou-tu-tires": {
+    "title": "Tu flashes ou tu tires"
+  },
+  "reportages/tour-de-france-feminin": {
+    "title": "Tour de France féminin"
+  },
+  "reportages/les-plongeuses-de-jeju": {
+    "title": "Les plongeuses de Jeju"
+  },
+  "reportages/for-free": {
+    "title": "For free"
+  },
+  "reportages/youth-in-cannes": {
+    "title": "Youth in Cannes"
+  },
   "reportages/yes-i-cannes": {
     "title": "Yes, I Cannes"
   },
