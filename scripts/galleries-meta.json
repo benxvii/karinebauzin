@@ -2,6 +2,21 @@
   "portraits": {
     "title": "Portraits"
   },
+  "reportages/yes-i-cannes": {
+    "title": "Yes, I Cannes"
+  },
+  "reportages/serial-colleuses": {
+    "title": "Serial colleuses"
+  },
+  "reportages/lesson-one": {
+    "title": "Lesson One"
+  },
+  "reportages/las-vegas-wedding": {
+    "title": "Las Vegas Wedding"
+  },
+  "reportages/coupe-weuro": {
+    "title": "Coupe Weuro"
+  },
   "reportages/swiss-cup-mulet": {
     "title": "Swiss Cup Mulet"
   },

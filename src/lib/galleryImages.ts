@@ -18,6 +18,18 @@ export function galleryImageUrls(
     .filter((url): url is string => Boolean(url));
 }
 
+/** Vignette du hub reportages : couverture choisie, sinon première image. */
+export function resolveHubImage(
+  entry: ManifestGallery | undefined,
+  coverPublicId: string | undefined,
+  loading: boolean,
+): string {
+  if (coverPublicId) {
+    return cloudinaryUrl(coverPublicId) ?? "";
+  }
+  return resolveGalleryDisplay(entry, [], loading)[0] ?? "";
+}
+
 /** Images du manifeste, ou replis si la galerie n’y figure pas encore. */
 export function resolveGalleryDisplay(
   entry: ManifestGallery | undefined,

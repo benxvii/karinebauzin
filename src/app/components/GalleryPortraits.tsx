@@ -12,11 +12,7 @@ const emptyGalleryMessage =
 export default function GalleryPortraits() {
   const { galleries, loading, error } = useGalleries();
   const entry = findManifestGallery(galleries, portraitGallery.slug);
-  const images = resolveGalleryDisplay(
-    entry,
-    portraitGallery.placeholderImages,
-    loading,
-  );
+  const images = resolveGalleryDisplay(entry, [], loading);
 
   return (
     <GalleryPage

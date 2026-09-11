@@ -3,7 +3,7 @@ import { documentary } from "../../config/site";
 import { useGalleries } from "../../hooks/useGalleries";
 import {
   findManifestGallery,
-  resolveGalleryDisplay,
+  resolveHubImage,
 } from "../../lib/galleryImages";
 
 export default function DocumentaireIndex() {
@@ -20,16 +20,11 @@ export default function DocumentaireIndex() {
           p.slug,
           documentary.cloudinaryFolder,
         );
-        const images = resolveGalleryDisplay(
-          entry,
-          p.placeholderImages,
-          loading,
-        );
         return {
           path: p.path,
           title: p.title,
           description: p.intro,
-          image: images[0] ?? "",
+          image: resolveHubImage(entry, p.coverPublicId, loading),
         };
       })}
     />

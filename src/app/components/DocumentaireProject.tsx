@@ -24,11 +24,7 @@ export default function DocumentaireProject() {
     project.slug,
     documentary.cloudinaryFolder,
   );
-  const images = resolveGalleryDisplay(
-    entry,
-    project.placeholderImages,
-    loading,
-  );
+  const images = resolveGalleryDisplay(entry, [], loading);
 
   return (
     <GalleryPage
