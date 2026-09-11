@@ -180,7 +180,7 @@ export const documentary = {
     {
       slug: "ete-2020-covid",
       path: "/reportages/ete-2020-covid",
-      title: "été 2020 – Covid",
+      title: "Été 2020 – Covid",
       intro: "",
       coverPublicId: "reportages/ete-2020-covid/040820_kb_04-2",
     },

@@ -166,18 +166,20 @@ function NavDropdown({
           {link.label}
         </button>
       )}
-      <div className="absolute left-0 mt-2 min-w-[12rem] bg-white border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-        {link.subLinks.map((subLink) => (
-          <Link
-            key={subLink.path}
-            to={subLink.path}
-            className={`block px-4 py-3 text-sm text-gray-500 transition-colors hover:bg-gray-50 hover:text-[var(--brand)] ${
-              isActive(subLink.path) ? "bg-gray-50 font-medium" : ""
-            }`}
-          >
-            {subLink.label}
-          </Link>
-        ))}
+      <div className="absolute left-0 top-full z-50 pt-2 min-w-[16rem] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+        <div className="nav-dropdown-scroll max-h-[calc(100dvh-6rem)] overflow-y-auto overscroll-contain bg-white border border-gray-100">
+          {link.subLinks.map((subLink) => (
+            <Link
+              key={subLink.path}
+              to={subLink.path}
+              className={`block px-3 py-1.5 text-sm leading-snug text-gray-500 transition-colors hover:bg-gray-50 hover:text-[var(--brand)] ${
+                isActive(subLink.path) ? "bg-gray-50 font-medium" : ""
+              }`}
+            >
+              {subLink.label}
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -229,13 +231,13 @@ function MobileSection({
   onNavigate: () => void;
 }) {
   return (
-    <div className="space-y-1 py-2">
+    <div className="py-1">
       <MobileSectionHeader link={link} onNavigate={onNavigate} />
       {link.subLinks.map((subLink) => (
         <Link
           key={subLink.path}
           to={subLink.path}
-          className={`block px-8 py-2 text-sm text-gray-500 transition-colors hover:bg-gray-50 hover:text-[var(--brand)] ${
+          className={`block px-8 py-1.5 text-sm leading-snug text-gray-500 transition-colors hover:bg-gray-50 hover:text-[var(--brand)] ${
             isActive(subLink.path) ? "bg-gray-50" : ""
           }`}
           onClick={onNavigate}
