@@ -299,11 +299,24 @@ function groupImagesBySlug(resources, rootFolder) {
       publicId: resource.public_id,
       width: resource.width ?? 0,
       height: resource.height ?? 0,
+      createdAt: resource.created_at ?? "",
     });
   }
 
-  for (const group of groups.values()) {
-    group.images.sort((a, b) => a.publicId.localeCompare(b.publicId));
+  for (const [slug, group] of groups) {
+    if (slug === "portraits") {
+      group.images.sort((a, b) => {
+        const byDate = (b.createdAt || "").localeCompare(a.createdAt || "");
+        return byDate || a.publicId.localeCompare(b.publicId);
+      });
+    } else {
+      group.images.sort((a, b) => a.publicId.localeCompare(b.publicId));
+    }
+    group.images = group.images.map(({ publicId, width, height }) => ({
+      publicId,
+      width,
+      height,
+    }));
   }
 
   return groups;
