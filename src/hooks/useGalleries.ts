@@ -10,7 +10,7 @@ function manifestUrls(): string[] {
 }
 
 async function fetchManifestFromUrl(url: string): Promise<GalleriesManifest> {
-  const response = await fetch(url);
+  const response = await fetch(url, { cache: "no-store" });
   if (!response.ok) {
     throw new Error(`Manifest HTTP ${response.status} (${url})`);
   }
