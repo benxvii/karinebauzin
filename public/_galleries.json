@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T16:37:11.705Z",
+  "generatedAt": "2026-09-11T21:02:10.211Z",
   "cloudFolder": "karinebauzin",
   "galleries": [
     {
@@ -1245,6 +1245,73 @@
       ]
     },
     {
+      "slug": "reportages/for-free",
+      "title": "For Free",
+      "folder": "karinebauzin/reportages/for-free",
+      "images": [
+        {
+          "publicId": "kb_26-09-11_120_r6ov4f",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_122_ep5voc",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_124_sdr8fg",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_126_saf0qs",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_131_sfr6t6",
+          "width": 1000,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_135_kmsd1y",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_138_okdqum",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_143_ifpg1f",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_144_c0gald",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_146_lqkbgw",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_147_ryjszy",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_148_nxvip8",
+          "width": 1500,
+          "height": 1000
+        }
+      ]
+    },
+    {
       "slug": "reportages/grece-sans-bleu",
       "title": "Grèce sans bleu",
       "folder": "karinebauzin/reportages/grece-sans-bleu",
@@ -1389,6 +1456,78 @@
       ]
     },
     {
+      "slug": "reportages/kirkenes",
+      "title": "Kirkenes",
+      "folder": "karinebauzin/reportages/kirkenes",
+      "images": [
+        {
+          "publicId": "kb_26-09-11_334_ypamto",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_335_irdhid",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_336_sgtzdp",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_337_jepof1",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_338_v5jnlr",
+          "width": 1500,
+          "height": 999
+        },
+        {
+          "publicId": "kb_26-09-11_339_yvyklr",
+          "width": 999,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_340_tmqckc",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_341_u0likq",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_342_uxstua",
+          "width": 1000,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_343_rcw5af",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_344_xzsefh",
+          "width": 1000,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_345_oxcow0",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_346_jcdt4d",
+          "width": 1500,
+          "height": 1000
+        }
+      ]
+    },
+    {
       "slug": "reportages/las-vegas-wedding",
       "title": "Las Vegas Wedding",
       "folder": "karinebauzin/reportages/las-vegas-wedding",
@@ -1430,6 +1569,83 @@
         },
         {
           "publicId": "kb_26-09-11_008_jmxgki",
+          "width": 1500,
+          "height": 998
+        }
+      ]
+    },
+    {
+      "slug": "reportages/les-plongeuses-de-jeju",
+      "title": "Les Plongeuses De Jeju",
+      "folder": "karinebauzin/reportages/les-plongeuses-de-jeju",
+      "images": [
+        {
+          "publicId": "kb_26-09-11_132_tphslb",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_151_gnhlme",
+          "width": 1000,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_152_dfkrqy",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_153_jvrx37",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_156_mebdvv",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_157_vkdtgi",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_158_qfdhyc",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_159_w2tegk",
+          "width": 998,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_162_hg1zmh",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_166_oj6gve",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_167_v6vof3",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_171_ynp0kr",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_173_i4nakd",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_174_orec9b",
           "width": 1500,
           "height": 998
         }
@@ -2009,7 +2225,7 @@
     },
     {
       "slug": "reportages/serial-colleuses",
-      "title": "Serial Colleuses",
+      "title": "Serial colleuses",
       "folder": "karinebauzin/reportages/serial-colleuses",
       "images": [
         {
@@ -2123,6 +2339,118 @@
           "publicId": "reportages/swiss-cup-mulet/L1000278",
           "width": 1080,
           "height": 719
+        }
+      ]
+    },
+    {
+      "slug": "reportages/tour-de-france-feminin",
+      "title": "Tour De France Feminin",
+      "folder": "karinebauzin/reportages/tour-de-france-feminin",
+      "images": [
+        {
+          "publicId": "kb_26-09-11_364_toswkp",
+          "width": 1500,
+          "height": 999
+        },
+        {
+          "publicId": "kb_26-09-11_367_ewsonh",
+          "width": 999,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_370_mnyvli",
+          "width": 1500,
+          "height": 999
+        },
+        {
+          "publicId": "kb_26-09-11_375_ydvrps",
+          "width": 1500,
+          "height": 999
+        },
+        {
+          "publicId": "kb_26-09-11_386_h9hdje",
+          "width": 1500,
+          "height": 999
+        },
+        {
+          "publicId": "kb_26-09-11_389_aanya3",
+          "width": 1500,
+          "height": 999
+        },
+        {
+          "publicId": "kb_26-09-11_402_dlerzh",
+          "width": 1500,
+          "height": 999
+        },
+        {
+          "publicId": "kb_26-09-11_412_ldthlj",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_413_fzeblg",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_422_jdtfmc",
+          "width": 1000,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_423_eso9no",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_428_vgkucz",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_432_xbop3v",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_439_c2okov",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_440_kzcoir",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_462_ichyhz",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_464_uxzrfn",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_466_tnimgo",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_489_azgy7g",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_503_nrmbhs",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_511_fmu1xo",
+          "width": 1500,
+          "height": 1000
         }
       ]
     },
@@ -2354,8 +2682,75 @@
       ]
     },
     {
+      "slug": "reportages/tu-flashes-ou-tu-tires",
+      "title": "Tu Flashes Ou Tu Tires",
+      "folder": "karinebauzin/reportages/tu-flashes-ou-tu-tires",
+      "images": [
+        {
+          "publicId": "kb_26-09-11_347_nniygd",
+          "width": 1500,
+          "height": 999
+        },
+        {
+          "publicId": "kb_26-09-11_348_h8wvcs",
+          "width": 1500,
+          "height": 999
+        },
+        {
+          "publicId": "kb_26-09-11_349_bfd9rs",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_350_e2tvac",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_351_wzaeww",
+          "width": 1000,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_352_ydyhmm",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_353_rjc2g7",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_354_zimqjj",
+          "width": 1000,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_355_sd1odh",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_356_dmzdep",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_357_fa5uzk",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_358_oq4yac",
+          "width": 1500,
+          "height": 998
+        }
+      ]
+    },
+    {
       "slug": "reportages/yes-i-cannes",
-      "title": "Yes I Cannes",
+      "title": "Yes, I Cannes",
       "folder": "karinebauzin/reportages/yes-i-cannes",
       "images": [
         {
@@ -2427,6 +2822,238 @@
           "publicId": "kb_26-09-11_034_h9vhh4",
           "width": 1500,
           "height": 998
+        }
+      ]
+    },
+    {
+      "slug": "reportages/youth-in-cannes",
+      "title": "Youth In Cannes",
+      "folder": "karinebauzin/reportages/youth-in-cannes",
+      "images": [
+        {
+          "publicId": "kb_26-09-11_179_w8dhoa",
+          "width": 1500,
+          "height": 997
+        },
+        {
+          "publicId": "kb_26-09-11_180_x2sujw",
+          "width": 997,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_183_a3ytbu",
+          "width": 1500,
+          "height": 997
+        },
+        {
+          "publicId": "kb_26-09-11_185_zpgpgh",
+          "width": 997,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_188_g4w0gd",
+          "width": 1500,
+          "height": 997
+        },
+        {
+          "publicId": "kb_26-09-11_194_gshj7g",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_195_gp8qkq",
+          "width": 1000,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_197_i0gobz",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_202_pkitsa",
+          "width": 1000,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_204_nil8ip",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_207_oqliun",
+          "width": 1500,
+          "height": 997
+        },
+        {
+          "publicId": "kb_26-09-11_209_a7vh8d",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_211_h1ynei",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_216_t10o94",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_220_jzqiof",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_221_hup6kd",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_222_iupti8",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_225_np96ns",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_227_hyectk",
+          "width": 1000,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_228_fxokas",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_232_neq6io",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_234_tlwr6m",
+          "width": 1000,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_235_gvvd4d",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_236_d1cpr3",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_240_joo8qa",
+          "width": 1000,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_241_xsskoh",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_244_ycfbx1",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_245_aeqbgm",
+          "width": 1000,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_250_mwhgsv",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_254_engg5j",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_255_bgenw4",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_256_sahcp2",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_257_hmmpcj",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_260_o6lo5u",
+          "width": 1000,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_262_f7rrfj",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_263_l6pnng",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_273_g5chb3",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_275_rzckxf",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_285_exb9c3",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_289_xh9ugh",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_298_jggzau",
+          "width": 1000,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_304_qrref1",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_314_pejp8h",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_323_uhaasa",
+          "width": 1500,
+          "height": 998
+        },
+        {
+          "publicId": "kb_26-09-11_325_hr5lqa",
+          "width": 1500,
+          "height": 1000
         }
       ]
     }
