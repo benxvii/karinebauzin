@@ -184,3 +184,26 @@
     @apply text-base text-gray-600 leading-snug;
   }
 }
+
+.nav-dropdown-scroll {
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: #c4c4c4 #f4f4f4;
+}
+
+.nav-dropdown-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.nav-dropdown-scroll::-webkit-scrollbar-track {
+  background: #f4f4f4;
+}
+
+.nav-dropdown-scroll::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 999px;
+}
+
+.nav-dropdown-scroll::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3;
+}
