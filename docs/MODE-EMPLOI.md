@@ -12,7 +12,7 @@ Public : Karine (quotidien) et Benoît / l’assistant (détail technique). Repo
 
 **Les textes** (intros, fiches livres, email, téléphone, menu) vivent dans le projet, sur ton ordinateur. Tu les changes dans Cursor.
 
-**Les photos des galeries** (portraits, reportages) vivent dans une bibliothèque en ligne : Cloudinary. Tu y déposes tes images.
+**Les photos des galeries** (portraits, reportages) vivent dans une bibliothèque en ligne : Cloudinary. Tu y déposes tes images, et tu y supprimes celles que tu ne veux plus.
 
 **Le site en ligne** (karinebauzin.ch) se met à jour tout seul une fois tes changements envoyés. Tu n’as pas à te connecter chez l’hébergeur.
 
@@ -62,8 +62,8 @@ Benoît t’invite sur le projet GitHub et te donne l’accès Cloudinary. Dans 
 | Où | Adresse | À quoi ça sert |
 | --- | --- | --- |
 | **Cursor** | l’appli sur ton Mac | Modifier les textes, ajouter un livre ou un reportage. Tu parles à l’assistant. |
-| **GitHub** | [github.com](https://github.com) | Envoyer tes changements. Après un dépôt de photos : Actions → *Sync galleries from Cloudinary* → Run. |
-| **Cloudinary** | [console.cloudinary.com](https://console.cloudinary.com) | Déposer tes photos dans le bon dossier. |
+| **GitHub** | [github.com](https://github.com) | Envoyer tes changements. Après un dépôt, une suppression ou un renommage de photos : Actions → *Sync galleries from Cloudinary* → Run. |
+| **Cloudinary** | [console.cloudinary.com](https://console.cloudinary.com) | Déposer, supprimer ou renommer tes photos dans le bon dossier. |
 
 Tu n’as pas besoin du compte Infomaniak au quotidien.
 
@@ -78,18 +78,13 @@ Tu n’as pas besoin du compte Infomaniak au quotidien.
 3. Regarder le résultat en local
 4. Demander à l’assistant d’envoyer les changements
 
-Pas besoin de Cloudinary pour du texte.
+Pas besoin de Cloudinary pour du texte. Où vit chaque champ : **§ 1**.
 
-### Ajouter des photos à une galerie qui existe déjà
+### Ajouter, retirer ou classer des photos
 
-Aucune modification de code. Uniquement Cloudinary + sync.
+Portraits et reportages : Cloudinary, puis sync. Pas de code, pas de `git push`.
 
-1. Aller sur Cloudinary
-2. Glisser tes JPG dans le dossier du reportage (ou Portraits)
-3. GitHub → Actions → *Sync galleries from Cloudinary* → Run
-4. Recharger la page
-
-Pas besoin de Cursor pour ça. Pas de `git push`.
+Procédure (dossiers, couverture, ordre) : **§ 2**.
 
 Un **nouveau reportage**, c’est les deux : une ligne de texte via Cursor, plus les photos via Cloudinary.
 
@@ -99,21 +94,21 @@ Un **nouveau reportage**, c’est les deux : une ligne de texte via Cursor, plus
 
 > Change l’intro de Cabines de plage avec ce texte : …
 
-> Ajoute un projet reportage « mon-projet », titre …, intro …
-
-> Remplace la couverture de Portraits-ge.ch. Le fichier est dans public/books/.
-
-> Envoie les changements avec un message en français.
-
-> J’ai uploadé des photos dans Cloudinary sous karinebauzin/reportages/swiss-cup-mulet. Comment je lance le sync ?
-
 > Ajoute un projet reportage « mon-projet » : titre …, intro …. Photos déjà sur Cloudinary dans karinebauzin/reportages/mon-projet/.
 
 > Remplace la couverture de Portraits-ge.ch : fichier dans public/books/, mockup fond blanc légèrement incliné.
 
+> J’ai uploadé des photos dans Cloudinary sous karinebauzin/reportages/swiss-cup-mulet. Comment je lance le sync ?
+
+> J’ai supprimé une photo dans karinebauzin/portraits. Comment je relance le sync ?
+
+> J’ai retiré la couverture de Coupe Weuro. Utilise cette photo à la place : https://res.cloudinary.com/…/….jpg
+
 > Sur `/reportages`, utilise cette photo en couverture de Coupe Weuro : https://res.cloudinary.com/…/kb_….jpg
 
-> Commit les changements avec un message en français.
+> Dans swiss-cup-mulet, je ne veux pas DSC3003 et DSC3004 côte à côte.
+
+> Envoie les changements avec un message en français.
 
 ---
 
@@ -190,49 +185,79 @@ Les métadonnées (photographies, éditeur, ISBN, prix, TWINT) passent par `Book
 
 ## 2. Galeries et photos (Cloudinary)
 
-### Ajouter des photos à une galerie existante
+Portraits et reportages se gèrent de la même façon. Tu bouges les fichiers dans Cloudinary, puis tu lances le sync. **Aucune modification de code** pour une photo normale. Pas de liste de photos dans `site.ts`.
 
-**Aucune modification de code.**
+| Page | Dossier Cloudinary |
+|------|--------------------|
+| `/portraits` | `karinebauzin/portraits/` |
+| `/reportages/<slug>` | `karinebauzin/reportages/<slug>/` |
 
-#### Étape A — Uploader sur Cloudinary
+Exemples : `karinebauzin/portraits/`, `karinebauzin/reportages/swiss-cup-mulet/`, `karinebauzin/reportages/144-smur/`.
+
+Le slug du reportage = le nom du dossier. Il doit coller à `path` dans `site.ts` (`/reportages/swiss-cup-mulet` → dossier `swiss-cup-mulet`).
+
+### Ajouter ou retirer une photo
 
 1. [console.cloudinary.com](https://console.cloudinary.com) → **Assets**
-2. Dossier de la galerie, par exemple :
+2. Ouvrir le dossier de la galerie (tableau ci-dessus)
+3. **Ajouter** : **Upload** → glisser les JPG. **Retirer** : cliquer la photo → **Delete** (poubelle) → confirmer
+4. Lancer le sync (ci-dessous)
+5. Recharger `/portraits` ou `/reportages/<slug>`
 
-```
-karinebauzin/portraits/
-karinebauzin/reportages/swiss-cup-mulet/
-```
+Pas de `git push`. Pas besoin de Cursor. Tant que le sync n’a pas tourné, l’ancienne galerie reste affichée. On ne « cache » pas une photo dans le code : on la retire de Cloudinary.
 
-3. **Upload** → glisser les JPG
+### Si tu supprimes (ou renommes) la photo de couverture d’un reportage
 
-| Galerie dans `site.ts` | Dossier Cloudinary |
-|------------------------|--------------------|
-| `portraitGallery` (`slug: "portraits"`) | `karinebauzin/portraits/` |
-| `slug: "swiss-cup-mulet"` | `karinebauzin/reportages/swiss-cup-mulet/` |
-| `slug: "144-smur"` | `karinebauzin/reportages/144-smur/` |
+La couverture, c’est la **vignette sur `/reportages`** (la grille des projets). Ce n’est pas forcément la première photo de la galerie. Les portraits n’ont pas de couverture.
 
-#### Étape B — Synchroniser le manifeste
+Si tu supprimes ou renommes cette photo dans Cloudinary **sans** mettre à jour `coverPublicId` :
+
+- la galerie du projet se met à jour après le sync
+- le hub `/reportages` pointe encore vers l’ancien fichier : vignette cassée
+
+Donc, dans l’ordre :
+
+1. Vérifie sur `/reportages` que c’est bien cette photo
+2. Choisis la remplaçante (une autre photo du même reportage, ou son URL Cloudinary)
+3. Supprime ou renomme l’ancienne dans Cloudinary
+4. Dis à l’assistant : *J’ai retiré la couverture de [projet]. Utilise celle-ci à la place : …*
+5. L’assistant change `coverPublicId` dans `site.ts` et envoie le code (commit + push)
+6. Lance le sync
+
+Sans remplaçante choisie : demande d’enlever `coverPublicId`. Le hub prendra alors la première photo de la galerie (pour un reportage : la première en A→Z).
+
+Changer de couverture **sans** supprimer la photo : juste la phrase à l’assistant. Pas de delete Cloudinary.
+
+### Classer les images (éviter deux photos côte à côte)
+
+Sur téléphone : une seule colonne, les photos s’empilent.
+
+Sur tablette et ordi : **2 colonnes**. Les photos 1 et 2 s’affichent côte à côte, puis 3 et 4, etc. Deux photos qui se suivent dans l’ordre se retrouvent donc l’une à côté de l’autre.
+
+Pour les séparer : glisse une autre photo entre les deux dans le classement. Puis sync.
+
+| Galerie | Comment l’ordre est décidé |
+|---------|----------------------------|
+| Portraits | Plus récent d’abord (date d’upload Cloudinary) |
+| Reportages | Nom de fichier A→Z (**Public ID**, pas le nom affiché) |
+
+**Reportages.** Avant l’upload, préfixe les fichiers : `01-…`, `02-…`, `03-…`. Déjà en ligne : Cloudinary → cliquer la photo → **Rename** / modifier le **Public ID** (le « display name » ne compte pas). `01` et `02` seront côte à côte ; pour les séparer : `01`, `02` (une autre photo), `03`. Si tu renommes la couverture, vois le paragraphe précédent.
+
+**Portraits.** La dernière photo ajoutée passe en haut à gauche. Les deux derniers uploads se retrouvent côte à côte en tête de page. Pour faire remonter une photo : la ré-uploader. Pour séparer deux portraits côte à côte : ré-uploader l’un des deux, ou en ajouter un troisième entre eux (en date).
+
+### Synchroniser le manifeste
+
+Après chaque ajout, suppression **ou** renommage :
 
 1. GitHub → repo → **Actions**
 2. **Sync galleries from Cloudinary** → **Run workflow**
 3. Attendre le ✅ vert (~30 s)
 
-En local : `npm run sync:galleries` si les clés API sont dans l’environnement. Sinon GitHub → **Actions** → **Sync galleries from Cloudinary**.
+Le cron tourne aussi tout seul chaque jour à 5h UTC (7h en Suisse). En local : `npm run sync:galleries` si les clés API sont dans l’environnement.
 
 Sur GitHub, le workflow a besoin des secrets `CLOUDINARY_API_KEY` et `CLOUDINARY_API_SECRET` (en plus de `CLOUDINARY_CLOUD_NAME` déjà présent).
 
-Le workflow tourne aussi tout seul chaque jour à 5h UTC (7h en Suisse).
-
-#### Étape C — Vérifier
-
-Recharger `/portraits` ou `/reportages/<slug>`.
-
-**Pas de `git push` nécessaire.**
-
-Pour retirer une photo : la supprimer dans Cloudinary, puis lancer le sync (ou attendre 7h). Pas de liste d’exceptions dans le code.
-
-### Créer un nouveau projet reportage (galerie)
+### Créer un nouveau projet reportage
 
 1. Cloudinary : `karinebauzin/reportages/<slug>/` + upload
 2. Cursor ajoute dans `documentary.projects` :
@@ -254,9 +279,7 @@ Pour retirer une photo : la supprimer dans Cloudinary, puis lancer le sync (ou a
 
 Pas de modification de `routes.ts` / `navigation.ts` : le menu se met à jour tout seul.
 
-### Autres galeries (portraits)
-
-Même geste : upload dans `karinebauzin/portraits/` + sync. Pas de liste de photos dans `site.ts`.
+Ensuite, les photos de ce projet se gèrent comme n’importe quelle galerie (ajouter / retirer / classer, plus haut).
 
 ---
 
@@ -290,7 +313,8 @@ Sans `price` : pas de ligne prix/TWINT, pas de bouton commander.
 |-------|------------|----------|----------|
 | Modifier un texte | — | `site.ts` (ou `About.tsx` / `Contact.tsx`) | ✅ |
 | Badge Trust-J | — | `site.trustJ` + `public/trustj-logo.png` | ✅ |
-| Ajouter photos (galerie existante) | ✅ upload + sync | — | non |
+| Ajouter / retirer / classer des photos | ✅ + sync | — | non |
+| Retirer ou renommer la **couverture** d’un reportage | ✅ + sync | `site.ts` (`coverPublicId`) | ✅ code |
 | Nouveau projet reportage | ✅ upload + sync | `site.ts` (slug/titre) | ✅ code |
 | Couverture de livre | — | `public/books/` + `site.ts` | ✅ |
 | Livre / film | — | `site.ts` | ✅ |
@@ -302,6 +326,9 @@ Sans `price` : pas de ligne prix/TWINT, pas de bouton commander.
 | Problème | Cause | Solution |
 |----------|-------|----------|
 | Galerie vide | Manifeste pas à jour, ou `.env` sans cloud name | Lancer **Sync galleries** |
+| Photo encore visible après suppression | Sync pas lancé | Relancer **Sync galleries**, puis recharger |
+| Vignette cassée sur `/reportages` | Couverture supprimée ou renommée, `coverPublicId` pas à jour | Dire à l’assistant quelle nouvelle photo utiliser |
+| Deux photos côte à côte alors que tu ne veux pas | Elles se suivent dans l’ordre (2 colonnes) | Glisser une autre photo entre les deux, puis sync |
 | Mauvais dossier Cloudinary | Slug ≠ chemin | Aligné sur `docs/MEDIA.md` |
 | Page 404 | `path` / `slug` incohérent | `path` = `/reportages/` ou `/livres/` + slug |
 | Métadonnées en double dans un livre | Texte dans `body` + champs | Garder les champs structurés |
