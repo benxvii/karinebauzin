@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T10:48:12.403Z",
+  "generatedAt": "2026-09-13T11:12:41.359Z",
   "cloudFolder": "karinebauzin",
   "galleries": [
     {
@@ -929,6 +929,11 @@
       "folder": "karinebauzin/reportages/coupe-weuro",
       "images": [
         {
+          "publicId": "kb_26-09-11_118_dc6epg",
+          "width": 1500,
+          "height": 1000
+        },
+        {
           "publicId": "kb_26-09-11_045_oqffwo",
           "width": 1500,
           "height": 999
@@ -936,16 +941,6 @@
         {
           "publicId": "kb_26-09-11_050_uybd9f",
           "width": 1000,
-          "height": 1500
-        },
-        {
-          "publicId": "kb_26-09-11_053_yyytpk",
-          "width": 1500,
-          "height": 1000
-        },
-        {
-          "publicId": "kb_26-09-11_055_a0f8kx",
-          "width": 999,
           "height": 1500
         },
         {
@@ -972,11 +967,6 @@
           "publicId": "kb_26-09-11_074_gcv97m",
           "width": 1500,
           "height": 999
-        },
-        {
-          "publicId": "kb_26-09-11_075_tsqcpq",
-          "width": 1500,
-          "height": 1000
         },
         {
           "publicId": "kb_26-09-11_076_u1z93o",
@@ -1021,6 +1011,21 @@
         {
           "publicId": "kb_26-09-11_086_zfczyn",
           "width": 1000,
+          "height": 1500
+        },
+        {
+          "publicId": "kb_26-09-11_075_tsqcpq",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_053_yyytpk",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "publicId": "kb_26-09-11_055_a0f8kx",
+          "width": 999,
           "height": 1500
         },
         {
@@ -1117,11 +1122,6 @@
           "publicId": "kb_26-09-11_115_zallg4",
           "width": 1000,
           "height": 1500
-        },
-        {
-          "publicId": "kb_26-09-11_118_dc6epg",
-          "width": 1500,
-          "height": 1000
         },
         {
           "publicId": "kb_26-09-11_119_esz6wr",
@@ -2381,9 +2381,9 @@
       "folder": "karinebauzin/reportages/swiss-cup-mulet",
       "images": [
         {
-          "publicId": "reportages/swiss-cup-mulet/DSC2645",
+          "publicId": "reportages/swiss-cup-mulet/L1000246",
           "width": 1080,
-          "height": 1620
+          "height": 719
         },
         {
           "publicId": "reportages/swiss-cup-mulet/DSC2736",
@@ -2391,17 +2391,12 @@
           "height": 1620
         },
         {
-          "publicId": "reportages/swiss-cup-mulet/DSC2766",
-          "width": 1080,
-          "height": 720
-        },
-        {
           "publicId": "reportages/swiss-cup-mulet/DSC2878",
           "width": 1080,
           "height": 720
         },
         {
-          "publicId": "reportages/swiss-cup-mulet/DSC3003",
+          "publicId": "reportages/swiss-cup-mulet/L1000278",
           "width": 1080,
           "height": 719
         },
@@ -2411,19 +2406,24 @@
           "height": 1620
         },
         {
-          "publicId": "reportages/swiss-cup-mulet/DSC3225",
+          "publicId": "reportages/swiss-cup-mulet/DSC2766",
           "width": 1080,
           "height": 720
         },
         {
-          "publicId": "reportages/swiss-cup-mulet/L1000246",
+          "publicId": "reportages/swiss-cup-mulet/DSC2645",
+          "width": 1080,
+          "height": 1620
+        },
+        {
+          "publicId": "reportages/swiss-cup-mulet/DSC3003",
           "width": 1080,
           "height": 719
         },
         {
-          "publicId": "reportages/swiss-cup-mulet/L1000278",
+          "publicId": "reportages/swiss-cup-mulet/DSC3225",
           "width": 1080,
-          "height": 719
+          "height": 720
         }
       ]
     },
