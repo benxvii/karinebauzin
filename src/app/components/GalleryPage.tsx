@@ -1,12 +1,13 @@
-import { useState } from "react";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import { useMemo, useState } from "react";
+import type { GalleryDisplayImage } from "../../lib/galleryImages";
+import { useIsMobile } from "./ui/use-mobile";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { Lightbox } from "./Lightbox";
 
 type GalleryPageProps = {
   title: string;
   intro: string;
-  images: readonly string[];
+  images: readonly GalleryDisplayImage[];
   showHeader?: boolean;
   loading?: boolean;
   error?: string | null;
@@ -54,42 +55,81 @@ export default function GalleryPage({
   );
 }
 
+type IndexedImage = GalleryDisplayImage & { index: number };
+
+/**
+ * Répartit les photos en colonnes de hauteur équilibrée, à partir de leurs
+ * dimensions réelles (chaque photo va dans la colonne la plus courte à cet
+ * instant). Déterministe, sans mesure DOM : pas de risque qu'une colonne
+ * finisse beaucoup plus longue que l'autre (contrairement à un simple
+ * `index % nombreDeColonnes`, ou à `column-fill: balance` en CSS, imprécis
+ * sur de grandes galeries).
+ */
+function splitIntoBalancedColumns(
+  images: readonly IndexedImage[],
+  columnsCount: number,
+): IndexedImage[][] {
+  const columns: IndexedImage[][] = Array.from({ length: columnsCount }, () => []);
+  const columnHeights = Array<number>(columnsCount).fill(0);
+
+  for (const image of images) {
+    const aspectRatio = image.width / image.height || 1;
+    let shortest = 0;
+    for (let i = 1; i < columnsCount; i += 1) {
+      if (columnHeights[i] < columnHeights[shortest]) shortest = i;
+    }
+    columns[shortest].push(image);
+    columnHeights[shortest] += 1 / aspectRatio;
+  }
+
+  return columns;
+}
+
 function GalleryGrid({
   images,
   title,
 }: {
-  images: readonly string[];
+  images: readonly GalleryDisplayImage[];
   title: string;
 }) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const isMobile = useIsMobile();
+  const columnsCount = isMobile ? 1 : 2;
+
+  const columns = useMemo(() => {
+    const indexed = images.map((image, index) => ({ ...image, index }));
+    return splitIntoBalancedColumns(indexed, columnsCount);
+  }, [images, columnsCount]);
+
+  const imageUrls = useMemo(() => images.map((image) => image.src), [images]);
 
   return (
     <>
       <div className="flex">
         <div className="hidden lg:block w-1/3 shrink-0 sticky top-0 h-screen" />
-        <div className="w-full lg:w-2/3">
-          <ResponsiveMasonry columnsCountBreakPoints={{ 0: 1, 768: 2 }}>
-            <Masonry gutter="8px">
-              {images.map((src, index) => (
+        <div className="w-full lg:w-2/3 flex gap-2">
+          {columns.map((column, columnIndex) => (
+            <div key={columnIndex} className="flex-1 min-w-0 flex flex-col gap-2">
+              {column.map((image) => (
                 <div
-                  key={src}
+                  key={image.src}
                   className="cursor-pointer"
-                  onClick={() => setActiveIndex(index)}
+                  onClick={() => setActiveIndex(image.index)}
                 >
                   <ImageWithFallback
-                    src={src}
-                    alt={`${title} ${index + 1}`}
+                    src={image.src}
+                    alt={`${title} ${image.index + 1}`}
                     className="w-full h-auto object-contain"
                   />
                 </div>
               ))}
-            </Masonry>
-          </ResponsiveMasonry>
+            </div>
+          ))}
         </div>
       </div>
       {activeIndex !== null && (
         <Lightbox
-          images={images}
+          images={imageUrls}
           activeIndex={activeIndex}
           onClose={() => setActiveIndex(null)}
           onNavigate={setActiveIndex}
