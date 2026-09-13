@@ -10,6 +10,10 @@
  * (même contrat que benoitdepagnier.ch).
  *
  * Titres des galeries : scripts/galleries-meta.json
+ *
+ * Ordre des photos (fixé dans le manifeste) :
+ * - portraits : plus récent d'abord (created_at)
+ * - reportages : display_name A→Z (sinon filename, sinon public_id)
  */
 
 import crypto from "node:crypto";
@@ -141,6 +145,37 @@ function folderFromPublicId(publicId) {
   return lastSlash === -1 ? "" : publicId.slice(0, lastSlash);
 }
 
+function lastPublicIdSegment(publicId) {
+  const lastSlash = publicId.lastIndexOf("/");
+  return lastSlash === -1 ? publicId : publicId.slice(lastSlash + 1);
+}
+
+/** Clé de tri reportages : display name Cloudinary, puis nom de fichier, puis public_id. */
+function reportageSortKey(image) {
+  const raw =
+    image.displayName || image.filename || lastPublicIdSegment(image.publicId || "");
+  return String(raw).trim();
+}
+
+function compareReportageOrder(a, b) {
+  const byName = reportageSortKey(a).localeCompare(reportageSortKey(b), undefined, {
+    numeric: true,
+    sensitivity: "base",
+  });
+  return byName || a.publicId.localeCompare(b.publicId);
+}
+
+function rememberResource(byId, resource) {
+  if (!resource.public_id) return;
+  const existing = byId.get(resource.public_id);
+  byId.set(resource.public_id, {
+    ...existing,
+    ...resource,
+    display_name: resource.display_name || existing?.display_name,
+    filename: resource.filename || existing?.filename,
+  });
+}
+
 function resolveResourceFolder(resource) {
   return resource.asset_folder || resource.folder || folderFromPublicId(resource.public_id);
 }
@@ -201,6 +236,7 @@ async function searchImages(expression) {
       expression,
       max_results: 500,
       sort_by: [{ public_id: "asc" }],
+      with_field: ["display_name"],
     };
     if (nextCursor) body.next_cursor = nextCursor;
 
@@ -255,7 +291,7 @@ async function fetchAllGalleryImages(rootFolder) {
     console.log(`Scan search : ${expression}`);
     const resources = await searchImages(expression);
     for (const resource of resources) {
-      if (resource.public_id) byId.set(resource.public_id, resource);
+      rememberResource(byId, resource);
     }
   }
 
@@ -274,7 +310,7 @@ async function fetchAllGalleryImages(rootFolder) {
     console.log(`Scan asset_folder : ${folderPath}`);
     const resources = await fetchByAssetFolder(folderPath);
     for (const resource of resources) {
-      if (resource.public_id) byId.set(resource.public_id, resource);
+      rememberResource(byId, resource);
     }
   }
 
@@ -300,6 +336,8 @@ function groupImagesBySlug(resources, rootFolder) {
       width: resource.width ?? 0,
       height: resource.height ?? 0,
       createdAt: resource.created_at ?? "",
+      displayName: resource.display_name ?? "",
+      filename: resource.filename ?? "",
     });
   }
 
@@ -310,7 +348,7 @@ function groupImagesBySlug(resources, rootFolder) {
         return byDate || a.publicId.localeCompare(b.publicId);
       });
     } else {
-      group.images.sort((a, b) => a.publicId.localeCompare(b.publicId));
+      group.images.sort(compareReportageOrder);
     }
     group.images = group.images.map(({ publicId, width, height }) => ({
       publicId,

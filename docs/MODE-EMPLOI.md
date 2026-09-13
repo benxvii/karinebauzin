@@ -16,15 +16,17 @@ Public : Karine (quotidien) et Benoît / l’assistant (détail technique). Repo
 
 **Le site en ligne** (karinebauzin.ch) se met à jour tout seul une fois tes changements envoyés. Tu n’as pas à te connecter chez l’hébergeur.
 
-| Élément | Rôle |
-|---------|------|
-| **Code** (`src/`) | Textes, structure des pages, menu, URLs |
-| **`src/config/site.ts`** | Fichier éditorial principal (copie **locale** sur le Mac) |
-| **Cloudinary** | **Photos de galeries** (portraits, reportages) + portrait À propos |
-| **`public/books/`** | Couvertures livres + affiche film (dans Git) |
-| **`public/trustj-logo.png`** | Badge Trust-J (page Contact, dans Git) |
-| **GitHub** | Code source + workflow **Sync galleries from Cloudinary** |
-| **Infomaniak** | Hébergement (deploy FTP via GitHub Actions). Benoît s’en occupe. |
+
+| Élément                      | Rôle                                                               |
+| ---------------------------- | ------------------------------------------------------------------ |
+| **Code** (`src/`)            | Textes, structure des pages, menu, URLs                            |
+| **`src/config/site.ts`**     | Fichier éditorial principal (copie **locale** sur le Mac)          |
+| **Cloudinary**               | **Photos de galeries** (portraits, reportages) + portrait À propos |
+| **`public/books/`**          | Couvertures livres + affiche film (dans Git)                       |
+| **`public/trustj-logo.png`** | Badge Trust-J (page Contact, dans Git)                             |
+| **GitHub**                   | Code source + workflow **Sync galleries from Cloudinary**          |
+| **Infomaniak**               | Hébergement (deploy FTP via GitHub Actions). Benoît s’en occupe.   |
+
 
 `site.ts` se modifie en local (projet ouvert dans Cursor), pas directement sur GitHub. Après commit + push, le site se met à jour.
 
@@ -51,7 +53,7 @@ Git est souvent déjà là. Cursor le propose aussi à l’installation.
 1. Ouvrir le projet dans Cursor
 2. Dans le terminal, une seule fois : `npm install`
 3. Pour voir le site chez toi : `npm run dev`
-4. Ouvrir l’adresse qui s’affiche (souvent http://localhost:5173)
+4. Ouvrir l’adresse qui s’affiche (souvent [http://localhost:5173](http://localhost:5173))
 
 ---
 
@@ -59,11 +61,13 @@ Git est souvent déjà là. Cursor le propose aussi à l’installation.
 
 Benoît t’invite sur le projet GitHub et te donne l’accès Cloudinary. Dans Cursor, tu te connectes une fois avec GitHub.
 
-| Où | Adresse | À quoi ça sert |
-| --- | --- | --- |
-| **Cursor** | l’appli sur ton Mac | Modifier les textes, ajouter un livre ou un reportage. Tu parles à l’assistant. |
-| **GitHub** | [github.com](https://github.com) | Envoyer tes changements. Après un dépôt, une suppression ou un renommage de photos : Actions → *Sync galleries from Cloudinary* → Run. |
-| **Cloudinary** | [console.cloudinary.com](https://console.cloudinary.com) | Déposer, supprimer ou renommer tes photos dans le bon dossier. |
+
+| Où             | Adresse                                                  | À quoi ça sert                                                                                                                         |
+| -------------- | -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| **Cursor**     | l’appli sur ton Mac                                      | Modifier les textes, ajouter un livre ou un reportage. Tu parles à l’assistant.                                                        |
+| **GitHub**     | [github.com](https://github.com)                         | Envoyer tes changements. Après un dépôt, une suppression ou un renommage de photos : Actions → *Sync galleries from Cloudinary* → Run. |
+| **Cloudinary** | [console.cloudinary.com](https://console.cloudinary.com) | Déposer, supprimer ou renommer tes photos dans le bon dossier.                                                                         |
+
 
 Tu n’as pas besoin du compte Infomaniak au quotidien.
 
@@ -102,9 +106,9 @@ Un **nouveau reportage**, c’est les deux : une ligne de texte via Cursor, plus
 
 > J’ai supprimé une photo dans karinebauzin/portraits. Comment je relance le sync ?
 
-> J’ai retiré la couverture de Coupe Weuro. Utilise cette photo à la place : https://res.cloudinary.com/…/….jpg
+> J’ai retiré la couverture de Coupe Weuro. Utilise cette photo à la place : [https://res.cloudinary.com/…/….jpg](https://res.cloudinary.com/…/….jpg)
 
-> Sur `/reportages`, utilise cette photo en couverture de Coupe Weuro : https://res.cloudinary.com/…/kb_….jpg
+> Sur `/reportages`, utilise cette photo en couverture de Coupe Weuro : [https://res.cloudinary.com/…/kb_….jpg](https://res.cloudinary.com/…/kb_….jpg)
 
 > Dans swiss-cup-mulet, je ne veux pas DSC3003 et DSC3004 côte à côte.
 
@@ -114,28 +118,32 @@ Un **nouveau reportage**, c’est les deux : une ligne de texte via Cursor, plus
 
 ## Fichiers utiles
 
-| Fichier | Contenu |
-|---------|---------|
-| `src/config/site.ts` | Contenu éditorial |
-| `src/config/navigation.ts` | Menu (généré depuis `site.ts`) |
-| `src/app/components/About.tsx` | Bio, stats, portrait Cloudinary |
-| `src/app/components/Contact.tsx` | Formulaire + affichage Trust-J |
-| `public/books/` | Couvertures livres/films |
-| `public/trustj-logo.png` | Logo Trust-J |
-| `docs/ARCHITECTURE.md` | Structure technique |
-| `docs/MEDIA.md` | Emplacement des images + Cloudinary |
-| `.env` | `VITE_CLOUDINARY_CLOUD_NAME` ; `VITE_CLOUDINARY_FOLDER=karinebauzin` ; `VITE_MANIFEST_URL` |
-| `scripts/sync-galleries.mjs` | Scan Cloudinary → `_galleries.json` |
-| `public/_galleries.json` | Copie locale du manifeste (secours) |
+
+| Fichier                          | Contenu                                                                                    |
+| -------------------------------- | ------------------------------------------------------------------------------------------ |
+| `src/config/site.ts`             | Contenu éditorial                                                                          |
+| `src/config/navigation.ts`       | Menu (généré depuis `site.ts`)                                                             |
+| `src/app/components/About.tsx`   | Bio, stats, portrait Cloudinary                                                            |
+| `src/app/components/Contact.tsx` | Formulaire + affichage Trust-J                                                             |
+| `public/books/`                  | Couvertures livres/films                                                                   |
+| `public/trustj-logo.png`         | Logo Trust-J                                                                               |
+| `docs/ARCHITECTURE.md`           | Structure technique                                                                        |
+| `docs/MEDIA.md`                  | Emplacement des images + Cloudinary                                                        |
+| `.env`                           | `VITE_CLOUDINARY_CLOUD_NAME` ; `VITE_CLOUDINARY_FOLDER=karinebauzin` ; `VITE_MANIFEST_URL` |
+| `scripts/sync-galleries.mjs`     | Scan Cloudinary → `_galleries.json`                                                        |
+| `public/_galleries.json`         | Copie locale du manifeste (secours)                                                        |
+
 
 ### Sections dans `site.ts`
 
-| Objet | Contenu |
-|-------|---------|
-| `site` | Nom, email, téléphone, réseaux, logo, Trust-J (`trustJ`) |
-| `portraitGallery` | `/portraits` |
-| `documentary` | Hub + projets `/reportages/:slug` |
-| `livres` | Hub + fiches `/livres/:slug` |
+
+| Objet             | Contenu                                                  |
+| ----------------- | -------------------------------------------------------- |
+| `site`            | Nom, email, téléphone, réseaux, logo, Trust-J (`trustJ`) |
+| `portraitGallery` | `/portraits`                                             |
+| `documentary`     | Hub + projets `/reportages/:slug`                        |
+| `livres`          | Hub + fiches `/livres/:slug`                             |
+
 
 Le menu se met à jour **automatiquement** quand on ajoute un livre ou un projet documentaire dans `site.ts`.
 
@@ -155,29 +163,33 @@ Ou demander à l’assistant : *Envoie les changements avec un message en franç
 
 Ouvrir `src/config/site.ts` (ou laisser Cursor le faire).
 
-| Élément | Où |
-|---------|-----|
-| Email, téléphone, réseaux | objet `site` |
-| Badge Trust-J (texte, URL, logo) | `site.trustJ` |
-| Titre / intro galerie | `portraitGallery` |
-| Projet documentaire | `documentary.projects[]` |
-| Fiche livre | `livres.items[]` |
-| Bio À propos | `src/app/components/About.tsx` (pas `site.ts`) |
-| Formulaire / mise en page Contact | `src/app/components/Contact.tsx` |
+
+| Élément                           | Où                                             |
+| --------------------------------- | ---------------------------------------------- |
+| Email, téléphone, réseaux         | objet `site`                                   |
+| Badge Trust-J (texte, URL, logo)  | `site.trustJ`                                  |
+| Titre / intro galerie             | `portraitGallery`                              |
+| Projet documentaire               | `documentary.projects[]`                       |
+| Fiche livre                       | `livres.items[]`                               |
+| Bio À propos                      | `src/app/components/About.tsx` (pas `site.ts`) |
+| Formulaire / mise en page Contact | `src/app/components/Contact.tsx`               |
+
 
 Champs d’une fiche livre :
 
-| Champ | Usage |
-|-------|-------|
-| `slug`, `path`, `title` | URL et titre |
-| `description` | Résumé (page détail livre ; **pas** affiché sur le hub `/livres`) |
-| `body` | Texte principal |
-| `image` | Couverture `/books/...` |
-| `price`, `shippingFee` | CHF |
-| `publisher` | Éditeur (affiché dans `BookMeta`) |
-| `isbn`, `language`, `pages`, `format` | Specs sous « Photographies » |
-| `availability` | « Ouvrage épuisé », « Ouvrage privé - Ville de Genève », etc. |
-| `kind: "film"` | Pas de prix ni bouton commander |
+
+| Champ                                 | Usage                                                             |
+| ------------------------------------- | ----------------------------------------------------------------- |
+| `slug`, `path`, `title`               | URL et titre                                                      |
+| `description`                         | Résumé (page détail livre ; **pas** affiché sur le hub `/livres`) |
+| `body`                                | Texte principal                                                   |
+| `image`                               | Couverture `/books/...`                                           |
+| `price`, `shippingFee`                | CHF                                                               |
+| `publisher`                           | Éditeur (affiché dans `BookMeta`)                                 |
+| `isbn`, `language`, `pages`, `format` | Specs sous « Photographies »                                      |
+| `availability`                        | « Ouvrage épuisé », « Ouvrage privé - Ville de Genève », etc.     |
+| `kind: "film"`                        | Pas de prix ni bouton commander                                   |
+
 
 Les métadonnées (photographies, éditeur, ISBN, prix, TWINT) passent par `BookMeta` dans `LivreDetail.tsx` — **ne pas** les coller dans `body`.
 
@@ -187,10 +199,12 @@ Les métadonnées (photographies, éditeur, ISBN, prix, TWINT) passent par `Book
 
 Portraits et reportages se gèrent de la même façon. Tu bouges les fichiers dans Cloudinary, puis tu lances le sync. **Aucune modification de code** pour une photo normale. Pas de liste de photos dans `site.ts`.
 
-| Page | Dossier Cloudinary |
-|------|--------------------|
-| `/portraits` | `karinebauzin/portraits/` |
+
+| Page                 | Dossier Cloudinary                |
+| -------------------- | --------------------------------- |
+| `/portraits`         | `karinebauzin/portraits/`         |
 | `/reportages/<slug>` | `karinebauzin/reportages/<slug>/` |
+
 
 Exemples : `karinebauzin/portraits/`, `karinebauzin/reportages/swiss-cup-mulet/`, `karinebauzin/reportages/144-smur/`.
 
@@ -206,11 +220,11 @@ Le slug du reportage = le nom du dossier. Il doit coller à `path` dans `site.ts
 
 Pas de `git push`. Pas besoin de Cursor. Tant que le sync n’a pas tourné, l’ancienne galerie reste affichée. On ne « cache » pas une photo dans le code : on la retire de Cloudinary.
 
-### Si tu supprimes (ou renommes) la photo de couverture d’un reportage
+### Si tu supprimes la photo de couverture (ou changes son Public ID)
 
 La couverture, c’est la **vignette sur `/reportages`** (la grille des projets). Ce n’est pas forcément la première photo de la galerie. Les portraits n’ont pas de couverture.
 
-Si tu supprimes ou renommes cette photo dans Cloudinary **sans** mettre à jour `coverPublicId` :
+Si tu **supprimes** cette photo, ou si tu changes son **Public ID**, **sans** mettre à jour `coverPublicId` :
 
 - la galerie du projet se met à jour après le sync
 - le hub `/reportages` pointe encore vers l’ancien fichier : vignette cassée
@@ -224,24 +238,26 @@ Donc, dans l’ordre :
 5. L’assistant change `coverPublicId` dans `site.ts` et envoie le code (commit + push)
 6. Lance le sync
 
-Sans remplaçante choisie : demande d’enlever `coverPublicId`. Le hub prendra alors la première photo de la galerie (pour un reportage : la première en A→Z).
+Sans remplaçante choisie : demande d’enlever `coverPublicId`. Le hub prendra alors la première photo de la galerie (pour un reportage : la première selon le display name).
 
-Changer de couverture **sans** supprimer la photo : juste la phrase à l’assistant. Pas de delete Cloudinary.
+**Rename** (le nom affiché) ne casse pas la couverture. Changer de couverture **sans** supprimer la photo : juste la phrase à l’assistant. Pas de delete Cloudinary.
 
-### Classer les images (éviter deux photos côte à côte)
+### Ordre des images
+
+
+| Galerie | Classement |
+|---------|------------|
+| **Portraits** | Plus récent d’abord (date d’upload Cloudinary) |
+| **Reportages** | **Display name** A→Z (Rename dans Cloudinary, ou le nom du fichier à l’export) |
+
 
 Sur téléphone : une seule colonne, les photos s’empilent.
 
-Sur tablette et ordi : **2 colonnes**. Les photos 1 et 2 s’affichent côte à côte, puis 3 et 4, etc. Deux photos qui se suivent dans l’ordre se retrouvent donc l’une à côté de l’autre.
+Sur tablette et ordi : **2 colonnes**. Les photos 1 et 2 s’affichent côte à côte, puis 3 et 4, etc. Deux photos qui se suivent dans l’ordre se retrouvent donc l’une à côté de l’autre. Pour les séparer : glisse une autre photo entre les deux, puis sync.
 
-Pour les séparer : glisse une autre photo entre les deux dans le classement. Puis sync.
+**Reportages.** L’ordre suit le **display name**. C’est le nom du fichier à l’export, et ce que **Rename** change dans Cloudinary. Pas besoin de toucher au Public ID.
 
-| Galerie | Comment l’ordre est décidé |
-|---------|----------------------------|
-| Portraits | Plus récent d’abord (date d’upload Cloudinary) |
-| Reportages | Nom de fichier A→Z (**Public ID**, pas le nom affiché) |
-
-**Reportages.** Avant l’upload, préfixe les fichiers : `01-…`, `02-…`, `03-…`. Déjà en ligne : Cloudinary → cliquer la photo → **Rename** / modifier le **Public ID** (le « display name » ne compte pas). `01` et `02` seront côte à côte ; pour les séparer : `01`, `02` (une autre photo), `03`. Si tu renommes la couverture, vois le paragraphe précédent.
+Avant l’upload, nomme les fichiers `01-…`, `02-…`, `03-…`. Déjà en ligne : cliquer la photo → **Rename** → sync. `01` et `02` seront côte à côte ; pour les séparer : `01`, `02` (une autre photo), `03`. Rename ne casse pas la couverture.
 
 **Portraits.** La dernière photo ajoutée passe en haut à gauche. Les deux derniers uploads se retrouvent côte à côte en tête de page. Pour faire remonter une photo : la ré-uploader. Pour séparer deux portraits côte à côte : ré-uploader l’un des deux, ou en ajouter un troisième entre eux (en date).
 
@@ -309,30 +325,34 @@ Sans `price` : pas de ligne prix/TWINT, pas de bouton commander.
 
 ## Récap rapide
 
-| Tâche | Cloudinary | Fichiers | Git push |
-|-------|------------|----------|----------|
-| Modifier un texte | — | `site.ts` (ou `About.tsx` / `Contact.tsx`) | ✅ |
-| Badge Trust-J | — | `site.trustJ` + `public/trustj-logo.png` | ✅ |
-| Ajouter / retirer / classer des photos | ✅ + sync | — | non |
-| Retirer ou renommer la **couverture** d’un reportage | ✅ + sync | `site.ts` (`coverPublicId`) | ✅ code |
-| Nouveau projet reportage | ✅ upload + sync | `site.ts` (slug/titre) | ✅ code |
-| Couverture de livre | — | `public/books/` + `site.ts` | ✅ |
-| Livre / film | — | `site.ts` | ✅ |
+
+| Tâche                                                | Cloudinary      | Fichiers                                   | Git push |
+| ---------------------------------------------------- | --------------- | ------------------------------------------ | -------- |
+| Modifier un texte                                    | —               | `site.ts` (ou `About.tsx` / `Contact.tsx`) | ✅        |
+| Badge Trust-J                                        | —               | `site.trustJ` + `public/trustj-logo.png`   | ✅        |
+| Ajouter / retirer / classer des photos               | ✅ + sync        | —                                          | non      |
+| Retirer ou changer le **Public ID** de la couverture | ✅ + sync | `site.ts` (`coverPublicId`) | ✅ code |
+| Nouveau projet reportage                             | ✅ upload + sync | `site.ts` (slug/titre)                     | ✅ code   |
+| Couverture de livre                                  | —               | `public/books/` + `site.ts`                | ✅        |
+| Livre / film                                         | —               | `site.ts`                                  | ✅        |
+
 
 ---
 
 ## Erreurs fréquentes
 
-| Problème | Cause | Solution |
-|----------|-------|----------|
-| Galerie vide | Manifeste pas à jour, ou `.env` sans cloud name | Lancer **Sync galleries** |
-| Photo encore visible après suppression | Sync pas lancé | Relancer **Sync galleries**, puis recharger |
-| Vignette cassée sur `/reportages` | Couverture supprimée ou renommée, `coverPublicId` pas à jour | Dire à l’assistant quelle nouvelle photo utiliser |
-| Deux photos côte à côte alors que tu ne veux pas | Elles se suivent dans l’ordre (2 colonnes) | Glisser une autre photo entre les deux, puis sync |
-| Mauvais dossier Cloudinary | Slug ≠ chemin | Aligné sur `docs/MEDIA.md` |
-| Page 404 | `path` / `slug` incohérent | `path` = `/reportages/` ou `/livres/` + slug |
-| Métadonnées en double dans un livre | Texte dans `body` + champs | Garder les champs structurés |
-| `npm run dev` plante (Rollup) | `node_modules` cassé | `rm -rf node_modules && npm install` |
+
+| Problème                                         | Cause                                                        | Solution                                          |
+| ------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------- |
+| Galerie vide                                     | Manifeste pas à jour, ou `.env` sans cloud name              | Lancer **Sync galleries**                         |
+| Photo encore visible après suppression           | Sync pas lancé                                               | Relancer **Sync galleries**, puis recharger       |
+| Vignette cassée sur `/reportages` | Couverture supprimée ou Public ID changé, `coverPublicId` pas à jour | Dire à l’assistant quelle nouvelle photo utiliser |
+| Deux photos côte à côte alors que tu ne veux pas | Elles se suivent dans l’ordre (2 colonnes)                   | Glisser une autre photo entre les deux, puis sync |
+| Mauvais dossier Cloudinary                       | Slug ≠ chemin                                                | Aligné sur `docs/MEDIA.md`                        |
+| Page 404                                         | `path` / `slug` incohérent                                   | `path` = `/reportages/` ou `/livres/` + slug      |
+| Métadonnées en double dans un livre              | Texte dans `body` + champs                                   | Garder les champs structurés                      |
+| `npm run dev` plante (Rollup)                    | `node_modules` cassé                                         | `rm -rf node_modules && npm install`              |
+
 
 ---
 
