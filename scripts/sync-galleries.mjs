@@ -236,7 +236,6 @@ async function searchImages(expression) {
       expression,
       max_results: 500,
       sort_by: [{ public_id: "asc" }],
-      with_field: ["display_name"],
     };
     if (nextCursor) body.next_cursor = nextCursor;
 
