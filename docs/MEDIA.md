@@ -62,7 +62,7 @@ Le sync (`scripts/sync-galleries.mjs`) fixe l’ordre dans le manifeste :
 | Galerie | Ordre |
 |---------|--------|
 | Portraits | Plus récent d’abord (`created_at` Cloudinary) |
-| Reportages | `public_id` alphabétique |
+| Reportages | `display_name` alphabétique (sinon `filename`, sinon `public_id`) |
 
 ### Workflow — ajouter des photos (galerie existante)
 

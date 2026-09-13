@@ -123,6 +123,7 @@ Redirige vers `/reportages`. Pas de composant `Home.tsx`.
 - Détail : `DocumentaireProject.tsx` → `GalleryPage` (photos via manifeste)
 - Données éditoriales : `documentary.projects[]` dans `site.ts` (slug, titre, intro optionnelle, `coverPublicId`)
 - Dossier Cloudinary : `karinebauzin/reportages/<slug>/`
+- Images : manifeste Cloudinary, ordre display name A→Z (fixé au sync)
 - 24 projets (ordre du tableau `site.ts` = ordre du hub et du menu)
 
 ### `/livres` et `/livres/:slug`
